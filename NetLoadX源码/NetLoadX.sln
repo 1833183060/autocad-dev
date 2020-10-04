@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetLoadX", "NetLoadX\NetLoadX.csproj", "{B55FDAD9-B90E-4B54-97F7-CD1BFCFD491A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteManager", ".\RemoteManager\RemoteManager.csproj", "{162D6DDA-53F2-43F0-A1F0-126832A0939F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B55FDAD9-B90E-4B54-97F7-CD1BFCFD491A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B55FDAD9-B90E-4B54-97F7-CD1BFCFD491A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B55FDAD9-B90E-4B54-97F7-CD1BFCFD491A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B55FDAD9-B90E-4B54-97F7-CD1BFCFD491A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{162D6DDA-53F2-43F0-A1F0-126832A0939F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{162D6DDA-53F2-43F0-A1F0-126832A0939F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{162D6DDA-53F2-43F0-A1F0-126832A0939F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{162D6DDA-53F2-43F0-A1F0-126832A0939F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

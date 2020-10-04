@@ -1,0 +1,163 @@
+<Window
+	x:Class="CAD屏幕菜单.Setting" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:CAD屏幕菜单" xmlns:input="clr-namespace:System.Windows.Input;assembly=PresentationCore"
+	Title="屏幕菜单设置"
+	Height="300.159"
+	Width="562.891"
+	ResizeMode="NoResize"
+	WindowStartupLocation="CenterScreen"
+	Topmost="True">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary
+					Source="resources/SettingStyle.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<Canvas
+		HorizontalAlignment="Stretch"
+		VerticalAlignment="Stretch">
+		<Border
+			Canvas.Left="10"
+			Canvas.Top="10"
+			Width="390"
+			Height="250"
+			CornerRadius="10"
+			BorderThickness="2"
+			BorderBrush="#FF808080" />
+		<TextBlock
+			Text="标题文字:"
+			HorizontalAlignment="Left"
+			Canvas.Bottom="200"
+			Canvas.Left="41"
+			Margin="0"
+			Canvas.Top="28"
+			RenderTransformOrigin="1.01,2.185" />
+		<TextBox
+			Name="title"
+			Grid.Column="1"
+			Tag="留空将使用默认值"
+			Width="208"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Center"
+			Grid.ColumnSpan="2"
+			FontSize="20"
+			Canvas.Left="143"
+			Canvas.Top="28" />
+		<TextBlock
+			Text="自动加载:"
+			Grid.Row="1"
+			HorizontalAlignment="Left"
+			Canvas.Left="41"
+			Margin="0"
+			Canvas.Top="80" />
+		<CheckBox
+			Name="AutoRollUpCB"
+			Grid.Row="1"
+			Grid.Column="1"
+			IsChecked="False"
+			Canvas.Left="152"
+			Canvas.Top="124"
+			Style="{StaticResource SliderCheckBox}" />
+		<TextBlock
+			Text="自动折叠:"
+			Grid.Row="1"
+			Grid.Column="2"
+			Canvas.Left="41"
+			Margin="0"
+			Canvas.Top="123" />
+		<CheckBox
+			Name="AutoLoadCB"
+			Grid.Row="1"
+			Padding="1"
+			IsChecked="False"
+			Grid.Column="3"
+			Canvas.Left="152"
+			Canvas.Top="82"
+			Style="{StaticResource SliderCheckBox}"
+			Height="25" />
+		<StackPanel
+			Orientation="Horizontal"
+			Grid.ColumnSpan="2"
+			Grid.Row="2"
+			HorizontalAlignment="Stretch"
+			Canvas.Left="30"
+			Canvas.Top="159">
+			<TextBlock
+				Text="面板高度:"
+				Margin="10"
+				RenderTransformOrigin="0.5,0.5" />
+			<TextBox
+				Name="HeightTextBox"
+				Tag="[700-1400](禁用停靠时有效)"
+				input:InputMethod.IsInputMethodEnabled="False"
+				HorizontalAlignment="Stretch"
+				Width="208"
+				HorizontalContentAlignment="Stretch"
+				Margin="10"
+				PreviewTextInput="NumberTextBox_PreviewTextInput" />
+		</StackPanel>
+		<StackPanel
+			Orientation="Horizontal"
+			HorizontalAlignment="Stretch"
+			Canvas.Left="30"
+			Canvas.Top="210">
+			<TextBlock
+				Margin="10"
+				RenderTransformOrigin="0.5,0.5"
+				Text="面板宽度:" />
+			<TextBox
+				Name="WidthTextBox"
+				Tag="[200-800](禁用停靠时有效)"
+				input:InputMethod.IsInputMethodEnabled="False"
+				HorizontalAlignment="Stretch"
+				Width="208"
+				HorizontalContentAlignment="Stretch"
+				Margin="10"
+				PreviewTextInput="NumberTextBox_PreviewTextInput" />
+		</StackPanel>
+		<Button
+			Name="Confirm"
+			Content="确定"
+			FontSize="20"
+			Canvas.Left="426"
+			Canvas.Top="54"
+			Width="100"
+			Height="50"
+			Click="Confirm_Click" />
+		<Button
+			Name="Cancel"
+			Content="取消"
+			FontSize="20"
+			Canvas.Left="426"
+			Canvas.Top="159"
+			Width="100"
+			Height="50"
+			Click="Cancel_Click" />
+		<TextBlock
+			Text="停靠方向:"
+			Canvas.Left="233"
+			Margin="0"
+			Canvas.Top="98"
+			RenderTransformOrigin="0.491,1.159" />
+		<RadioButton
+			Name="leftRB"
+			GroupName="dock"
+			IsChecked="True"
+			Content="左侧"
+			Canvas.Left="323"
+			Canvas.Top="85"
+			FontSize="15"
+			VerticalAlignment="Top"
+			Tag="left" />
+		<RadioButton
+			Name="rightRB"
+			GroupName="dock"
+			Content="右侧"
+			Canvas.Left="323"
+			Canvas.Top="120"
+			FontSize="15"
+			VerticalAlignment="Top"
+			Tag="right" />
+	</Canvas>
+</Window>

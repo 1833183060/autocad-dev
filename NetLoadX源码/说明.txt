@@ -1,0 +1,3 @@
+NetLoadX生成到测试dll的输出目录
+RemoteManager生成到AutoCad的安装目录
+加载NetLoadX.dll运行netloadx命令即可

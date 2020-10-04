@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A6A19922-EE00-4F01-BA0F-F41DD32C5C61}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>田草CAD工具箱_For2014</RootNamespace>
+    <AssemblyName>田草CAD工具箱_For2014</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ApplicationIcon>田草CAD工具箱_For2014.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AcCoreMgd">
+      <HintPath>..\..\..\..\..\ObjectARX 2016\inc\AcCoreMgd.dll</HintPath>
+    </Reference>
+    <Reference Include="AcCui">
+      <HintPath>..\..\..\..\..\ObjectARX 2016\inc\AcCui.dll</HintPath>
+    </Reference>
+    <Reference Include="AcDbMgd">
+      <HintPath>..\..\..\..\..\ObjectARX 2016\inc\AcDbMgd.dll</HintPath>
+    </Reference>
+    <Reference Include="AcMgd">
+      <HintPath>..\..\..\..\..\ObjectARX 2016\inc\AcMgd.dll</HintPath>
+    </Reference>
+    <Reference Include="AcTcMgd">
+      <HintPath>..\..\..\..\..\ObjectARX 2016\inc\AcTcMgd.dll</HintPath>
+    </Reference>
+    <Reference Include="AdWindows">
+      <HintPath>..\..\..\..\..\ObjectARX 2016\inc\AdWindows.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="TcDotNetBarcode">
+      <HintPath>..\..\..\..\..\BaiduYunDownload\vue饿了么\田草CAD工具箱\田草CAD工具箱For2014x64\ToolBox\TcDotNetBarcode.dll</HintPath>
+    </Reference>
+    <Reference Include="TcFunctions">
+      <HintPath>..\..\..\..\..\BaiduYunDownload\vue饿了么\田草CAD工具箱\田草CAD工具箱For2014x64\ToolBox\TcFunctions.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="-Module-{075E2D4E-D11E-4F88-9D38-7F1D5097E014}.cs" />
+    <Compile Include="-PrivateImplementationDetails-{FF55C0D7-23E2-46D4-8E92-A495B43F0DDB}.cs" />
+    <Compile Include="BiaoGao_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BiaoGao_Frm.Designer.cs">
+      <DependentUpon>BiaoGao_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BlockYin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BlockYin.Designer.cs">
+      <DependentUpon>BlockYin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChengTai.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="Class30.cs" />
+    <Compile Include="Class31.cs" />
+    <Compile Include="Class32.cs" />
+    <Compile Include="Class33.cs" />
+    <Compile Include="Class36.cs" />
+    <Compile Include="Class37.cs" />
+    <Compile Include="Class38.cs" />
+    <Compile Include="Class39.cs" />
+    <Compile Include="clsListviewSorter.cs" />
+    <Compile Include="Code128_Cls.cs" />
+    <Compile Include="DimStyle.cs" />
+    <Compile Include="DVar_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DVar_Frm.Designer.cs">
+      <DependentUpon>DVar_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="exportWmf.cs" />
+    <Compile Include="Filter_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Filter_Frm.Designer.cs">
+      <DependentUpon>Filter_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Flower.cs" />
+    <Compile Include="JG.cs" />
+    <Compile Include="JigEnt.cs" />
+    <Compile Include="JigEntIDs.cs" />
+    <Compile Include="JigEntIDs1.cs" />
+    <Compile Include="JM.cs" />
+    <Compile Include="JMTX_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="JMTX_Frm.Designer.cs">
+      <DependentUpon>JMTX_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LJM_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LJM_Frm.Designer.cs">
+      <DependentUpon>LJM_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Logo_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Logo_Frm.Designer.cs">
+      <DependentUpon>Logo_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModelSpace.cs" />
+    <Compile Include="My\MySettings.Designer.cs">
+      <DependentUpon>MySettings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="My\MySettingsProperty.cs" />
+    <Compile Include="My\Resources\Resources.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QRCode_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QRCode_Frm.Designer.cs">
+      <DependentUpon>QRCode_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="QuRa.cs" />
+    <Compile Include="Rec.cs" />
+    <Compile Include="RegCls.cs" />
+    <Compile Include="Reg_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reg_frm.Designer.cs">
+      <DependentUpon>Reg_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SBGJ.cs" />
+    <Compile Include="ShowScreenPrompt\CreateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowScreenPrompt\CreateForm.Designer.cs">
+      <DependentUpon>CreateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowScreenPrompt\PromptSetting.cs" />
+    <Compile Include="TcAboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcAboutBox.Designer.cs">
+      <DependentUpon>TcAboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcAsv_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcAsv_Frm.Designer.cs">
+      <DependentUpon>TcAsv_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcBJFJ_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcBJFJ_frm.Designer.cs">
+      <DependentUpon>TcBJFJ_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcBmp2Dwg_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcBmp2Dwg_frm.Designer.cs">
+      <DependentUpon>TcBmp2Dwg_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcCGB_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcCGB_Frm.Designer.cs">
+      <DependentUpon>TcCGB_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tcCiKu_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tcCiKu_frm.Designer.cs">
+      <DependentUpon>tcCiKu_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcCMD2_Frm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TcCMD_Frm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TcDJ_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcDJ_frm.Designer.cs">
+      <DependentUpon>TcDJ_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcDwgOnLine_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcDwgOnLine_frm.Designer.cs">
+      <DependentUpon>TcDwgOnLine_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcFileHistory_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcFileHistory_Frm.Designer.cs">
+      <DependentUpon>TcFileHistory_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcFind_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcFind_Frm.Designer.cs">
+      <DependentUpon>TcFind_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcGangJinJig.cs" />
+    <Compile Include="TcHuaBian.cs" />
+    <Compile Include="TcJG_Frm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TcJG_ZiLiao_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcJG_ZiLiao_frm.Designer.cs">
+      <DependentUpon>TcJG_ZiLiao_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcJianTouJig.cs" />
+    <Compile Include="TcJoinDwg_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcJoinDwg_Frm.Designer.cs">
+      <DependentUpon>TcJoinDwg_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcPC_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcPC_frm.Designer.cs">
+      <DependentUpon>TcPC_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcPGP_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcPGP_Frm.Designer.cs">
+      <DependentUpon>TcPGP_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcQuRa_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcQuRa_frm.Designer.cs">
+      <DependentUpon>TcQuRa_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcSelect_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcSelect_frm.Designer.cs">
+      <DependentUpon>TcSelect_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcSet_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcSet_frm.Designer.cs">
+      <DependentUpon>TcSet_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcSoftDown_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcSoftDown_frm.Designer.cs">
+      <DependentUpon>TcSoftDown_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcTM_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcTM_frm.Designer.cs">
+      <DependentUpon>TcTM_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcTuKu_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcTuKu_frm.Designer.cs">
+      <DependentUpon>TcTuKu_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcXG_frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcXG_frm.Designer.cs">
+      <DependentUpon>TcXG_frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TcYunXian.cs" />
+    <Compile Include="TcYunXian1.cs" />
+    <Compile Include="TcZJM_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TcZJM_Frm.Designer.cs">
+      <DependentUpon>TcZJM_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TKFind_Frm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TKFind_Frm.Designer.cs">
+      <DependentUpon>TKFind_Frm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WinAPI.cs" />
+    <Compile Include="任意多边形填充.cs" />
+    <Compile Include="全局比例.cs" />
+    <Compile Include="初始化设置.cs" />
+    <Compile Include="单点引注X.cs" />
+    <Compile Include="单点引注X1_PL.cs" />
+    <Compile Include="单点引注X_PL.cs" />
+    <Compile Include="单点引注Y.cs" />
+    <Compile Include="单点引注Y1_PL.cs" />
+    <Compile Include="单点引注Y_PL.cs" />
+    <Compile Include="双打断线.cs" />
+    <Compile Include="吊筋.cs" />
+    <Compile Include="图库.cs" />
+    <Compile Include="墙柱钢筋.cs" />
+    <Compile Include="墙线.cs" />
+    <Compile Include="大括号.cs" />
+    <Compile Include="工具面板.cs" />
+    <Compile Include="打断线.cs" />
+    <Compile Include="打砖块.cs" />
+    <Compile Include="把直线和圆弧合并成PL.cs" />
+    <Compile Include="拉临时测试桁架.cs" />
+    <Compile Include="拉筋.cs" />
+    <Compile Include="标注.cs" />
+    <Compile Include="梁柱拉筋.cs" />
+    <Compile Include="正筋135度钩.cs" />
+    <Compile Include="正筋180度钩.cs" />
+    <Compile Include="注释.cs" />
+    <Compile Include="窗线.cs" />
+    <Compile Include="等距布块.cs" />
+    <Compile Include="等距布筋.cs" />
+    <Compile Include="算术运算.cs" />
+    <Compile Include="管道打断线.cs" />
+    <Compile Include="结构分析.cs" />
+    <Compile Include="绘制圆钩.cs" />
+    <Compile Include="绘制屋面布置.cs" />
+    <Compile Include="绘制斜钩.cs" />
+    <Compile Include="绘制梁箍筋和纵筋.cs" />
+    <Compile Include="绘制注释标记.cs" />
+    <Compile Include="绘制注释标记1.cs" />
+    <Compile Include="绘制注释标记2.cs" />
+    <Compile Include="绘制注释标记3.cs" />
+    <Compile Include="绘制注释标记4.cs" />
+    <Compile Include="绘制注释标记5.cs" />
+    <Compile Include="绘制箍筋.cs" />
+    <Compile Include="统计.cs" />
+    <Compile Include="负筋.cs" />
+    <Compile Include="连续引注.cs" />
+    <Compile Include="连续引注1.cs" />
+    <Compile Include="连续引注2.cs" />
+    <Compile Include="连续标注.cs" />
+    <Compile Include="钢筋处理.cs" />
+    <Compile Include="钢筋桁架LM.cs" />
+    <Compile Include="钢筋桁架LM1.cs" />
+    <Compile Include="钢筋桁架LM2.cs" />
+    <Compile Include="钢筋桁架PM.cs" />
+    <Compile Include="钢筋桁架PM1.cs" />
+    <Compile Include="钢筋转换.cs" />
+    <Compile Include="附加箍筋.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="aR3nbf8dQp2feLmk31.lSfgApatkdxsVcGcrktoFd.resources" />
+    <EmbeddedResource Include="aR3nbf8dQp2feLmk31.rFohpatkdxsVcxLfJKhM7.resources" />
+    <EmbeddedResource Include="BiaoGao_Frm.resources" />
+    <EmbeddedResource Include="BlockYin.resources" />
+    <EmbeddedResource Include="DVar_Frm.resources" />
+    <EmbeddedResource Include="Filter_Frm.resources" />
+    <EmbeddedResource Include="JMTX_Frm.resources" />
+    <EmbeddedResource Include="LJM_Frm.resources" />
+    <EmbeddedResource Include="Logo_Frm.resources" />
+    <EmbeddedResource Include="QRCode_Frm.resources" />
+    <EmbeddedResource Include="Reg_frm.resources" />
+    <EmbeddedResource Include="Resources.resources" />
+    <EmbeddedResource Include="TcAboutBox.resources" />
+    <EmbeddedResource Include="TcAsv_Frm.resources" />
+    <EmbeddedResource Include="TcBJFJ_frm.resources" />
+    <EmbeddedResource Include="TcBmp2Dwg_frm.resources" />
+    <EmbeddedResource Include="TcCGB_Frm.resources" />
+    <EmbeddedResource Include="tcCiKu_frm.resources" />
+    <EmbeddedResource Include="TcCMD2_Frm.resources" />
+    <EmbeddedResource Include="TcCMD2_Frm.resx">
+      <DependentUpon>TcCMD2_Frm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TcCMD_Frm.resources" />
+    <EmbeddedResource Include="TcDJ_frm.resources" />
+    <EmbeddedResource Include="TcDwgOnLine_frm.resources" />
+    <EmbeddedResource Include="TcFileHistory_Frm.resources" />
+    <EmbeddedResource Include="TcFind_Frm.resources" />
+    <EmbeddedResource Include="TcJG_Frm.resources" />
+    <EmbeddedResource Include="TcJG_ZiLiao_frm.resources" />
+    <EmbeddedResource Include="TcJoinDwg_Frm.resources" />
+    <EmbeddedResource Include="TcPC_frm.resources" />
+    <EmbeddedResource Include="TcPGP_Frm.resources" />
+    <EmbeddedResource Include="TcQuRa_frm.resources" />
+    <EmbeddedResource Include="TcSelect_frm.resources" />
+    <EmbeddedResource Include="TcSet_frm.resources" />
+    <EmbeddedResource Include="TcSoftDown_frm.resources" />
+    <EmbeddedResource Include="TcTM_frm.resources" />
+    <EmbeddedResource Include="TcXG_frm.resources" />
+    <EmbeddedResource Include="TcZJM_Frm.resources" />
+    <EmbeddedResource Include="TKFind_Frm.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My\MySettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>MySettings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

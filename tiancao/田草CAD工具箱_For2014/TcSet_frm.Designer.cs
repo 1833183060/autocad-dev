@@ -1,0 +1,212 @@
+﻿namespace 田草CAD工具箱_For2014
+{
+	[global::Microsoft.VisualBasic.CompilerServices.DesignerGenerated]
+	public partial class TcSet_frm : global::System.Windows.Forms.Form
+	{
+		[global::System.Diagnostics.DebuggerNonUserCode]
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && this.icontainer_0 != null)
+			{
+				this.icontainer_0.Dispose();
+			}
+			base.Dispose(disposing);
+		}
+
+		[global::System.Diagnostics.DebuggerStepThrough]
+		private void InitializeComponent()
+		{
+			this.TableLayoutPanel1 = new global::System.Windows.Forms.TableLayoutPanel();
+			this.OK_Button = new global::System.Windows.Forms.Button();
+			this.Button1 = new global::System.Windows.Forms.Button();
+			this.Button2 = new global::System.Windows.Forms.Button();
+			this.Button3 = new global::System.Windows.Forms.Button();
+			this.Button4 = new global::System.Windows.Forms.Button();
+			this.CheckBox1 = new global::System.Windows.Forms.CheckBox();
+			this.CheckBox2 = new global::System.Windows.Forms.CheckBox();
+			this.Button5 = new global::System.Windows.Forms.Button();
+			this.CheckBox3 = new global::System.Windows.Forms.CheckBox();
+			this.Button6 = new global::System.Windows.Forms.Button();
+			this.CheckBox4 = new global::System.Windows.Forms.CheckBox();
+			this.CheckBox5 = new global::System.Windows.Forms.CheckBox();
+			this.TableLayoutPanel1.SuspendLayout();
+			this.SuspendLayout();
+			this.TableLayoutPanel1.Anchor = (global::System.Windows.Forms.AnchorStyles.Bottom | global::System.Windows.Forms.AnchorStyles.Right);
+			this.TableLayoutPanel1.ColumnCount = 1;
+			this.TableLayoutPanel1.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 50f));
+			this.TableLayoutPanel1.ColumnStyles.Add(new global::System.Windows.Forms.ColumnStyle(global::System.Windows.Forms.SizeType.Percent, 50f));
+			this.TableLayoutPanel1.Controls.Add(this.OK_Button, 0, 0);
+			global::System.Windows.Forms.Control tableLayoutPanel = this.TableLayoutPanel1;
+			global::System.Drawing.Point location = new global::System.Drawing.Point(286, 298);
+			tableLayoutPanel.Location = location;
+			this.TableLayoutPanel1.Name = "TableLayoutPanel1";
+			this.TableLayoutPanel1.RowCount = 1;
+			this.TableLayoutPanel1.RowStyles.Add(new global::System.Windows.Forms.RowStyle(global::System.Windows.Forms.SizeType.Percent, 50f));
+			global::System.Windows.Forms.Control tableLayoutPanel2 = this.TableLayoutPanel1;
+			global::System.Drawing.Size size = new global::System.Drawing.Size(146, 27);
+			tableLayoutPanel2.Size = size;
+			this.TableLayoutPanel1.TabIndex = 0;
+			this.OK_Button.Anchor = global::System.Windows.Forms.AnchorStyles.None;
+			global::System.Windows.Forms.Control ok_Button = this.OK_Button;
+			location = new global::System.Drawing.Point(39, 3);
+			ok_Button.Location = location;
+			this.OK_Button.Name = "OK_Button";
+			global::System.Windows.Forms.Control ok_Button2 = this.OK_Button;
+			size = new global::System.Drawing.Size(67, 21);
+			ok_Button2.Size = size;
+			this.OK_Button.TabIndex = 0;
+			this.OK_Button.Text = "确定";
+			global::System.Windows.Forms.Control button = this.Button1;
+			location = new global::System.Drawing.Point(8, 6);
+			button.Location = location;
+			this.Button1.Name = "Button1";
+			global::System.Windows.Forms.Control button2 = this.Button1;
+			size = new global::System.Drawing.Size(273, 23);
+			button2.Size = size;
+			this.Button1.TabIndex = 1;
+			this.Button1.Text = "复制字体文件       TcCopyFonts";
+			this.Button1.TextAlign = global::System.Drawing.ContentAlignment.MiddleLeft;
+			this.Button1.UseVisualStyleBackColor = true;
+			global::System.Windows.Forms.Control button3 = this.Button2;
+			location = new global::System.Drawing.Point(8, 64);
+			button3.Location = location;
+			this.Button2.Name = "Button2";
+			global::System.Windows.Forms.Control button4 = this.Button2;
+			size = new global::System.Drawing.Size(273, 23);
+			button4.Size = size;
+			this.Button2.TabIndex = 2;
+			this.Button2.Text = "添加简化命令       TcAddPGP";
+			this.Button2.TextAlign = global::System.Drawing.ContentAlignment.MiddleLeft;
+			this.Button2.UseVisualStyleBackColor = true;
+			global::System.Windows.Forms.Control button5 = this.Button3;
+			location = new global::System.Drawing.Point(8, 93);
+			button5.Location = location;
+			this.Button3.Name = "Button3";
+			global::System.Windows.Forms.Control button6 = this.Button3;
+			size = new global::System.Drawing.Size(273, 23);
+			button6.Size = size;
+			this.Button3.TabIndex = 3;
+			this.Button3.Text = "更改工具选项板路径 ChangeToolPalettePath";
+			this.Button3.TextAlign = global::System.Drawing.ContentAlignment.MiddleLeft;
+			this.Button3.UseVisualStyleBackColor = true;
+			global::System.Windows.Forms.Control button7 = this.Button4;
+			location = new global::System.Drawing.Point(8, 122);
+			button7.Location = location;
+			this.Button4.Name = "Button4";
+			global::System.Windows.Forms.Control button8 = this.Button4;
+			size = new global::System.Drawing.Size(273, 23);
+			button8.Size = size;
+			this.Button4.TabIndex = 4;
+			this.Button4.Text = "更改设计中心路径   ChangeDesignCenterPath";
+			this.Button4.TextAlign = global::System.Drawing.ContentAlignment.MiddleLeft;
+			this.Button4.UseVisualStyleBackColor = true;
+			this.CheckBox1.AutoSize = true;
+			global::System.Windows.Forms.Control checkBox = this.CheckBox1;
+			location = new global::System.Drawing.Point(8, 151);
+			checkBox.Location = location;
+			this.CheckBox1.Name = "CheckBox1";
+			global::System.Windows.Forms.Control checkBox2 = this.CheckBox1;
+			size = new global::System.Drawing.Size(252, 16);
+			checkBox2.Size = size;
+			this.CheckBox1.TabIndex = 5;
+			this.CheckBox1.Text = "启动时候显示菜单（默认显示）  TcMenuOn";
+			this.CheckBox1.UseVisualStyleBackColor = true;
+			this.CheckBox2.AutoSize = true;
+			global::System.Windows.Forms.Control checkBox3 = this.CheckBox2;
+			location = new global::System.Drawing.Point(8, 173);
+			checkBox3.Location = location;
+			this.CheckBox2.Name = "CheckBox2";
+			global::System.Windows.Forms.Control checkBox4 = this.CheckBox2;
+			size = new global::System.Drawing.Size(282, 16);
+			checkBox4.Size = size;
+			this.CheckBox2.TabIndex = 6;
+			this.CheckBox2.Text = "启用历史文件记录（默认关闭）  TcFileHistory";
+			this.CheckBox2.UseVisualStyleBackColor = true;
+			global::System.Windows.Forms.Control button9 = this.Button5;
+			location = new global::System.Drawing.Point(8, 35);
+			button9.Location = location;
+			this.Button5.Name = "Button5";
+			global::System.Windows.Forms.Control button10 = this.Button5;
+			size = new global::System.Drawing.Size(273, 23);
+			button10.Size = size;
+			this.Button5.TabIndex = 7;
+			this.Button5.Text = "复制填充图案       TcCopyPAT";
+			this.Button5.TextAlign = global::System.Drawing.ContentAlignment.MiddleLeft;
+			this.Button5.UseVisualStyleBackColor = true;
+			this.CheckBox3.AutoSize = true;
+			global::System.Windows.Forms.Control checkBox5 = this.CheckBox3;
+			location = new global::System.Drawing.Point(8, 195);
+			checkBox5.Location = location;
+			this.CheckBox3.Name = "CheckBox3";
+			global::System.Windows.Forms.Control checkBox6 = this.CheckBox3;
+			size = new global::System.Drawing.Size(372, 16);
+			checkBox6.Size = size;
+			this.CheckBox3.TabIndex = 8;
+			this.CheckBox3.Text = "启用双击编辑钢筋字符（默认开启）  TcAsCuteDoubleClickClose";
+			this.CheckBox3.UseVisualStyleBackColor = true;
+			global::System.Windows.Forms.Control button11 = this.Button6;
+			location = new global::System.Drawing.Point(8, 216);
+			button11.Location = location;
+			this.Button6.Name = "Button6";
+			global::System.Windows.Forms.Control button12 = this.Button6;
+			size = new global::System.Drawing.Size(273, 23);
+			button12.Size = size;
+			this.Button6.TabIndex = 9;
+			this.Button6.Text = "显示钢筋面积和推荐选筋  TcShowAS";
+			this.Button6.TextAlign = global::System.Drawing.ContentAlignment.MiddleLeft;
+			this.Button6.UseVisualStyleBackColor = true;
+			this.CheckBox4.AutoSize = true;
+			global::System.Windows.Forms.Control checkBox7 = this.CheckBox4;
+			location = new global::System.Drawing.Point(8, 245);
+			checkBox7.Location = location;
+			this.CheckBox4.Name = "CheckBox4";
+			global::System.Windows.Forms.Control checkBox8 = this.CheckBox4;
+			size = new global::System.Drawing.Size(342, 16);
+			checkBox8.Size = size;
+			this.CheckBox4.TabIndex = 10;
+			this.CheckBox4.Text = "指定找不到指定的字体文件时要使用的替换字体（txt.shx）";
+			this.CheckBox4.UseVisualStyleBackColor = true;
+			this.CheckBox5.AutoSize = true;
+			global::System.Windows.Forms.Control checkBox9 = this.CheckBox5;
+			location = new global::System.Drawing.Point(8, 267);
+			checkBox9.Location = location;
+			this.CheckBox5.Name = "CheckBox5";
+			global::System.Windows.Forms.Control checkBox10 = this.CheckBox5;
+			size = new global::System.Drawing.Size(186, 16);
+			checkBox10.Size = size;
+			this.CheckBox5.TabIndex = 11;
+			this.CheckBox5.Text = "不显示代理对象(PROXYNOTICE)";
+			this.CheckBox5.UseVisualStyleBackColor = true;
+			this.AcceptButton = this.OK_Button;
+			global::System.Drawing.SizeF autoScaleDimensions = new global::System.Drawing.SizeF(6f, 12f);
+			this.AutoScaleDimensions = autoScaleDimensions;
+			this.AutoScaleMode = global::System.Windows.Forms.AutoScaleMode.Font;
+			size = new global::System.Drawing.Size(435, 329);
+			this.ClientSize = size;
+			this.Controls.Add(this.CheckBox5);
+			this.Controls.Add(this.CheckBox4);
+			this.Controls.Add(this.Button6);
+			this.Controls.Add(this.CheckBox3);
+			this.Controls.Add(this.Button5);
+			this.Controls.Add(this.CheckBox2);
+			this.Controls.Add(this.CheckBox1);
+			this.Controls.Add(this.Button4);
+			this.Controls.Add(this.Button3);
+			this.Controls.Add(this.Button2);
+			this.Controls.Add(this.Button1);
+			this.Controls.Add(this.TableLayoutPanel1);
+			this.FormBorderStyle = global::System.Windows.Forms.FormBorderStyle.FixedDialog;
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
+			this.Name = "TcSet_frm";
+			this.ShowInTaskbar = false;
+			this.StartPosition = global::System.Windows.Forms.FormStartPosition.CenterParent;
+			this.Text = "设置";
+			this.TableLayoutPanel1.ResumeLayout(false);
+			this.ResumeLayout(false);
+			this.PerformLayout();
+		}
+
+		private global::System.ComponentModel.IContainer icontainer_0;
+	}
+}
