@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config>
+  <!--不要修改此参数，仅用于判断是否第一次加载-->
+  <FistLoad>false</FistLoad>
+  <!--Title:设置屏幕菜单显示名称,留空将默认设置为""迷你&源泉"-->
+  <Title>迷你&amp;源泉菜单</Title>
+  <!--AutoLoad:是否随CAD启动时自动加载,可设置:自动加载(true);手动加载(false)-->
+  <AutoLoad>True</AutoLoad>
+  <!--Dock:保存停靠位置,可选值:左侧(left)；右侧(right)-->
+  <DockSides>left</DockSides>
+  <!--AutoRollUp:是否自动停靠，可设值：自动停靠(true);不自动停靠(false)-->
+  <AutoRollUp>True</AutoRollUp>
+  <!--Height:面板高度，默认700,可设值:700以上任意值-->
+  <Height>700</Height>
+  <!--Width:面板宽度，默认300，可设值:200以上任意值-->
+  <Width>300</Width>
+  <!--
+      ISEnable:true->表示启用;false->表示禁用；
+      IconFolder:设置图标所在文件夹，需要和DLL文件放同级目录；
+      XmlFileName:自定义显示菜单XML文件名称，需要和DLL文件放同级目录，写法参考已有xml文件说明；
+   -->
+  <PaletteSet ISEnable="true" IconFolder="mini_icons" XmlFileName="Cmd_mini.xml">迷你</PaletteSet>
+  <PaletteSet ISEnable="true" IconFolder="yq_icons" XmlFileName="Cmd_yq.xml">源泉</PaletteSet>
+</Config>

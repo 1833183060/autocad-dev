@@ -1,0 +1,758 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+	屏幕菜单说明
+	文件结构：
+	<ScreenMenu>  //*根目录，必须按照此名称，不做解释；
+	  <Group TextColor ="#FFF5F5F5" Title ="第一个组" TextColor(可选) ="Coral" BackColorr(可选) ="AliceBlue">  //组，组中可以包含子项，包括子组，可以嵌套（即组中加入子组）
+	      <Item Command ="Line" ImageFile =""(可选) ImageIndex = "0"(为资源文件中图标索引，起始值0；如果ImageFile为图像文件，可忽略，) TextColor ="#FFF5F5F5"(可选) >绘制直线</Item>
+	      <Item>-</Item> //分割线
+	      <Group TextColor ="#FFF5F5F5" Title ="嵌套子组">  //嵌套组
+	        <Item Command ="Command" ImageFile ="" ImageIndex = "0">嵌套子组的项目</Item>//
+	      </Group>
+	  </Group>  
+	</ScreenMenu>
+-->
+<ScreenMenu>
+  <Item Command ="_mini_drawing_scale" ImageFile ="\mini_drawing_scale.bmp"  TextColor ="#FFF5F5F5">绘图比例</Item>
+  <Item Command ="_mini_pgp_edit" ImageFile ="\mini_pgp_edit.bmp"  TextColor ="#FFF5F5F5">快捷键&amp;命令搜索</Item>
+  <Item Command ="_mini_config" ImageFile ="\mini_config.bmp"  TextColor ="#FFF5F5F5">选项配置</Item>
+  <Group TextColor ="#FFF5F5F5" Title ="视口布局">
+    <Item Command ="_mini_tkk" ImageFile ="\mini_tkk.bmp"  TextColor ="#FFF5F5F5">插入图框</Item>
+    <Item Command ="_mini_units_scale" ImageFile ="\mini_units_scale.bmp"  TextColor ="#FFF5F5F5">切换绘图比例和单位</Item>
+    <Group TextColor ="#FFF5F5F5" Title ="缩放图转换">
+      <Item Command ="(mai_plus_run &quot;mini_dwg_mm2m&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">毫米→米</Item>
+      <Item Command ="(mai_plus_run &quot;mini_dwg_m2mm&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">米→毫米</Item>
+      <Item Command ="(mai_plus_run &quot;mini_dwg_cm2mm&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">厘米→毫米</Item>
+      <Item>-</Item>
+    </Group>
+    <Item Command ="_mini_tzml" ImageFile ="\mini_tzml.bmp"  TextColor ="#FFF5F5F5">图纸目录或拆分DWG</Item>
+    <Item Command ="_mini_merge_dwgs" ImageFile ="\mini_merge_dwgs.bmp"  TextColor ="#FFF5F5F5">合并多个DWG文件</Item>
+    <Item Command ="_mini_batch_xref" ImageFile ="\mini_batch_xref.bmp"  TextColor ="#FFF5F5F5">批量做外部参照条件图</Item>
+    <Item Command ="(mai_plus_run &quot;BatchPlot&quot;)" ImageFile ="\mini_batch_xref.bmp"  TextColor ="#FFF5F5F5">秋枫批量打印</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_jbqt" ImageFile ="\mini_jbqt.bmp"  TextColor ="#FFF5F5F5">局部取图</Item>
+    <Item Command ="_mini_regen" ImageFile ="\mini_regen.bmp"  TextColor ="#FFF5F5F5">快速局部重生成</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_ps_scale" ImageFile ="\mini_ps_scale.bmp"  TextColor ="#FFF5F5F5">图纸空间1：1布图</Item>
+    <Item Command ="_mini_ms_scale" ImageFile ="\mini_ps_scale.bmp"  TextColor ="#FFF5F5F5">模型空间做块布图</Item>
+    <Item Command ="_mini_ms_exp" ImageFile ="\mini_ms_exp.bmp"  TextColor ="#FFF5F5F5">还原炸开布图块</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_vpscale" ImageFile ="\mini_vpscale.bmp"  TextColor ="#FFF5F5F5">编辑视口比例</Item>
+    <Item Command ="_mini_vpsync" ImageFile ="\mini_vpsync.bmp"  TextColor ="#FFF5F5F5">同步对齐视口</Item>
+    <Item Command ="_mini_vp_outline" ImageFile ="\mini_vp_outline.bmp"  TextColor ="#FFF5F5F5">在模型空间绘制视口外框</Item>
+    <Item Command ="(mai_plus_run &quot;mini_vportlock&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">视口锁定或解锁</Item>
+    <Item Command ="(mai_plus_run &quot;LM_TabSort&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">布局重排序</Item>
+    <Group TextColor ="#FFF5F5F5" Title ="快捷UCS转换">
+      <Item Command ="(mai_plus_run &quot;mini_z1&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">UCS复原，南立面方向</Item>
+      <Item Command ="(mai_plus_run &quot;mini_z2&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">东立面方向UCS</Item>
+      <Item Command ="(mai_plus_run &quot;mini_z3&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">北立面方向UCS</Item>
+      <Item Command ="(mai_plus_run &quot;mini_z4&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">西立面方向UCS</Item>
+      <Item Command ="(mai_plus_run &quot;mini_zo&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">选实体的UCS</Item>
+    </Group>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="系统工具">
+    <Item Command ="_mini_file_wipe" ImageFile ="\mini_file_wipe.bmp"  TextColor ="#FFF5F5F5">粉碎文件</Item>
+    <Item Command ="_mini_view_slb" ImageFile ="\mini_view_slb.bmp"  TextColor ="#FFF5F5F5">查看幻灯库</Item>
+    <Item Command ="_mini_vlx_isolate" ImageFile ="\mini_vlx_isolate.bmp"  TextColor ="#FFF5F5F5">拆分VLX文件</Item>
+    <Item>-</Item>
+    <Item Command ="_minimenu" ImageFile ="\minimenu.bmp"  TextColor ="#FFF5F5F5">重加载迷你菜单</Item>
+    <Item Command ="_mini_fix_pattern" ImageFile ="\mini_fix_pattern.bmp"  TextColor ="#FFF5F5F5">修复其他填充不显示问题</Item>
+    <Item Command ="_mini_fix_fonts" ImageFile ="\mini_fix_fonts.bmp"  TextColor ="#FFF5F5F5">修复文字问号</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_close_toolbar" ImageFile ="\mini_close_toolbar.bmp"  TextColor ="#FFF5F5F5">图标一键开关</Item>
+    <Item Command ="_mini_merge_menu" ImageFile ="\mini_merge_menu.bmp"  TextColor ="#FFF5F5F5">开合迷你下拉菜单</Item>
+    <Item Command ="_mini_menu" ImageFile ="\mini_menu.bmp"  TextColor ="#FFF5F5F5">屏幕菜单开关</Item>
+    <Item Command ="_mini_background" ImageFile ="\mini_background.bmp"  TextColor ="#FFF5F5F5">切换ACAD绘图区颜色</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_osnap_use" ImageFile ="\mini_osnap_use.bmp"  TextColor ="#FFF5F5F5">捕捉打开</Item>
+    <Item Command ="_mini_osnap_non" ImageFile ="\mini_osnap_non.bmp"  TextColor ="#FFF5F5F5">捕捉关闭</Item>
+    <Item Command ="mini_mouse" ImageFile ="\mini_mouse.bmp"  TextColor ="#FFF5F5F5">切换鼠标中键功能</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_open_folder" ImageFile ="\mini_open_folder.bmp"  TextColor ="#FFF5F5F5">打开谜你所在文件夹</Item>
+    <Item Command ="_mini_current_folder" ImageFile ="\mini_current_folder.bmp"  TextColor ="#FFF5F5F5">打开当前图纸文件夹</Item>
+    <Item>-</Item>
+    <Item Command ="(mai_dos_execute &quot;IMINI工具说明.txt&quot; nil)" ImageFile ="\mini_current_folder.bmp"  TextColor ="#FFF5F5F5">谜你工具说明</Item>
+    <Item Command ="_mini_unload" ImageFile ="\mini_unload.bmp"  TextColor ="#FFF5F5F5">卸载迷你</Item>
+    <Item>-</Item>
+    <Group TextColor ="#FFF5F5F5" Title ="其他工具">
+      <Item Command ="_sysvdlg" ImageFile ="\sysvdlg.bmp"  TextColor ="#FFF5F5F5">ET 编辑系统变量</Item>
+      <Item Command ="_revert" ImageFile ="\revert.bmp"  TextColor ="#FFF5F5F5">ET 恢复原始状态</Item>
+      <Item Command ="_Propulate" ImageFile ="\Propulate.bmp"  TextColor ="#FFF5F5F5">ET 更新图形属性</Item>
+      <Item>-</Item>
+      <Item Command ="cdorder" ImageFile ="\cdorder.bmp"  TextColor ="#FFF5F5F5">ET 颜色排序</Item>
+      <Item Command ="movebak" ImageFile ="\movebak.bmp"  TextColor ="#FFF5F5F5">ET 备份设置</Item>
+      <Item Command ="plt2dwg" ImageFile ="\plt2dwg.bmp"  TextColor ="#FFF5F5F5">ET 转PLT为DWG格式</Item>
+      <Item Command ="imageedit" ImageFile ="\imageedit.bmp"  TextColor ="#FFF5F5F5">ET 图像编辑</Item>
+      <Item Command ="redir" ImageFile ="\redir.bmp"  TextColor ="#FFF5F5F5">ET 路径替代</Item>
+      <Item Command ="Propulate" ImageFile ="\Propulate.bmp"  TextColor ="#FFF5F5F5">ET 更新图形属性</Item>
+      <Item Command ="closeall" ImageFile ="\closeall.bmp"  TextColor ="#FFF5F5F5">ET 关闭所有文件</Item>
+      <Item Command ="aliasedit" ImageFile ="\aliasedit.bmp"  TextColor ="#FFF5F5F5">ET 编辑快捷命令</Item>
+      <Item Command ="rtucs" ImageFile ="\rtucs.bmp"  TextColor ="#FFF5F5F5">ET 实时旋转坐标系</Item>
+      <Item Command ="xdata" ImageFile ="\xdata.bmp"  TextColor ="#FFF5F5F5">ET 外部数据连接</Item>
+      <Item Command ="xdlist" ImageFile ="\xdlist.bmp"  TextColor ="#FFF5F5F5">ET 列表显示图元外部数据</Item>
+      <Item Command ="fullscreen" ImageFile ="\fullscreen.bmp"  TextColor ="#FFF5F5F5">ET 全屏</Item>
+    </Group>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="各式面板">
+    <Item Command ="_xall" ImageFile ="\xall.bmp"  TextColor ="#FFF5F5F5">谜你命令总面板</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_zxmb" ImageFile ="\mini_zxmb.bmp"  TextColor ="#FFF5F5F5">装修面板</Item>
+    <Item Command ="_mini_symbol" ImageFile ="\mini_symbol.bmp"  TextColor ="#FFF5F5F5">建筑符号图像面板</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_wall_panel" ImageFile ="\mini_wall_panel.bmp"  TextColor ="#FFF5F5F5">墙功能数字面板</Item>
+    <Item Command ="_mini_column_panel" ImageFile ="\mini_column_panel.bmp"  TextColor ="#FFF5F5F5">梁柱数字面板</Item>
+    <Item Command ="_mini_window_panel" ImageFile ="\mini_window_panel.bmp"  TextColor ="#FFF5F5F5">门窗数字面板</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_pwidth_panel" ImageFile ="\mini_pwidth_panel.bmp"  TextColor ="#FFF5F5F5">批多段线改宽度面板</Item>
+    <Item Command ="_mini_number_panel" ImageFile ="\mini_number_panel.bmp"  TextColor ="#FFF5F5F5">偏移倒角数字面板</Item>
+    <Item Command ="_mini_hatch_panel" ImageFile ="\mini_hatch_panel.bmp"  TextColor ="#FFF5F5F5">快捷填充面板</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="墙柱和梁">
+    <Item Command ="_mini_axis_line" ImageFile ="\mini_axis_line.bmp"  TextColor ="#FFF5F5F5">直线轴网</Item>
+    <Item Command ="_mini_axis_arc" ImageFile ="\mini_axis_arc.bmp"  TextColor ="#FFF5F5F5">圆弧轴网</Item>
+    <Item Command ="_mini_axis_text" ImageFile ="\mini_axis_text.bmp"  TextColor ="#FFF5F5F5">轴线编号</Item>
+    <Item Command ="_mini_axis_out" ImageFile ="\mini_axis_out.bmp"  TextColor ="#FFF5F5F5">轴线号外偏</Item>
+    <Item Command ="_mini_axis_update" ImageFile ="\mini_axis_update.bmp"  TextColor ="#FFF5F5F5">修改轴线编号</Item>
+    <Item Command ="_mini_wall_2_axis" ImageFile ="\mini_wall_2_axis.bmp"  TextColor ="#FFF5F5F5">墙生轴线</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_Fix_Wall" ImageFile ="\mini_Fix_Wall.bmp"  TextColor ="#FFF5F5F5">智能修补墙柱门窗</Item>
+    <Item Command ="_mini_erase_wall" ImageFile ="\mini_erase_wall.bmp"  TextColor ="#FFF5F5F5">删除墙柱门窗</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_wall" ImageFile ="\mini_wall.bmp"  TextColor ="#FFF5F5F5">画墙</Item>
+    <Item Command ="_mini_wall_width" ImageFile ="\mini_wall_width.bmp"  TextColor ="#FFF5F5F5">批量修改墙宽</Item>
+    <Item Command ="_mini_line_to_wall" ImageFile ="\mini_line_to_wall.bmp"  TextColor ="#FFF5F5F5">单线变墙</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_c_column" ImageFile ="\mini_c_column.bmp"  TextColor ="#FFF5F5F5">＋ 型柱</Item>
+    <Item Command ="_mini_l_column" ImageFile ="\mini_l_column.bmp"  TextColor ="#FFF5F5F5">Ｌ 型柱</Item>
+    <Item Command ="_mini_t_column" ImageFile ="\mini_t_column.bmp"  TextColor ="#FFF5F5F5">Ｔ 型柱</Item>
+    <Item Command ="_mini_O_column" ImageFile ="\mini_O_column.bmp"  TextColor ="#FFF5F5F5">○ 型柱</Item>
+    <Item Command ="_mini_r_column" ImageFile ="\mini_r_column.bmp"  TextColor ="#FFF5F5F5">□ 型柱</Item>
+    <Item Command ="_mini_axis_column" ImageFile ="\mini_axis_column.bmp"  TextColor ="#FFF5F5F5">轴线布柱</Item>
+    <Item Command ="_mini_pline_to_beam" ImageFile ="\mini_pline_to_beam.bmp"  TextColor ="#FFF5F5F5">处理PKPM GS生成的柱子</Item>
+    <Item Command ="_mini_pline_to_column" ImageFile ="\mini_pline_to_column.bmp"  TextColor ="#FFF5F5F5">多段线,块,填充变柱</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_fill_column" ImageFile ="\mini_fill_column.bmp"  TextColor ="#FFF5F5F5">填充柱或墙</Item>
+    <Item Command ="_mini_wall_cover" ImageFile ="\mini_wall_cover.bmp"  TextColor ="#FFF5F5F5">墙体完成面或保温层线</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_beam" ImageFile ="\mini_beam.bmp"  TextColor ="#FFF5F5F5">画梁</Item>
+    <Item Command ="_mini_line_to_beam" ImageFile ="\mini_line_to_beam.bmp"  TextColor ="#FFF5F5F5">单线变梁</Item>
+    <Item Command ="_mini_fix_beam" ImageFile ="\mini_fix_beam.bmp"  TextColor ="#FFF5F5F5">智能修补梁柱</Item>
+    <Item Command ="_mini_foundation_beam" ImageFile ="\mini_foundation_beam.bmp"  TextColor ="#FFF5F5F5">筏板梁倒角</Item>
+    <Item Command ="_mini_beam_width" ImageFile ="\mini_beam_width.bmp"  TextColor ="#FFF5F5F5">批量修改梁宽</Item>
+    <Item Command ="_mini_beam_2_axis" ImageFile ="\mini_beam_2_axis.bmp"  TextColor ="#FFF5F5F5">梁生轴线</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="门窗工具">
+    <Item Command ="_mini_hole_door" ImageFile ="\mini_hole_door.bmp"  TextColor ="#FFF5F5F5">墙上开门</Item>
+    <Item Command ="_mini_door" ImageFile ="\mini_door.bmp"  TextColor ="#FFF5F5F5">两点画门</Item>
+    <Item Command ="_mini_door_line" ImageFile ="\mini_door_line.bmp"  TextColor ="#FFF5F5F5">门坎线</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_hole_win" ImageFile ="\mini_hole_win.bmp"  TextColor ="#FFF5F5F5">墙上开参数门窗</Item>
+    <Item Command ="_mini_win" ImageFile ="\mini_win.bmp"  TextColor ="#FFF5F5F5">两点画参数门窗</Item>
+    <Item Command ="_mini_coner_win" ImageFile ="\mini_coner_win.bmp"  TextColor ="#FFF5F5F5">墙上开转角窗</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_modify_win" ImageFile ="\mini_modify_win.bmp"  TextColor ="#FFF5F5F5">修改门窗</Item>
+    <Item Command ="_mini_Fix_Wall" ImageFile ="\mini_Fix_Wall.bmp"  TextColor ="#FFF5F5F5">修补墙柱门窗</Item>
+    <Item Command ="_mini_match_win" ImageFile ="\mini_match_win.bmp"  TextColor ="#FFF5F5F5">匹配门窗样式</Item>
+    <Item Command ="_mini_win_width" ImageFile ="\mini_win_width.bmp"  TextColor ="#FFF5F5F5">修改门窗宽度</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_win_direction1" ImageFile ="\mini_win_direction1.bmp"  TextColor ="#FFF5F5F5">内外翻转门窗</Item>
+    <Item Command ="_mini_win_direction2" ImageFile ="\mini_win_direction2.bmp"  TextColor ="#FFF5F5F5">左右翻转门窗</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_win_text" ImageFile ="\mini_win_text.bmp"  TextColor ="#FFF5F5F5">门窗编号</Item>
+    <Item Command ="_mini_win_list" ImageFile ="\mini_win_list.bmp"  TextColor ="#FFF5F5F5">绘制门窗表</Item>
+    <Item Command ="_mini_win_text_elev" ImageFile ="\mini_win_text_elev.bmp"  TextColor ="#FFF5F5F5">由编号生成门窗边框</Item>
+    <Item Command ="_mini_dim_flip" ImageFile ="\mini_dim_flip.bmp"  TextColor ="#FFF5F5F5">翻转标注和门窗编号</Item>
+    <Item Command ="_mini_attribon" ImageFile ="\mini_attribon.bmp"  TextColor ="#FFF5F5F5">门窗编号开关</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_winelev" ImageFile ="\mini_winelev.bmp"  TextColor ="#FFF5F5F5">窗立面</Item>
+    <Item Command ="_mini_elev_arcwin" ImageFile ="\mini_elev_arcwin.bmp"  TextColor ="#FFF5F5F5">圆弧立面窗</Item>
+    <Item Command ="_mini_winelev2" ImageFile ="\mini_winelev2.bmp"  TextColor ="#FFF5F5F5">幕墙立面</Item>
+    <Item Command ="_mini_dtwg" ImageFile ="\mini_dtwg.bmp"  TextColor ="#FFF5F5F5">动态网格</Item>
+    <Item Command ="_mini_kqx" ImageFile ="\mini_kqx.bmp"  TextColor ="#FFF5F5F5">门窗立面开启线</Item>
+    <Item Command ="_mini_mqblpm" ImageFile ="\mini_mqblpm.bmp"  TextColor ="#FFF5F5F5">幕墙玻璃剖面</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_exerase" ImageFile ="\mini_exerase.bmp"  TextColor ="#FFF5F5F5">删除增强</Item>
+    <Item Command ="_mini_exmirror" ImageFile ="\mini_exmirror.bmp"  TextColor ="#FFF5F5F5">镜像增强</Item>
+    <Item Command ="mini_exmove" ImageFile ="\mini_exmove.bmp"  TextColor ="#FFF5F5F5">移动增强</Item>
+    <Item Command ="mini_excopy" ImageFile ="\mini_excopy.bmp"  TextColor ="#FFF5F5F5">全能复制</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="建筑构件">
+    <Item Command ="mini_jieju" ImageFile ="\mini_jieju.bmp"  TextColor ="#FFF5F5F5">公共卫生间布置</Item>
+    <Item Command ="mini_furniture" ImageFile ="\mini_furniture.bmp"  TextColor ="#FFF5F5F5">住宅家具布置</Item>
+    <Item>-</Item>
+    <Item Command ="mini_stair_plan" ImageFile ="\mini_stair_plan.bmp"  TextColor ="#FFF5F5F5">普通楼梯平面</Item>
+    <Item Command ="mini_arc_stair" ImageFile ="\mini_arc_stair.bmp"  TextColor ="#FFF5F5F5">圆弧楼梯平面</Item>
+    <Item Command ="mini_auto_stair" ImageFile ="\mini_auto_stair.bmp"  TextColor ="#FFF5F5F5">自动扶梯平面</Item>
+    <Item Command ="mini_elevator" ImageFile ="\mini_elevator.bmp"  TextColor ="#FFF5F5F5">电梯轿厢平面</Item>
+    <Item>-</Item>
+    <Item Command ="mini_stair_section" ImageFile ="\mini_stair_section.bmp"  TextColor ="#FFF5F5F5">楼梯剖面</Item>
+    <Item Command ="mini_analyzeview" ImageFile ="\mini_analyzeview.bmp"  TextColor ="#FFF5F5F5">剖面视线分析</Item>
+    <Item>-</Item>
+    <Item Command ="mini_bg" ImageFile ="\mini_bg.bmp"  TextColor ="#FFF5F5F5">建筑标高</Item>
+    <Item Command ="mini_ztbg" ImageFile ="\mini_ztbg.bmp"  TextColor ="#FFF5F5F5">总图标高</Item>
+    <Item Command ="mini_gcbg" ImageFile ="\mini_gcbg.bmp"  TextColor ="#FFF5F5F5">高程标高</Item>
+    <Item Command ="mini_3dzb" ImageFile ="\mini_3dzb.bmp"  TextColor ="#FFF5F5F5">三维坐标</Item>
+    <Item Command ="mini_zb" ImageFile ="\mini_zb.bmp"  TextColor ="#FFF5F5F5">建筑坐标</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_index_name" ImageFile ="\mini_index_name.bmp"  TextColor ="#FFF5F5F5">标注图名</Item>
+    <Item>-</Item>
+
+    <Item Command ="mini_line_to_road" ImageFile ="\mini_line_to_road.bmp"  TextColor ="#FFF5F5F5">单线变道路</Item>
+    <Item Command ="mini_fix_dline" ImageFile ="\mini_fix_dline.bmp"  TextColor ="#FFF5F5F5">智能修补双线</Item>
+    <Item>-</Item>
+    <Item Command ="mini_hip_roof" ImageFile ="\mini_hip_roof.bmp"  TextColor ="#FFF5F5F5">四坡顶平面</Item>
+    <Item Command ="mini_build_high" ImageFile ="\mini_build_high.bmp"  TextColor ="#FFF5F5F5">建筑高度</Item>
+    <Item Command ="mini_build_shadow" ImageFile ="\mini_build_shadow.bmp"  TextColor ="#FFF5F5F5">阴影分析</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="建筑符号A">
+    <Item Command ="mini_symbol" ImageFile ="\mini_symbol.bmp"  TextColor ="#FFF5F5F5">建筑符号图像面板</Item>
+    <Item>-</Item>
+    <Item Command ="mini_break_line" ImageFile ="\mini_break_line.bmp"  TextColor ="#FFF5F5F5">折断线</Item>
+    <Item Command ="mini_dot_line" ImageFile ="\mini_dot_line.bmp"  TextColor ="#FFF5F5F5">点引线</Item>
+    <Item Command ="mini_arrow_line" ImageFile ="\mini_arrow_line.bmp"  TextColor ="#FFF5F5F5">箭头线</Item>
+    <Item Command ="mini_arrow_line2" ImageFile ="\mini_arrow_line2.bmp"  TextColor ="#FFF5F5F5">箭头线2</Item>
+    <Item Command ="mini_arrow_line3" ImageFile ="\mini_arrow_line3.bmp"  TextColor ="#FFF5F5F5">箭头线3</Item>
+    <Item Command ="mini_arrow_line4" ImageFile ="\mini_arrow_line4.bmp"  TextColor ="#FFF5F5F5">箭头线4</Item>
+    <Item Command ="mini_arrow_line5" ImageFile ="\mini_arrow_line5.bmp"  TextColor ="#FFF5F5F5">大箭头</Item>
+    <Item Command ="mini_arrow_line6" ImageFile ="\mini_arrow_line6.bmp"  TextColor ="#FFF5F5F5">入口箭头</Item>
+    <Item Command ="mini_arrow_line7" ImageFile ="\mini_arrow_line7.bmp"  TextColor ="#FFF5F5F5">箭头线7</Item>
+    <Item Command ="mini_arrow_trace" ImageFile ="\mini_arrow_trace.bmp"  TextColor ="#FFF5F5F5">流线箭头</Item>
+    <Item>-</Item>
+    <Item Command ="mini_indexnum1" ImageFile ="\mini_indexnum1.bmp"  TextColor ="#FFF5F5F5">大样索引</Item>
+    <Item Command ="mini_indexnum2" ImageFile ="\mini_indexnum2.bmp"  TextColor ="#FFF5F5F5">剖切索引</Item>
+    <Item Command ="mini_indexnum3" ImageFile ="\mini_indexnum3.bmp"  TextColor ="#FFF5F5F5">大样编号</Item>
+    <Item Command ="mini_index_sec1" ImageFile ="\mini_index_sec1.bmp"  TextColor ="#FFF5F5F5">大剖面符号</Item>
+    <Item Command ="mini_index_sec2" ImageFile ="\mini_index_sec2.bmp"  TextColor ="#FFF5F5F5">小剖面符号</Item>
+    <Item Command ="mini_index_mirror" ImageFile ="\mini_index_mirror.bmp"  TextColor ="#FFF5F5F5">对称符号</Item>
+    <Item Command ="mini_index_north" ImageFile ="\mini_index_north.bmp"  TextColor ="#FFF5F5F5">指北针</Item>
+    <Item Command ="mini_index_name" ImageFile ="\mini_index_name.bmp"  TextColor ="#FFF5F5F5">标注图名</Item>
+    <Item Command ="mini_draw_Hole" ImageFile ="\mini_draw_Hole.bmp"  TextColor ="#FFF5F5F5">洞口符号</Item>
+    <Item Command ="mini_Hole_CenterLine" ImageFile ="\mini_Hole_CenterLine.bmp"  TextColor ="#FFF5F5F5">洞中心线</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="建筑符号B">
+    <Item Command ="_mini_symbol" ImageFile ="\mini_symbol.bmp"  TextColor ="#FFF5F5F5">建筑符号图像面板</Item>
+    <Item>-</Item>
+    <Item Command ="mini_tamped_soil" ImageFile ="\mini_tamped_soil.bmp"  TextColor ="#FFF5F5F5">素土夯实</Item>
+    <Item Command ="mini_nature_soil" ImageFile ="\mini_nature_soil.bmp"  TextColor ="#FFF5F5F5">自然土壤</Item>
+    <Item Command ="mini_air_brick" ImageFile ="\mini_air_brick.bmp"  TextColor ="#FFF5F5F5">空心砖墙</Item>
+    <Item Command ="mini_face_brick" ImageFile ="\mini_face_brick.bmp"  TextColor ="#FFF5F5F5">面砖</Item>
+    <Item>-</Item>
+    <Item Command ="mini_batting_fill" ImageFile ="\mini_batting_fill.bmp"  TextColor ="#FFF5F5F5">保温材料</Item>
+    <Item Command ="_mini_cement_mortarsec" ImageFile ="\mini_cement_mortarsec.bmp"  TextColor ="#FFF5F5F5">水泥砂浆截面</Item>
+    <Item Command ="_mini_Reinforced_Consec" ImageFile ="\mini_Reinforced_Consec.bmp"  TextColor ="#FFF5F5F5">钢筋混凝土截面</Item>
+    <Item Command ="_mini_cement_Consec" ImageFile ="\mini_cement_Consec.bmp"  TextColor ="#FFF5F5F5">素混凝土截面</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="装饰工具A">
+    <Item Command ="_mini_jieju" ImageFile ="\mini_jieju.bmp"  TextColor ="#FFF5F5F5">公共卫生间布置</Item>
+    <Item Command ="_mini_furniture" ImageFile ="\mini_furniture.bmp"  TextColor ="#FFF5F5F5">住宅家具布置</Item>
+    <Item>-</Item>
+    <Item Command ="mini_mugongban" ImageFile ="\mini_mugongban.bmp"  TextColor ="#FFF5F5F5">木工板截面</Item>
+    <Item Command ="_mini_jiaban" ImageFile ="\mini_jiaban.bmp"  TextColor ="#FFF5F5F5">夹板截面</Item>
+    <Item Command ="_mini_woodsec_floor" ImageFile ="\mini_woodsec_floor.bmp"  TextColor ="#FFF5F5F5">实木收口截面</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_curtain" ImageFile ="\mini_curtain.bmp"  TextColor ="#FFF5F5F5">窗帘平面</Item>
+    <Item Command ="_mini_closet" ImageFile ="\mini_closet.bmp"  TextColor ="#FFF5F5F5">衣柜平面</Item>
+    <Item Command ="mini_ggpm" ImageFile ="\mini_ggpm.bmp"  TextColor ="#FFF5F5F5">高柜平面</Item>
+    <Item>-</Item>
+    <Item Command ="mini_gzlm" ImageFile ="\mini_gzlm.bmp"  TextColor ="#FFF5F5F5">柜子立面</Item>
+    <Item>-</Item>
+    <Item Command ="mini_cdpm" ImageFile ="\mini_cdpm.bmp"  TextColor ="#FFF5F5F5">层板、抽屉剖面</Item>
+    <Item Command ="mini_gzpm" ImageFile ="\mini_gzpm.bmp"  TextColor ="#FFF5F5F5">柜子剖面</Item>
+    <Item Command ="mini_gdgpm" ImageFile ="\mini_gdgpm.bmp"  TextColor ="#FFF5F5F5">高低柜剖面</Item>
+    <Item>-</Item>
+    <Item Command ="mini_mfpm" ImageFile ="\mini_mfpm.bmp"  TextColor ="#FFF5F5F5">木方剖面</Item>
+    <Item Command ="mini_mfdb" ImageFile ="\mini_mfdb.bmp"  TextColor ="#FFF5F5F5">木方垫板剖面</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="装饰工具B">
+    <Item Command ="mini_jianxian_plan" ImageFile ="\mini_jianxian_plan.bmp"  TextColor ="#FFF5F5F5">角线平面</Item>
+    <Item Command ="mini_jianxian_elev" ImageFile ="\mini_jianxian_elev.bmp"  TextColor ="#FFF5F5F5">角线立面</Item>
+    <Item>-</Item>
+    <Item Command ="mini_elec_line" ImageFile ="\mini_elec_line.bmp"  TextColor ="#FFF5F5F5">灯具连线或标注</Item>
+    <Item Command ="mini_light_plan" ImageFile ="\mini_light_plan.bmp"  TextColor ="#FFF5F5F5">动态沿线布天花筒灯</Item>
+    <Item>-</Item>
+    <Item Command ="mini_glasssec" ImageFile ="\mini_glasssec.bmp"  TextColor ="#FFF5F5F5">玻璃截面</Item>
+    <Item Command ="mini_gypsumsec" ImageFile ="\mini_gypsumsec.bmp"  TextColor ="#FFF5F5F5">石膏板截面</Item>
+    <Item Command ="mini_stonesec" ImageFile ="\mini_stonesec.bmp"  TextColor ="#FFF5F5F5">石材截面</Item>
+    <Item Command ="_mini_steel" ImageFile ="\mini_steel.bmp"  TextColor ="#FFF5F5F5">钢板截面</Item>
+    <Item Command ="mini_xg" ImageFile ="\mini_xg.bmp"  TextColor ="#FFF5F5F5">型钢截面面板</Item>
+    <Item>-</Item>
+    <Item Command ="mini_gypsumsec_cell" ImageFile ="\mini_gypsumsec_cell.bmp"  TextColor ="#FFF5F5F5">石膏板吊顶剖面</Item>
+    <Item Command ="mini_gypsumsec_wall" ImageFile ="\mini_gypsumsec_wall.bmp"  TextColor ="#FFF5F5F5">轻钢龙骨板墙剖面</Item>
+    <Item Command ="mini_stonesec_wall" ImageFile ="\mini_stonesec_wall.bmp"  TextColor ="#FFF5F5F5">干挂海棠角石材剖面</Item>
+    <Item Command ="mini_jggk" ImageFile ="\mini_jggk.bmp"  TextColor ="#FFF5F5F5">角钢钢框剖面</Item>
+    <Item>-</Item>
+    <Item Command ="mini_hbsk" ImageFile ="\mini_hbsk.bmp"  TextColor ="#FFF5F5F5">画背栓孔</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_weld_line" ImageFile ="\mini_weld_line.bmp"  TextColor ="#FFF5F5F5">焊缝</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_flex" ImageFile ="\mini_flex.bmp"  TextColor ="#FFF5F5F5">连接软管</Item>
+    <Item Command ="_mini_tube" ImageFile ="\mini_tube.bmp"  TextColor ="#FFF5F5F5">绘制管线</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="装饰索引">
+    <Item Command ="mini_mleader_align" ImageFile ="\mini_mleader_align.bmp"  TextColor ="#FFF5F5F5">多重引线对齐</Item>
+    <Item Command ="mini_match_MLeader" ImageFile ="\mini_match_MLeader.bmp"  TextColor ="#FFF5F5F5">批量刷多重索引</Item>
+    <Item Command ="_aimleadereditadd" ImageFile ="\aimleadereditadd.bmp"  TextColor ="#FFF5F5F5">多重索引增加引线</Item>
+    <Item Command ="_aimleadereditremove" ImageFile ="\aimleadereditremove.bmp"  TextColor ="#FFF5F5F5">多重索引删减引线</Item>
+    <Item>-</Item>
+    <Item Command ="mini_leader_2_mleader" ImageFile ="\mini_leader_2_mleader.bmp"  TextColor ="#FFF5F5F5">批量转索引为多重索引</Item>
+    <Item Command ="mini_mleader_list" ImageFile ="\mini_mleader_list.bmp"  TextColor ="#FFF5F5F5">统计多重索引材料</Item>
+    <Item>-</Item>
+    <Item Command ="mini_clsy" ImageFile ="\mini_clsy.bmp"  TextColor ="#FFF5F5F5">面板DIY材料索引</Item>
+    <Item Command ="MINI_WLSY" ImageFile ="\MINI_WLSY.bmp"  TextColor ="#FFF5F5F5">面板软装物料索引</Item>
+    <Item Command ="mini_zfsy" ImageFile ="\mini_zfsy.bmp"  TextColor ="#FFF5F5F5">面板DIY做法说明索引</Item>
+    <Item>-</Item>
+    <Item Command ="mini_indexer2" ImageFile ="\mini_indexer2.bmp"  TextColor ="#FFF5F5F5">椭圆块索引</Item>
+    <Item Command ="mini_indexer4" ImageFile ="\mini_indexer4.bmp"  TextColor ="#FFF5F5F5">范围加框节点索引</Item>
+    <Item Command ="mini_indexer5" ImageFile ="\mini_indexer5.bmp"  TextColor ="#FFF5F5F5">文字在线上索引</Item>
+    <Item Command ="mini_indexer6" ImageFile ="\mini_indexer6.bmp"  TextColor ="#FFF5F5F5">文字在线外索引</Item>
+    <Item Command ="_mini_indexer3" ImageFile ="\mini_indexer3.bmp"  TextColor ="#FFF5F5F5">文字在线外加框索引</Item>
+    <Item Command ="_mini_indexer_text" ImageFile ="\mini_indexer_text.bmp"  TextColor ="#FFF5F5F5">文字三合一索引</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_indexer8" ImageFile ="\mini_indexer8.bmp"  TextColor ="#FFF5F5F5">多层构造说明索引</Item>
+    <Item>-</Item>
+    <Item Command ="mini_indexer7" ImageFile ="\mini_indexer7.bmp"  TextColor ="#FFF5F5F5">通用词库材料索引</Item>
+    <Item Command ="mini_indexer9" ImageFile ="\mini_indexer9.bmp"  TextColor ="#FFF5F5F5">带天花标高索引</Item>
+    <Item>-</Item>
+    <Item Command ="mini_bzmc" ImageFile ="\mini_bzmc.bmp"  TextColor ="#FFF5F5F5">标注块或填充的名称</Item>
+    <Item>-</Item>
+    <Item Command ="mini_index_elev" ImageFile ="\mini_index_elev.bmp"  TextColor ="#FFF5F5F5">立面索引</Item>
+    <Item Command ="mini_sbpdx" ImageFile ="\mini_sbpdx.bmp"  TextColor ="#FFF5F5F5">四边剖断线</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="线性工具">
+    <Item Command ="mini_ltype" ImageFile ="\mini_ltype.bmp"  TextColor ="#FFF5F5F5">改线型</Item>
+    <Item Command ="_mini_pline_jbbx" ImageFile ="\mini_pline_jbbx.bmp"  TextColor ="#FFF5F5F5">局部变虚线</Item>
+    <Item Command ="mini_reverse_line" ImageFile ="\mini_reverse_line.bmp"  TextColor ="#FFF5F5F5">反转线型方向</Item>
+    <Item Command ="mini_dtbl" ImageFile ="\mini_dtbl.bmp"  TextColor ="#FFF5F5F5">动态线型、块、填充比例</Item>
+    <Item>-</Item>
+    <Item Command ="mini_lt_shp2blk" ImageFile ="\mini_lt_shp2blk.bmp"  TextColor ="#FFF5F5F5">线型&lt;树&gt;转换为块</Item>
+    <Item Command ="(mai_plus_run &quot;mini_shp2blk&quot;)" ImageFile ="\mini_dtbl.bmp"  TextColor ="#FFF5F5F5">形变块</Item>
+    <Item Command ="_mkshape" ImageFile ="\mkshape.bmp"  TextColor ="#FFF5F5F5">制作形到Shx文件</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="景观工具">
+    <Item Command ="mini_tree_style" ImageFile ="\mini_tree_style.bmp"  TextColor ="#FFF5F5F5">变线为树</Item>
+    <Item Command ="mini_tree_group" ImageFile ="\mini_tree_group.bmp"  TextColor ="#FFF5F5F5">成片布树</Item>
+    <Item>-</Item>
+    <Item Command ="mini_lt_shp2blk" ImageFile ="\mini_lt_shp2blk.bmp"  TextColor ="#FFF5F5F5">线型&lt;树&gt;转换为块</Item>
+    <Item>-</Item>
+    <Item Command ="mini_shrub_edge" ImageFile ="\mini_shrub_edge.bmp"  TextColor ="#FFF5F5F5">多段线变灌木边缘线</Item>
+    <Item Command ="mini_grass" ImageFile ="\mini_grass.bmp"  TextColor ="#FFF5F5F5">画立面草</Item>
+    <Item>-</Item>
+    <Item Command ="mini_plant_text" ImageFile ="\mini_plant_text.bmp"  TextColor ="#FFF5F5F5">标注苗木数量</Item>
+    <Item Command ="mini_shrub_text" ImageFile ="\mini_shrub_text.bmp"  TextColor ="#FFF5F5F5">标注灌木面积</Item>
+    <Item Command ="_mini_area_landscape" ImageFile ="\mini_area_landscape.bmp"  TextColor ="#FFF5F5F5">内轮廓面积及随机色填充</Item>
+    <Item>-</Item>
+    <Item Command ="mini_mmtj" ImageFile ="\mini_mmtj.bmp"  TextColor ="#FFF5F5F5">苗木统计表</Item>
+    <Item Command ="mini_mmtj_hatch" ImageFile ="\mini_mmtj_hatch.bmp"  TextColor ="#FFF5F5F5">景观填充面积统计</Item>
+    <Item>-</Item>
+    <Item Command ="mini_add_path" ImageFile ="\mini_add_path.bmp"  TextColor ="#FFF5F5F5">封闭多段线搭桥</Item>
+    <Item Command ="mini_remove_path" ImageFile ="\mini_remove_path.bmp"  TextColor ="#FFF5F5F5">封闭多段线挖路</Item>
+    <Item>-</Item>
+    <Item Command ="(mai_plus_run &quot;fjw_ZBZD&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">坐标展点</Item>
+    <Item Command ="(mai_plus_run &quot;mini_triangle&quot;)" ImageFile ="\mini_remove_path.bmp"  TextColor ="#FFF5F5F5">由离散点生成三角网</Item>
+    <Item Command ="(mai_plus_run &quot;mini_triangle_chg&quot;)" ImageFile ="\mini_remove_path.bmp"  TextColor ="#FFF5F5F5">局部调整三角网</Item>
+    <Item Command ="(mai_plus_run &quot;mini_hull&quot;)" ImageFile ="\mini_hull.bmp"  TextColor ="#FFF5F5F5">由离散点生成凸包</Item>
+    <Item Command ="(mai_plus_run &quot;mini_dgx&quot;)" ImageFile ="\mini_dgx.bmp"  TextColor ="#FFF5F5F5">由三角网生成等高线</Item>
+    <Item Command ="(mai_plus_run &quot;mini_tfph&quot;)" ImageFile ="\mini_tfph.bmp"  TextColor ="#FFF5F5F5">由三角网计算土方平衡</Item>
+    <Item Command ="(mai_plus_run &quot;mini_tin_redgc&quot;)" ImageFile ="\mini_tin_redgc.bmp"  TextColor ="#FFF5F5F5">标注三角网内任意点高程</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="统计工具">
+    <Item Command ="(mai_plus_run &quot;xc_ss&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">小菜选择易</Item>
+    <Item Command ="mini_chain_Sel" ImageFile ="\mini_chain_Sel.bmp"  TextColor ="#FFF5F5F5">首尾链式连锁反应选择</Item>
+    <Item Command ="_mini_fastsel" ImageFile ="mini_fastsel.bmp"  TextColor ="#FFF5F5F5">触碰连锁反应选择</Item>
+    <Item Command ="getsel " ImageFile ="\getsel .bmp"  TextColor ="#FFF5F5F5">获得选择集</Item>
+    <Item>-</Item>
+    <Item Command ="(mai_plus_run &quot;Gu_X2C&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">输入Excel表格到ACAD</Item>
+    <Item Command ="mini_text2excel" ImageFile ="\mini_text2excel.bmp"  TextColor ="#FFF5F5F5">输出文字到Excel表格</Item>
+    <Item>-</Item>
+    <Item Command ="mini_block_clist" ImageFile ="\mini_block_clist.bmp"  TextColor ="#FFF5F5F5">块统计表</Item>
+    <Item Command ="(mai_plus_run &quot;lm_BlockCount&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">块统计表&lt;含嵌套块&gt;</Item>
+    <Item Command ="mini_attrib_list" ImageFile ="\mini_attrib_list.bmp"  TextColor ="#FFF5F5F5">块属性统计表</Item>
+    <Item>-</Item>
+    <Item Command ="mini_win_list" ImageFile ="\mini_win_list.bmp"  TextColor ="#FFF5F5F5">门窗表</Item>
+    <Item Command ="_mini_mleader_list" ImageFile ="\mini_mleader_list.bmp"  TextColor ="#FFF5F5F5">多重索引统计表</Item>
+    <Item Command ="mini_text_list" ImageFile ="\mini_text_list.bmp"  TextColor ="#FFF5F5F5">文字统计表</Item>
+    <Item>-</Item>
+    <Item Command ="mini_area_text" ImageFile ="\mini_area_text.bmp"  TextColor ="#FFF5F5F5">面积标注&lt;智能识别阳台&gt;</Item>
+    <Item Command ="mini_area_analyze" ImageFile ="\mini_area_analyze.bmp"  TextColor ="#FFF5F5F5">标准层面积分摊表</Item>
+    <Item>-</Item>
+    <Item Command ="mini_point_area" ImageFile ="\mini_point_area.bmp"  TextColor ="#FFF5F5F5">点选.框选标面积</Item>
+    <Item Command ="mini_dim_room" ImageFile ="\mini_dim_room.bmp"  TextColor ="#FFF5F5F5">点选房间内尺寸.周长.面积</Item>
+    <Item>-</Item>
+    <Item Command ="mini_text_Length" ImageFile ="\mini_text_Length.bmp"  TextColor ="#FFF5F5F5">标注线段长度</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_bylayer_area" ImageFile ="\mini_bylayer_area.bmp"  TextColor ="#FFF5F5F5">面积分层统计表</Item>
+    <Item Command ="_mini_total_Length" ImageFile ="\mini_total_Length.bmp"  TextColor ="#FFF5F5F5">长度分层统计表</Item>
+    <Item Command ="mini_shape_list" ImageFile ="\mini_shape_list.bmp"  TextColor ="#FFF5F5F5">同形状线条面积或长度统计</Item>
+    <Item>-</Item>
+    <Item Command ="mini_text_cale2" ImageFile ="\mini_text_cale2.bmp"  TextColor ="#FFF5F5F5">标注数字乘除结果</Item>
+    <Item Command ="mini_text_cale1" ImageFile ="\mini_text_cale1.bmp"  TextColor ="#FFF5F5F5">标注数字加减结果</Item>
+    <Item Command ="mini_cale_txt" ImageFile ="\mini_cale_txt.bmp"  TextColor ="#FFF5F5F5">标注表达式计算结果</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="扩展工具">
+    <Item Command ="mini_dline" ImageFile ="\mini_dline.bmp"  TextColor ="#FFF5F5F5">简易双线</Item>
+    <Item Command ="mini_line_to_dline" ImageFile ="\mini_line_to_dline.bmp"  TextColor ="#FFF5F5F5">单线变双线</Item>
+    <Item Command ="mini_fix_dline" ImageFile ="\mini_fix_dline.bmp"  TextColor ="#FFF5F5F5">智能修补双线</Item>
+    <Item Command ="mini_middle_line" ImageFile ="\mini_middle_line.bmp"  TextColor ="#FFF5F5F5">两根线的中间线</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_mstretch" ImageFile ="\mini_mstretch.bmp"  TextColor ="#FFF5F5F5">多窗口拉伸</Item>
+    <Item>-</Item>
+    <Item Command ="mini_extrim" ImageFile ="\mini_extrim.bmp"  TextColor ="#FFF5F5F5">全能修剪</Item>
+    <Item Command ="mini_xclip" ImageFile ="\mini_xclip.bmp"  TextColor ="#FFF5F5F5">全能裁刀</Item>
+    <Item Command ="mini_exscale" ImageFile ="\mini_exscale.bmp"  TextColor ="#FFF5F5F5">全能缩放</Item>
+    <Item Command ="mini_excopy" ImageFile ="\mini_excopy.bmp"  TextColor ="#FFF5F5F5">全能复制</Item>
+    <Group TextColor ="#FFF5F5F5" Title ="各种越界复制">
+      <Item Command ="_chspace" ImageFile ="\chspace.bmp"  TextColor ="#FFF5F5F5">图纸→模型</Item>
+      <Item Command ="(mai_plus_run &quot;lm_ms2ps&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">模型→图纸</Item>
+      <Item Command ="(mai_plus_run &quot;lm_c2layouts&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">到布局</Item>
+      <Item Command ="(mai_plus_run &quot;lm_c2xref&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">到外部参照</Item>
+      <Item Command ="(mai_plus_run &quot;lm_c2dwg&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">到外部文件</Item>
+      <Item Command ="(mai_plus_run &quot;lm_Block_Add&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">到图块</Item>
+    </Group>
+    <Item Command ="mini_break_inter" ImageFile ="\mini_break_inter.bmp"  TextColor ="#FFF5F5F5">交点断开</Item>
+    <Item Command ="mini_break_at" ImageFile ="\mini_break_at.bmp"  TextColor ="#FFF5F5F5">连续点打断</Item>
+    <Item Command ="mini_extendtopoint" ImageFile ="\mini_extendtopoint.bmp"  TextColor ="#FFF5F5F5">延长或修剪到两点连线</Item>
+    <Item Command ="mini_sxcj" ImageFile ="\mini_sxcj.bmp"  TextColor ="#FFF5F5F5">批量双线裁剪</Item>
+    <Item Command ="(mai_plus_run &quot;mini_break_erase&quot;)" ImageFile ="\mini_break_erase.bmp"  TextColor ="#FFF5F5F5">框选打断并删除短线</Item>
+    <Item Command ="mini_fix_line" ImageFile ="\mini_fix_line.bmp"  TextColor ="#FFF5F5F5">框选修补单线</Item>
+    <Item>-</Item>
+    <Item Command ="mini_dy_offset" ImageFile ="\mini_dy_offset.bmp"  TextColor ="#FFF5F5F5">单根全能偏移</Item>
+    <Item Command ="_mini_MOffset" ImageFile ="\mini_MOffset.bmp"  TextColor ="#FFF5F5F5">多选多重偏移</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_block_flips" ImageFile ="\mini_block_flips.bmp"  TextColor ="#FFF5F5F5">自由翻转实体</Item>
+    <Item Command ="(mai_plus_run &quot;mini_rotate_center&quot;)" ImageFile ="\mini_rotate_center.bmp"  TextColor ="#FFF5F5F5">自由翻转实体</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_mfillet" ImageFile ="\mini_mfillet.bmp"  TextColor ="#FFF5F5F5">两组平行线倒角</Item>
+  </Group>
+  <!--<Item Command ="(mai_plus_run &quot;LM_abbt&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">LM 块自动随线并断线</Item>
+    <Item>-</Item>
+    <Item Command ="mini_jbqt" ImageFile ="\mini_jbqt.bmp"  TextColor ="#FFF5F5F5">局部取图复制</Item>
+    <Item Command ="mini_pline_jbbx" ImageFile ="\mini_pline_jbbx.bmp"  TextColor ="#FFF5F5F5">局部变虚线</Item>
+    <Item Command ="chspace" ImageFile ="\chspace.bmp"  TextColor ="#FFF5F5F5">ACAD复制由图纸空间到模型</Item>
+    <Item Command ="(mai_plus_run &quot;lm_ms2pst&quot;)" ImageFile =""  TextColor ="#FFF5F5F5"> LM 复制由模型到图纸空间</Item>
+    <Item Command ="(mai_plus_run &quot;lm_c2layoutst&quot;)" ImageFile =""  TextColor ="#FFF5F5F5"> LM 复制实体到布局</Item>
+    <Item Command ="(mai_plus_run &quot;lm_c2xreft&quot;)" ImageFile =""  TextColor ="#FFF5F5F5"> LM 复制实体到外部参照</Item>
+    <Item Command ="(mai_plus_run &quot;lm_c2dwgt&quot;)" ImageFile =""  TextColor ="#FFF5F5F5"> LM 复制实体到外部文件</Item>
+    <Item Command ="(mai_plus_run &quot;lm_Block_Addt&quot;)" ImageFile =""  TextColor ="#FFF5F5F5"> LM 复制实体到图块</Item>
+    <Item>-</Item>
+    <Item Command ="mini_dy_offset" ImageFile ="\mini_dy_offset.bmp"  TextColor ="#FFF5F5F5">单根全能偏移</Item>
+    <Item Command ="mini_MOffset" ImageFile ="\mini_MOffset.bmp"  TextColor ="#FFF5F5F5">多选多重偏移</Item>
+    <Item>-</Item>
+    <Item Command ="mini_block_flips" ImageFile ="\mini_block_flips.bmp"  TextColor ="#FFF5F5F5">自由翻转实体</Item>
+    <Item Command ="(mai_plus_run &quot;mini_rotate_centert&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">批量中心旋转实体</Item>
+    <Item Command ="mini_mstretch" ImageFile ="\mini_mstretch.bmp"  TextColor ="#FFF5F5F5">多窗口拉伸</Item>
+    <Item Command ="mini_dtbl" ImageFile ="\mini_dtbl.bmp"  TextColor ="#FFF5F5F5">动态线型、块、填充比例</Item>
+    <Item>-</Item>-->
+  <Group TextColor ="#FFF5F5F5" Title ="文字工具A">
+    <Item Command ="mini_text_lib" ImageFile ="\mini_text_lib.bmp"  TextColor ="#FFF5F5F5">词库输入</Item>
+    <Item Command ="mini_xuhao" ImageFile ="\mini_xuhao.bmp"  TextColor ="#FFF5F5F5">全能编号</Item>
+    <Item Command ="mini_shell_text" ImageFile ="\mini_shell_text.bmp"  TextColor ="#FFF5F5F5">外部多行书写</Item>
+    <Item>-</Item>
+    <Item Command ="mini_shell_edit" ImageFile ="\mini_shell_edit.bmp"  TextColor ="#FFF5F5F5">外部多行编辑</Item>
+    <Item Command ="mini_sedit" ImageFile ="\mini_sedit.bmp"  TextColor ="#FFF5F5F5">全能单选文字编辑</Item>
+    <Item Command ="mini_exedit" ImageFile ="\mini_exedit.bmp"  TextColor ="#FFF5F5F5">动态菜单编辑&lt;单选&gt;</Item>
+    <Item>-</Item>
+    <Item Command ="mini_text_order" ImageFile ="\mini_text_order.bmp"  TextColor ="#FFF5F5F5">文字重排版</Item>
+    <Item Command ="mini_exp_text" ImageFile ="\mini_exp_text.bmp"  TextColor ="#FFF5F5F5">文字打断</Item>
+    <Item Command ="mini_join_text" ImageFile ="\mini_join_text.bmp"  TextColor ="#FFF5F5F5">智能连接多行文字</Item>
+    <Item Command ="(mai_plus_run &quot;lm_Text2MText&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">框选打断并删除短线</Item>
+    <Item Command ="_mini_cht" ImageFile ="\mini_cht.bmp"  TextColor ="#FFF5F5F5">文字批量更改Cht</Item>
+    <Item>-</Item>
+    <Item Command ="(mai_plus_run &quot;LM_incarray&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">文字递增复制</Item>
+    <Item Command ="_lm_tbox" ImageFile ="\lm_tbox.bmp"  TextColor ="#FFF5F5F5">文字加外框并关联</Item>
+    <Item Command ="(mai_plus_run &quot;lm_CurveText&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">沿曲线标注文字</Item>
+    <Item Command ="(mai_plus_run &quot;mini_gxgzt&quot;)" ImageFile ="\mini_gxgzt.bmp"  TextColor ="#FFF5F5F5">文字改斜归正</Item>
+    <Item>-</Item>
+    <Item Command ="_find" ImageFile =""  TextColor ="#FFF5F5F5">ACAD查找替换</Item>
+    <Item Command ="(mai_plus_run &quot;LM_FIND&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">批量多文件查找替换文字&lt;LM版&gt;</Item>
+    <Item Command ="(mai_plus_run &quot;YJR_find&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">单文件查找替换文字&lt;YJR版&gt;</Item>
+    <Item Command ="(mai_plus_run &quot;LXX_find&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">批量多文件查找替换文字&lt;LXX版&gt;</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="文字工具B">
+    <Item Command ="mini_fix_fonts" ImageFile ="\mini_fix_fonts.bmp"  TextColor ="#FFF5F5F5">自动替换缺失的字库</Item>
+    <Item Command ="mini_use_myfonts" ImageFile ="\mini_use_myfonts.bmp"  TextColor ="#FFF5F5F5">全部字体用我的字库</Item>
+    <Item>-</Item>
+    <Item Command ="mini_style_any" ImageFile ="\mini_style_any.bmp"  TextColor ="#FFF5F5F5">字形快速设置</Item>
+    <Item Command ="mini_style_hz" ImageFile ="\mini_style_hz.bmp"  TextColor ="#FFF5F5F5">字形"HZ"设置</Item>
+    <Item Command ="mini_style_khz" ImageFile ="\mini_style_khz.bmp"  TextColor ="#FFF5F5F5">字形"KHZ"设置</Item>
+    <Item>-</Item>
+    <Item Command ="mini_text2pl" ImageFile ="\mini_text2pl.bmp"  TextColor ="#FFF5F5F5">分解文字变线</Item>
+    <Item Command ="(mai_plus_run &quot;t2gt&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">写高精度矢量文字</Item>
+    <Item>-</Item>
+    <Item Command ="(mai_plus_run &quot;hfb_trans_code&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">中文简繁编码转换</Item>
+    <Item Command ="mini_youdao" ImageFile ="\mini_youdao.bmp"  TextColor ="#FFF5F5F5">文字中英文互译</Item>
+    <Item>-</Item>
+    <Item Command ="mini_sxcj" ImageFile ="\mini_sxcj.bmp"  TextColor ="#FFF5F5F5">单选文字中英文互译&lt;单选&gt;</Item>
+    <Group TextColor ="#FFF5F5F5" Title ="其他">
+      <Item Command ="tcount" ImageFile ="\tcount.bmp"  TextColor ="#FFF5F5F5">ET 自动编号</Item>
+      <Item Command ="dtext" ImageFile ="\dtext.bmp"  TextColor ="#FFF5F5F5">ET 动态文字</Item>
+      <Item Command ="rtext" ImageFile ="\rtext.bmp"  TextColor ="#FFF5F5F5">ET 远程文字</Item>
+      <Item Command ="textmask" ImageFile ="\textmask.bmp"  TextColor ="#FFF5F5F5">ET 文字屏蔽</Item>
+      <Item Command ="textfit" ImageFile ="\textfit.bmp"  TextColor ="#FFF5F5F5">ET 两侧对齐</Item>
+      <Item Command ="torient" ImageFile ="\torient.bmp"  TextColor ="#FFF5F5F5">ET 旋转文字</Item>
+      <Item Command ="tcircle" ImageFile ="\tcircle.bmp"  TextColor ="#FFF5F5F5">ET 文字加外框</Item>
+      <Item Command ="tcase" ImageFile ="\tcase.bmp"  TextColor ="#FFF5F5F5">ET 文字大小写</Item>
+      <Item Command ="arctext" ImageFile ="\arctext.bmp"  TextColor ="#FFF5F5F5">ET 圆弧对齐文字</Item>
+      <Item Command ="txt2mtxt" ImageFile ="\txt2mtxt.bmp"  TextColor ="#FFF5F5F5">ET 转换文字为多行文字</Item>
+      <Item Command ="textunmask" ImageFile ="\textunmask.bmp"  TextColor ="#FFF5F5F5">ET 解除文字屏蔽</Item>
+    </Group>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="标注工具">
+    <Item Command ="mini_fzx" ImageFile ="\mini_fzx.bmp"  TextColor ="#FFF5F5F5">辅助线</Item>
+    <Item Command ="mini_styx" ImageFile ="\mini_styx.bmp"  TextColor ="#FFF5F5F5">审图云线</Item>
+    <Item>-</Item>
+    <Item Command ="mini_dim_devide" ImageFile ="\mini_dim_devide.bmp"  TextColor ="#FFF5F5F5">全能标注</Item>
+    <Item Command ="mini_dim_merge" ImageFile ="\mini_dim_merge.bmp"  TextColor ="#FFF5F5F5">合并标注</Item>
+    <Item Command ="mini_dim_total" ImageFile ="\mini_dim_total.bmp"  TextColor ="#FFF5F5F5">标注总尺寸</Item>
+    <Item>-</Item>
+    <Item Command ="mini_dim_move" ImageFile ="\mini_dim_move.bmp"  TextColor ="#FFF5F5F5">标注文字移动</Item>
+    <Item Command ="mini_dim_home" ImageFile ="\mini_dim_home.bmp"  TextColor ="#FFF5F5F5">标注文字归位</Item>
+    <Item>-</Item>
+    <Item Command ="mini_dim_fix_text" ImageFile ="\mini_dim_fix_text.bmp"  TextColor ="#FFF5F5F5">标注文字避让</Item>
+    <Item Command ="mini_dim_flip" ImageFile ="\mini_dim_flip.bmp"  TextColor ="#FFF5F5F5">翻转标注和门窗编号</Item>
+    <Item>-</Item>
+    <Item Command ="mini_dim_trim" ImageFile ="\mini_dim_trim.bmp"  TextColor ="#FFF5F5F5">修剪延长线</Item>
+    <Item Command ="mini_dim_align" ImageFile ="\mini_dim_align.bmp"  TextColor ="#FFF5F5F5">标注对齐</Item>
+    <Item>-</Item>
+    <Item Command ="mini_dim_check" ImageFile ="\mini_dim_check.bmp"  TextColor ="#FFF5F5F5">标注原值检查</Item>
+    <Item Command ="mini_dimreassoc" ImageFile ="\mini_dimreassoc.bmp"  TextColor ="#FFF5F5F5">标注恢复原值</Item>
+    <Item Command ="mini_dim_update" ImageFile ="\mini_dim_update.bmp"  TextColor ="#FFF5F5F5">标注更新</Item>
+    <Item>-</Item>
+    <Item Command ="(mai_plus_run &quot;mini_bzgd&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">固化标注文字</Item>
+    <Item>-</Item>
+    <Item Command ="mini_dim_win" ImageFile ="\mini_dim_win.bmp"  TextColor ="#FFF5F5F5">标注门窗轴线</Item>
+    <Item Command ="mini_dimpoly" ImageFile ="\mini_dimpoly.bmp"  TextColor ="#FFF5F5F5">标注柱子</Item>
+    <Item Command ="mini_dim_room" ImageFile ="\mini_dim_room.bmp"  TextColor ="#FFF5F5F5">点选标注房间内尺寸.周长.面积</Item>
+    <Item>-</Item>
+    <Item Command ="mini_dim_line" ImageFile ="\mini_dim_line.bmp"  TextColor ="#FFF5F5F5">沿任意线标注</Item>
+    <Item Command ="mini_dim_axis" ImageFile ="\mini_dim_axis.bmp"  TextColor ="#FFF5F5F5">沿轴线标注</Item>
+    <Item Command ="mini_dim_wall" ImageFile ="\mini_dim_wall.bmp"  TextColor ="#FFF5F5F5">沿墙柱标注</Item>
+    <Group TextColor ="#FFF5F5F5" Title ="其他">
+      <Item Command ="qlattach" ImageFile ="\qlattach.bmp"  TextColor ="#FFF5F5F5">ET 向说明附着索引线</Item>
+      <Item Command ="qldetachset" ImageFile ="\qldetachset.bmp"  TextColor ="#FFF5F5F5">ET 从说明分离索引线</Item>
+      <Item Command ="qlattachset" ImageFile ="\qlattachset.bmp"  TextColor ="#FFF5F5F5">ET 全部附着索引线到说明</Item>
+      <Item Command ="dimex" ImageFile ="\dimex.bmp"  TextColor ="#FFF5F5F5">ET 标注样式输出</Item>
+      <Item Command ="dimim" ImageFile ="\dimim.bmp"  TextColor ="#FFF5F5F5">ET 标注样式输入</Item>
+    </Group>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="图块工具">
+    <Item Command ="mini_blocksee" ImageFile ="\mini_blocksee.bmp"  TextColor ="#FFF5F5F5">慧眼图库管理</Item>
+    <Item>-</Item>
+    <Item Command ="mini_exp_mblk" ImageFile ="\mini_exp_mblk.bmp"  TextColor ="#FFF5F5F5">超级炸块</Item>
+    <Item Command ="(mai_plus_run &quot;lm_nburst&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">无限炸开嵌套块</Item>
+    <Item Command ="_mini_exptoblay" ImageFile ="\mini_exptoblay.bmp"  TextColor ="#FFF5F5F5">炸开实体到块的层</Item>
+    <Item>-</Item>
+    <Item Command ="mini_quick_block" ImageFile ="\mini_quick_block.bmp"  TextColor ="#FFF5F5F5">快速作块</Item>
+    <Item Command ="(mai_plus_run &quot;lm_Block_Add&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">往图块中加入图元</Item>
+    <Item Command ="(mai_plus_run &quot;lm_Block_del&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">删除块中图元</Item>
+    <Item Command ="(mai_plus_run &quot;lm_block_move&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">移动块中图元</Item>
+    <Item Command ="(mai_plus_run &quot;lm_enb&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">分离块里嵌套块</Item>
+    <Item Command ="_ncopy" ImageFile ="\ncopy.bmp"  TextColor ="#FFF5F5F5">从图块中复制图元</Item>
+    <Item Command ="_mini_BlockWipeouts" ImageFile ="\mini_BlockWipeouts.bmp"  TextColor ="#FFF5F5F5">给块添加遮罩</Item>
+    <Item Command ="_mini_blk2lay0" ImageFile ="\mini_blk2lay0.bmp"  TextColor ="#FFF5F5F5">块内实体到0层随块层改颜色</Item>
+    <Item>-</Item>
+    <Item Command ="mini_blk_rename" ImageFile ="\mini_blk_rename.bmp"  TextColor ="#FFF5F5F5">图块重命名</Item>
+    <Item Command ="mini_blk_Insertion" ImageFile ="\mini_blk_Insertion.bmp"  TextColor ="#FFF5F5F5">改变块的插入点</Item>
+    <Item>-</Item>
+    <Item Command ="mini_blk_replace " ImageFile ="\mini_blk_replace .bmp"  TextColor ="#FFF5F5F5">替换图块或点</Item>
+    <Item Command ="mini_blk_along_line" ImageFile ="\mini_blk_along_line.bmp"  TextColor ="#FFF5F5F5">沿路径布块</Item>
+    <Item>-</Item>
+    <Item Command ="mini_block_flipm" ImageFile ="\mini_block_flipm.bmp"  TextColor ="#FFF5F5F5">批量翻转图块</Item>
+    <Item Command ="mini_block_flips" ImageFile ="\mini_block_flips.bmp"  TextColor ="#FFF5F5F5">自由翻转实体</Item>
+    <Item Command ="(mai_plus_run &quot;mini_dksf&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">多块同时基点缩放</Item>
+    <Item Command ="(mai_plus_run &quot;LM_abb&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">块自动随线并断线</Item>
+    <Item Command ="_mini_dtbl" ImageFile ="\mini_dtbl.bmp"  TextColor ="#FFF5F5F5">动态线型、块、填充比例</Item>
+    <Item>-</Item>
+    <Group TextColor ="#FFF5F5F5" Title ="图块其它">
+      <Item Command ="block" ImageFile =""  TextColor ="#FFF5F5F5">做块</Item>
+      <Item Command ="wblock" ImageFile =""  TextColor ="#FFF5F5F5">写块</Item>
+      <Item Command ="base" ImageFile =""  TextColor ="#FFF5F5F5">定义图形插入点</Item>
+      <Item>-</Item>
+      <Item Command ="xplode" ImageFile =""  TextColor ="#FFF5F5F5">扩展炸开</Item>
+    </Group>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="属性参照">
+    <Item Command ="ddattdef" ImageFile =""  TextColor ="#FFF5F5F5">ACAD定义属性</Item>
+    <Item>-</Item>
+    <Item Command ="mini_att2text" ImageFile ="\mini_att2text.bmp"  TextColor ="#FFF5F5F5">块属性转为文字</Item>
+    <Item Command ="(mai_plus_run &quot;mini_text2att&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">文字变块属性</Item>
+    <Item Command ="(mai_plus_run &quot;lm_mvAtt&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">属性批量移动</Item>
+    <Item Command ="(mai_plus_run &quot;lm_AttCol&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">属性批量改颜色</Item>
+    <Item Command ="(mai_plus_run &quot;lm_roAtt&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">属性批量旋转</Item>
+    <Item Command ="(mai_plus_run &quot;lm_edAtt&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">属性批量特征修改</Item>
+    <Item Command ="(mai_plus_run &quot;lm_BAtte&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">外部文件批量属性处理</Item>
+    <Item Command ="(mai_plus_run &quot;lm_MatchAttribs&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">刷块属性</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_attrib_list" ImageFile ="\mini_attrib_list.bmp"  TextColor ="#FFF5F5F5">块属性统计表</Item>
+    <Item>-</Item>
+    <Item Command ="mini_xdlj" ImageFile ="\mini_xdlj.bmp"  TextColor ="#FFF5F5F5">外部参照改相对路径</Item>
+    <Item Command ="mini_xref2blk" ImageFile ="\mini_xref2blk.bmp"  TextColor ="#FFF5F5F5">复制外部参照为无名块</Item>
+    <Item Command ="(mai_plus_run &quot;WG_BlockToXref&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">块转外部参照</Item>
+    <Item Command ="(mai_plus_run &quot;WG_XrefRepath&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">重定义参照、图片路径</Item>
+    <Item Command ="_mini_batch_xref" ImageFile ="\mini_batch_xref.bmp"  TextColor ="#FFF5F5F5">批量做外部参照条件图</Item>
+    <Item>-</Item>
+    <Item Command ="(mai_plus_run &quot;lm_c2xref&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">复制实体到外部参照</Item>
+    <Item>-</Item>
+    <Item Command ="attout" ImageFile ="\attout.bmp"  TextColor ="#FFF5F5F5">导出属性值</Item>
+    <Item Command ="attin" ImageFile ="\attin.bmp"  TextColor ="#FFF5F5F5">导入属性值</Item>
+    <Item Command ="gatte" ImageFile ="\gatte.bmp"  TextColor ="#FFF5F5F5">编辑全局属性</Item>
+    <Item Command ="_xlist" ImageFile ="\xlist.bmp"  TextColor ="#FFF5F5F5">列表显示外部参照和块属性</Item>
+    <Item Command ="_blocktoxref" ImageFile ="\blocktoxref.bmp"  TextColor ="#FFF5F5F5">转换块为外部参照</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="曲线边界">
+    <Item Command ="mini_3p_rectang" ImageFile ="\mini_3p_rectang.bmp"  TextColor ="#FFF5F5F5">全能矩形</Item>
+    <Item>-</Item>
+    <Item Command ="mini_add_vertex" ImageFile ="\mini_add_vertex.bmp"  TextColor ="#FFF5F5F5">增加顶点</Item>
+    <Item Command ="mini_delete_vertex" ImageFile ="\mini_delete_vertex.bmp"  TextColor ="#FFF5F5F5">删除顶点</Item>
+    <Item Command ="mini_lw_arc" ImageFile ="\mini_lw_arc.bmp"  TextColor ="#FFF5F5F5">线弧转换</Item>
+    <Item>-</Item>
+    <Item Command ="mini_pljoin" ImageFile ="\mini_pljoin.bmp"  TextColor ="#FFF5F5F5">多段线连接</Item>
+    <Item Command ="mini_pwidth" ImageFile ="\mini_pwidth.bmp"  TextColor ="#FFF5F5F5">宽度批量修改</Item>
+    <Item Command ="mini_pline_batch" ImageFile ="\mini_pline_batch.bmp"  TextColor ="#FFF5F5F5">扩展批量处理多义线</Item>
+    <Item>-</Item>
+    <Item Command ="mini_patrial_stretch" ImageFile ="\mini_patrial_stretch.bmp"  TextColor ="#FFF5F5F5">局部动态拉伸&lt;不封闭&gt;</Item>
+    <Item Command ="mini_patrial_offset" ImageFile ="\mini_patrial_offset.bmp"  TextColor ="#FFF5F5F5">局部动态偏移</Item>
+    <Item Command ="mini_patrial_ortho" ImageFile ="\mini_patrial_ortho.bmp"  TextColor ="#FFF5F5F5">局部正交</Item>
+    <Item>-</Item>
+    <Item Command ="boundary" ImageFile ="\boundary.bmp"  TextColor ="#FFF5F5F5">ACAD边界</Item>
+    <Item Command ="(mai_plus_run &quot;mini_MinEncCirclet&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">最小外接圆</Item>
+    <Item Command ="mini_boundary" ImageFile ="\mini_boundary.bmp"  TextColor ="#FFF5F5F5">智能外轮廓</Item>
+    <Item Command ="" ImageFile ="\.bmp"  TextColor ="#FFF5F5F5">内偏移内轮廓</Item>
+    <Item>-</Item>
+    <Item Command ="mini_pline_booler" ImageFile ="\mini_pline_booler.bmp"  TextColor ="#FFF5F5F5">多段线、填充布尔运算</Item>
+    <Item Command ="mini_pline_divide" ImageFile ="\mini_pline_divide.bmp"  TextColor ="#FFF5F5F5">按面积分封闭多段线</Item>
+    <Item>-</Item>
+    <Item Command ="mini_curve_2_pline" ImageFile ="\mini_curve_2_pline.bmp"  TextColor ="#FFF5F5F5">转换曲线为多段线</Item>
+    <Item Command ="mini_divide_sp" ImageFile ="\mini_divide_sp.bmp"  TextColor ="#FFF5F5F5">等弦长均分曲线</Item>
+    <Item>-</Item>
+    <Item Command ="mini_region_2_pline" ImageFile ="\mini_region_2_pline.bmp"  TextColor ="#FFF5F5F5">将面域转成多段线</Item>
+    <Item Command ="(mai_plus_run &quot;mini_circle_2_donut&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">将圆变实心圆环</Item>
+    <Item Command ="(mai_plus_run &quot;lm_mpolyout&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">带宽度多段线变线框</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_chk_open" ImageFile ="\mini_chk_open.bmp"  TextColor ="#FFF5F5F5">检查线是否闭合，在断开处画圆</Item>
+    <Item Command ="(mai_plus_run &quot;WG_MinDistLine&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">WG 在两曲线的最小间距处画线</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="填充工具">
+    <Item Command ="mini_hatch_panel" ImageFile ="\mini_hatch_panel.bmp"  TextColor ="#FFF5F5F5">快捷填充面板</Item>
+    <Item Command ="mini_custom_pattern" ImageFile ="\mini_custom_pattern.bmp"  TextColor ="#FFF5F5F5">自定义填充</Item>
+    <Item Command ="_mini_superhatch" ImageFile ="\mini_superhatch.bmp"  TextColor ="#FFF5F5F5">超级填充</Item>
+    <Item>-</Item>
+    <Item Command ="mini_hatch" ImageFile ="\mini_hatch.bmp"  TextColor ="#FFF5F5F5">快捷填充</Item>
+    <Item Command ="(mai_plus_run &quot;mini_hatch_select&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">选现有图案填充</Item>
+    <Item>-</Item>
+    <Item Command ="mini_hatch_move" ImageFile ="\mini_hatch_move.bmp"  TextColor ="#FFF5F5F5">对齐填充图案</Item>
+    <Item Command ="mini_hatch_out" ImageFile ="\mini_hatch_out.bmp"  TextColor ="#FFF5F5F5">填充图案提取输出</Item>
+    <Item Command ="mini_hatchb" ImageFile ="\mini_hatchb.bmp"  TextColor ="#FFF5F5F5">由填充生成边界</Item>
+    <Item>-</Item>
+    <Item Command ="mini_hatch_isolate" ImageFile ="\mini_hatch_isolate.bmp"  TextColor ="#FFF5F5F5">批量分离填充</Item>
+    <Item Command ="mini_xclip" ImageFile ="\mini_xclip.bmp"  TextColor ="#FFF5F5F5">全能裁刀裁填充</Item>
+    <Item Command ="mini_pline_booler" ImageFile ="\mini_pline_booler.bmp"  TextColor ="#FFF5F5F5">多段线、填充布尔运算</Item>
+    <Item>-</Item>
+    <Item Command ="(mai_plus_run &quot;mini_solid_2_hatch&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">将SOLID实体变填充</Item>
+    <Item Command ="mini_pline_to_solid" ImageFile ="\mini_pline_to_solid.bmp"  TextColor ="#FFF5F5F5">用SOLID实体满铺多义线</Item>
+    <Item>-</Item>
+    <Item Command ="mini_dtbl" ImageFile ="\mini_dtbl.bmp"  TextColor ="#FFF5F5F5">动态线型、块、填充比例</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="变形工具">
+    <Item Command ="mini_exscale" ImageFile ="\mini_exscale.bmp"  TextColor ="#FFF5F5F5">全能缩放</Item>
+    <Item>-</Item>
+    <Item Command ="mini_trans_reg" ImageFile ="\mini_trans_reg.bmp"  TextColor ="#FFF5F5F5">四边形变形</Item>
+    <Item Command ="mini_CopyAlongCurve" ImageFile ="\mini_CopyAlongCurve.bmp"  TextColor ="#FFF5F5F5">沿路径无缝连接复制</Item>
+    <Item>-</Item>
+    <Item Command ="mini_hm" ImageFile ="\mini_hm.bmp"  TextColor ="#FFF5F5F5">曲线展开立面转投影立面</Item>
+    <Item>-</Item>
+    <Item Command ="mini_freehand" ImageFile ="\mini_freehand.bmp"  TextColor ="#FFF5F5F5">手绘抖动效果</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="清理优化">
+    <Item Command ="mini_purge" ImageFile ="\mini_purge.bmp"  TextColor ="#FFF5F5F5">一键清理</Item>
+    <Item Command ="_mini_layer_killdollar" ImageFile ="\mini_layer_killdollar.bmp"  TextColor ="#FFF5F5F5">清理双美元$符号</Item>
+    <Item Command ="mini_line_clean" ImageFile ="\mini_line_clean.bmp"  TextColor ="#FFF5F5F5">清理短线、点、空字</Item>
+    <Item Command ="(mai_plus_run &quot;mini_dictst&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">删除图中常规词典</Item>
+    <Item>-</Item>
+    <Item Command ="mini_line_union" ImageFile ="\mini_line_union.bmp"  TextColor ="#FFF5F5F5">合并重线、多段线多余顶点</Item>
+    <Item Command ="overkill" ImageFile ="\overkill.bmp"  TextColor ="#FFF5F5F5">ACAD 消重图元</Item>
+    <Item>-</Item>
+    <Item Command ="mini_multimerge" ImageFile ="\mini_multimerge.bmp"  TextColor ="#FFF5F5F5">合并图层.字样.线型等</Item>
+    <Item Command ="(mai_plus_run &quot;mini_layer_strcase&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">层名变大小写</Item>
+    <Item Command ="(mai_plus_run &quot;lm_ldordert&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">按图层调整绘图顺序</Item>
+    <Item Command ="(mai_plus_run &quot;lm_LayerExtract&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">图层提取器</Item>
+    <Item>-</Item>
+    <Item Command ="mini_layer_bycolor" ImageFile ="\mini_layer_bycolor.bmp"  TextColor ="#FFF5F5F5">按颜色分层，颜色随层</Item>
+    <Item Command ="mini_yjbh" ImageFile ="\mini_yjbh.bmp"  TextColor ="#FFF5F5F5">全能变色</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_quzheng" ImageFile ="\mini_quzheng.bmp"  TextColor ="#FFF5F5F5">坐标基点网格取整</Item>
+    <Item>-</Item>
+    <Item Command ="mini_Flat" ImageFile ="\mini_Flat.bmp"  TextColor ="#FFF5F5F5">Z轴归0</Item>
+    <Item Command ="Flatten " ImageFile ="\Flatten .bmp"  TextColor ="#FFF5F5F5">二维化对象</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="组和遮罩">
+    <Item Command ="group" ImageFile ="\group.bmp"  TextColor ="#FFF5F5F5">ACAD组管理</Item>
+    <Item>-</Item>
+    <Item Command ="mini_group_creat" ImageFile ="\mini_group_creat.bmp"  TextColor ="#FFF5F5F5">快速建组</Item>
+    <Item Command ="mini_group_explode" ImageFile ="\mini_group_explode.bmp"  TextColor ="#FFF5F5F5">快速炸组</Item>
+    <Item>-</Item>
+    <Item Command ="Wipeout" ImageFile ="\Wipeout.bmp"  TextColor ="#FFF5F5F5">ACAD遮罩</Item>
+    <Item>-</Item>
+    <Item Command ="mini_BlockWipeouts" ImageFile ="\mini_BlockWipeouts.bmp"  TextColor ="#FFF5F5F5">给块添加遮罩</Item>
+    <Item Command ="mini_wipeout" ImageFile ="\mini_wipeout.bmp"  TextColor ="#FFF5F5F5">由边界生成遮罩</Item>
+    <Item Command ="mini_erase_wipeout" ImageFile ="\mini_erase_wipeout.bmp"  TextColor ="#FFF5F5F5">删除遮罩</Item>
+    <Item>-</Item>
+    <Item Command ="mini_wipeout_Frames" ImageFile ="\mini_wipeout_Frames.bmp"  TextColor ="#FFF5F5F5">多样外框开关</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="图层显示">
+    <Item Command ="layercur" ImageFile ="\layercur.bmp"  TextColor ="#FFF5F5F5">当前层</Item>
+    <Item Command ="layeron" ImageFile ="\layeron.bmp"  TextColor ="#FFF5F5F5">打开层</Item>
+    <Item Command ="layeroff" ImageFile ="\layeroff.bmp"  TextColor ="#FFF5F5F5">关闭层</Item>
+    <Item Command ="layerlck" ImageFile ="\layerlck.bmp"  TextColor ="#FFF5F5F5">锁定层</Item>
+    <Item Command ="layerulk" ImageFile ="\layerulk.bmp"  TextColor ="#FFF5F5F5">解锁层</Item>
+    <Item Command ="layerlckiso" ImageFile ="\layerlckiso.bmp"  TextColor ="#FFF5F5F5">分离锁层</Item>
+    <Item Command ="layeriso" ImageFile ="\layeriso.bmp"  TextColor ="#FFF5F5F5">分离层</Item>
+    <Item Command ="layerfrz" ImageFile ="\layerfrz.bmp"  TextColor ="#FFF5F5F5">冻结层</Item>
+    <Item Command ="layerthaw" ImageFile ="\layerthaw.bmp"  TextColor ="#FFF5F5F5">解冻层</Item>
+    <Item>-</Item>
+    <Item Command ="layeronall" ImageFile ="\layeronall.bmp"  TextColor ="#FFF5F5F5">打开所有图层</Item>
+    <Item Command ="(command &quot;_.layer&quot; &quot;off&quot; &quot;*&quot; &quot;y&quot; &quot;&quot;)" ImageFile ="\layeronall.bmp"  TextColor ="#FFF5F5F5">关闭全部图层</Item>
+    <Item Command ="layerunlall" ImageFile ="\layerunlall.bmp"  TextColor ="#FFF5F5F5">解锁所有图层</Item>
+    <Item Command ="layerfreeall" ImageFile ="\layerfreeall.bmp"  TextColor ="#FFF5F5F5">自由所有图层</Item>
+    <Item>-</Item>
+    <Item Command ="mini_layerstates_save" ImageFile ="\mini_layerstates_save.bmp"  TextColor ="#FFF5F5F5">保存图层状态</Item>
+    <Item Command ="mini_layerstates_res" ImageFile ="\mini_layerstates_res.bmp"  TextColor ="#FFF5F5F5">恢复图层状态</Item>
+    <Item>-</Item>
+    <Item Command ="mini_unblank" ImageFile ="\mini_unblank.bmp"  TextColor ="#FFF5F5F5">显示所有实体</Item>
+    <Item Command ="mini_blank" ImageFile ="\mini_blank.bmp"  TextColor ="#FFF5F5F5">隐藏实体</Item>
+    <Item Command ="mini_IsolateObjects" ImageFile ="\mini_IsolateObjects.bmp"  TextColor ="#FFF5F5F5">独立显示实体</Item>
+    <Item>-</Item>
+    <Item Command ="_mini_lockobjects" ImageFile ="\mini_lockobjects.bmp"  TextColor ="#FFF5F5F5">锁定实体不能编辑</Item>
+    <Item Command ="_mini_unlockobjects" ImageFile ="\mini_unlockobjects.bmp"  TextColor ="#FFF5F5F5">解锁实体使能编辑</Item>
+    <Item Command ="_mini_disablelock" ImageFile ="\mini_disablelock.bmp"  TextColor ="#FFF5F5F5">解锁所有实体使能编辑</Item>
+    <Item>-</Item>
+    <Group TextColor ="#FFF5F5F5" Title ="更多功能">
+      <Item Command ="lman" ImageFile ="\lman.bmp"  TextColor ="#FFF5F5F5">ET 图层管理</Item>
+      <Item Command ="laywalk" ImageFile ="\laywalk.bmp"  TextColor ="#FFF5F5F5">ET 图层浏览</Item>
+      <Item Command ="laymch" ImageFile ="\laymch.bmp"  TextColor ="#FFF5F5F5">ET 图层匹配</Item>
+      <Item Command ="copytolayer" ImageFile ="\copytolayer.bmp"  TextColor ="#FFF5F5F5">ET 改层复制</Item>
+      <Item Command ="laydel" ImageFile ="\laydel.bmp"  TextColor ="#FFF5F5F5">ET 图层删除</Item>
+    </Group>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="刷子对齐">
+    <Item Command ="mini_blk_replace" ImageFile ="\mini_blk_replace.bmp"  TextColor ="#FFF5F5F5">替换块或点</Item>
+    <Item Command ="(mai_plus_run &quot;lm_MatchAttribs&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">刷块属性</Item>
+    <Item>-</Item>
+    <Item Command ="mini_match_Text_Value" ImageFile ="\mini_match_Text_Value.bmp"  TextColor ="#FFF5F5F5">刷文字内容</Item>
+    <Item Command ="mini_match_Text_size" ImageFile ="\mini_match_Text_size.bmp"  TextColor ="#FFF5F5F5">刷文字大小</Item>
+    <Item Command ="mini_match_Text_Angle" ImageFile ="\mini_match_Text_Angle.bmp"  TextColor ="#FFF5F5F5">刷文字角度</Item>
+    <Item>-</Item>
+    <Item Command ="mini_match_Text_y" ImageFile ="\mini_match_Text_y.bmp"  TextColor ="#FFF5F5F5">= 水平对齐文字</Item>
+    <Item Command ="mini_match_Text_x" ImageFile ="\mini_match_Text_x.bmp"  TextColor ="#FFF5F5F5">||垂直对齐文字</Item>
+    <Item>-</Item>
+    <Item Command ="mini_exalign" ImageFile ="\mini_exalign.bmp"  TextColor ="#FFF5F5F5">扩展对齐</Item>
+    <Item>-</Item>
+    <Item Command ="mini_match_MLeader" ImageFile ="\mini_match_MLeader.bmp"  TextColor ="#FFF5F5F5">刷多重索引</Item>
+    <Item Command ="mini_mleader_align" ImageFile ="\mini_mleader_align.bmp"  TextColor ="#FFF5F5F5">多重引线对齐</Item>
+    <Item>-</Item>
+    <Item Command ="(mai_plus_run &quot;lm_atc&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">单选文字动态沿曲线布字</Item>
+    <Item Command ="(mai_plus_run &quot;lm_TxAlign&quot;)" ImageFile =""  TextColor ="#FFF5F5F5">多选文字动态对齐曲线</Item>
+    <Item>-</Item>
+    <Item Command ="mini_xxdq" ImageFile ="\mini_xxdq.bmp"  TextColor ="#FFF5F5F5">形心对齐</Item>
+    <Item Command ="mini_cell_center" ImageFile ="\mini_cell_center.bmp"  TextColor ="#FFF5F5F5">表格内实体智能居中</Item>
+  </Group>
+</ScreenMenu>

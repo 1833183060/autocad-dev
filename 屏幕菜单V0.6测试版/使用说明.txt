@@ -1,0 +1,1 @@
+Auto CAD命令行输入"netload"，然后加载此目录下的"CAD_ScreenMenu.dll"文件即可。

@@ -1,0 +1,639 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+  屏幕菜单说明
+  文件结构：
+  <ScreenMenu>  //*根目录，必须按照此名称，不做解释；
+    <Group TextColor ="#FFF5F5F5" Title ="第一个组" TextColor(可选) ="Coral" BackColorr(可选) ="AliceBlue">  //组，组中可以包含子项，包括子组，可以嵌套（即组中加入子组）
+        <Item Command ="Line" ImageFile =""(可选) ImageIndex = "0"(为资源文件中图标索引，起始值0；如果ImageFile为图像文件，可忽略，) TextColor ="#FFF5F5F5"(可选)>绘制直线</Item>
+        <Item>-</Item> //分割线
+        <Group TextColor ="#FFF5F5F5" Title ="嵌套子组">  //嵌套组
+          <Item Command ="Command" ImageFile ="" ImageIndex = "0">嵌套子组的项目</Item>//
+        </Group>
+    </Group>
+  </ScreenMenu>
+  -->
+<ScreenMenu>
+  <Group TextColor ="#FFF5F5F5" Title ="系统设定" >
+    <Item Command ="YQ_SYS_SETTING" ImageFile ="\YQ_yqsys.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">用户系统配置</Item>
+    <Item Command ="YQARCH" ImageFile ="\YQ_yq.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">源泉设计命令总览</Item>
+    <Item Command ="YQ_TOOLBARSON" ImageFile ="\YQ_tbA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">打开源泉图像按钮</Item>
+    <Item Command ="YQ_TOOLBARSOFF" ImageFile ="\YQ_tbAF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">关闭源泉图像按钮</Item>
+    <Item Command ="YQ_SETUSER" ImageFile ="\YQ_yquser.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">选择当前用户</Item>
+    <Item Command ="YQ_LANG" ImageFile ="\YQ_yqlang.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">切换提示语言</Item>
+    <Item Command ="YQ_SETUNITS" ImageFile ="\YQ_yqunits.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">设定绘图单位</Item>
+    <Item Command ="YQ_MENU" ImageFile ="\YQ_yqmenu.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">加载源泉菜单</Item>
+    <Item Command ="YQ_SETDWGSCALE" ImageFile ="\YQ_sd.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">设置图纸/符号比例</Item>
+    <Item Command ="YQ_DWGFRAME" ImageFile ="\YQ_tk.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">绘制图框</Item>
+    <Item Command ="YQ_HELP" ImageFile ="\YQ_yqhelp.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">详细帮助</Item>
+    <Item Command ="YQ_VER" ImageFile ="\YQ_yqver.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">源泉版本号</Item>
+    <Item Command ="YQ_WEBSITE" ImageFile ="\YQ_yqweb.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">源泉设计网站</Item>
+    <Item Command ="(yq_browser &quot;http://bigd.ys168.com&quot;)" ImageFile ="\YQ_.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">截图教程网站</Item>
+    <Item Command ="YQ_ABOUT" ImageFile ="\YQ_yqabout.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">关于源泉</Item>
+    <Item Command ="YQ_UNINSTALL" ImageFile ="\YQ_yquninst.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">卸载源泉设计</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="平面墙柱">
+    <Item Command ="YQ_AXISLINE" ImageFile ="\YQ_ax.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">画轴线</Item>
+    <Item Command ="YQ_GRIDAXIS" ImageFile ="\YQ_zxw.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">简单轴线网</Item>
+    <Item Command ="YQ_WALL" ImageFile ="\YQ_ww.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">画墙</Item>
+    <Item Command ="YQ_TRIM_FIX_WALL" ImageFile ="\YQ_TW.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">智能墙剪</Item>
+    <Item Command ="YQ_WALL_CHGTHK" ImageFile ="\YQ_wwT.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">修正墙体厚度</Item>
+    <Item Command ="YQ_LINE2WALL" ImageFile ="\YQ_Xww.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">轴线变墙</Item>
+    <Item Command ="YQ_WALL_CDOFFSET" ImageFile ="\YQ_wwO.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">墙净距偏移</Item>
+    <Item Command ="YQ_WALL2AXIS" ImageFile ="\YQ_wwA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">求墙中轴线</Item>
+    <Item Command ="YQ_FILL_WALL" ImageFile ="\YQ_wwF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">填充墙、柱</Item>
+    <Item Command ="YQ_R_COLUMN" ImageFile ="\YQ_zzR.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">画方柱子</Item>
+    <Item Command ="YQ_O_COLUMN" ImageFile ="\YQ_zzC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">画圆柱子</Item>
+    <Item Command ="YQ_L_COLUMN" ImageFile ="\YQ_zzL.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">画L型柱子</Item>
+    <Item Command ="YQ_T_COLUMN" ImageFile ="\YQ_zzT.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">画T型柱子</Item>
+    <Item Command ="YQ_C_COLUMN" ImageFile ="\YQ_zzX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">画十字型柱子</Item>
+    <Item Command ="YQ_AXIS_COLUMN" ImageFile ="\YQ_zzBZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">轴线布置柱子</Item>
+    <Item Command ="YQ_PLINE2COLUMN" ImageFile ="\YQ_xxzz.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">变成柱子</Item>
+    <Item Command ="YQ_FILL_COLUMN" ImageFile ="\YQ_zzF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">填充柱子</Item>
+    <Item Command ="YQ_ERASE_WALL" ImageFile ="\YQ_EW.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">删除墙柱门窗</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="平面门窗">
+    <Item Command ="YQ_HOLE_DOOR" ImageFile ="\YQ_AD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">墙或轴线开普通门</Item>
+    <Item Command ="YQ_DOOR" ImageFile ="\YQ_AD2.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">两点画普通门</Item>
+    <Item Command ="YQ_HOLE_WIN" ImageFile ="\YQ_AW.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">墙或轴线开普通窗</Item>
+    <Item Command ="YQ_WIN" ImageFile ="\YQ_AW2.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">两点画普通窗</Item>
+    <Item Command ="YQ_WINDOOR_REPLACE" ImageFile ="\YQ_TD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">普通门窗置换</Item>
+    <Item Command ="YQ_HOLE" ImageFile ="\YQ_HO.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">墙上开门洞</Item>
+    <Item Command ="YQ_HOLE_POCKETDOOR" ImageFile ="\YQ_ADT.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">墙或轴线开门套门</Item>
+    <Item Command ="YQ_POCKETDOOR" ImageFile ="\YQ_ADT2.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">两点画门套门</Item>
+    <Item Command ="YQ_POCKETDOOR_REPLACE" ImageFile ="\YQ_TDD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">替代为门套门</Item>
+    <Item Command ="YQ_HOLE_WINDOW" ImageFile ="\YQ_WD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">墙或轴线开参数窗</Item>
+    <Item Command ="YQ_WINDOW" ImageFile ="\YQ_WD2.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">两点画参数窗</Item>
+    <Item Command ="YQ_WINDOW_REPLACE" ImageFile ="\YQ_TDW.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">替代为参数窗</Item>
+    <Item Command ="YQ_HOLE_CORNERWINDOW" ImageFile ="\YQ_WDZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">墙上开转角窗</Item>
+    <Item Command ="YQ_CWINDOW_REPLACE" ImageFile ="\YQ_TDZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">转角窗替换样式</Item>
+    <Item Command ="YQ_DOORSILL" ImageFile ="\YQ_MKX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">门槛线管理</Item>
+    <Item Command ="YQ_DOOROPENING" ImageFile ="\YQ_MDX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">门洞线管理</Item>
+    <Item Command ="YQ_LINE2WINDOW" ImageFile ="\YQ_xWD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">线变平面窗</Item>
+    <Item Command ="YQ_WIDTH_WINDOOR" ImageFile ="\YQ_CW.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">修改门窗宽度</Item>
+    <Item Command ="YQ_MOVE_WINDOOR" ImageFile ="\YQ_VW.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">左右移动门窗</Item>
+    <Item Command ="YQ_REPAIR" ImageFile ="\YQ_XF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">修正门窗和柱子</Item>
+    <Item Command ="YQ_MOVEANDFIX" ImageFile ="\YQ_vX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">移动并修正</Item>
+    <Item Command ="YQ_COPYANDFIX" ImageFile ="\YQ_cX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">复制并修正</Item>
+    <Item Command ="YQ_MIRRORANDFIX" ImageFile ="\YQ_rrX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">镜像并修正</Item>
+    <Item Command ="YQ_OVERTURN" ImageFile ="\YQ_FZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">翻转门窗</Item>
+    <Item Command ="YQ_MATCH_BLOCK" ImageFile ="\YQ_ssB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">刷子.匹配门窗</Item>
+    <Item Command ="YQ_ERASE_WALL" ImageFile ="\YQ_EW.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">删除墙柱门窗</Item>
+    <Item Command ="YQ_WINSERIALNUMBER" ImageFile ="\YQ_wbh.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">门窗编号管理</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="建筑构件">
+    <Item Command ="YQ_SLDCOMPONENTS" ImageFile ="\YQ_gj.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">建筑构件集</Item>
+    <Item Command ="YQ_ESCALATOR" ImageFile ="\YQ_ltF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">自动扶梯平面立面</Item>
+    <Item Command ="YQ_STAIRCASE_PLAN" ImageFile ="\YQ_ltJ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">矩形楼梯间平面</Item>
+    <Item Command ="YQ_ARCSTAIR_PLAN" ImageFile ="\YQ_ltA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">弧形楼梯平面</Item>
+    <Item Command ="YQ_LIFT_PLAN" ImageFile ="\YQ_DTJ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">电梯轿厢平面</Item>
+    <Item Command ="YQ_DOOR_ELEVATION" ImageFile ="\YQ_adE.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">平开门立面</Item>
+    <Item Command ="YQ_DOOR_SECTION" ImageFile ="\YQ_adS.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">平开门剖面</Item>
+    <Item Command ="YQ_BAYWIN_SECTION" ImageFile ="\YQ_wtS.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">绘制凸窗剖面</Item>
+    <Item Command ="YQ_WINDOW_ELEVATION" ImageFile ="\YQ_wdE.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">窗户立面</Item>
+    <Item Command ="YQ_WINDOW_SECTION" ImageFile ="\YQ_wdS.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">窗户剖面</Item>
+    <Item Command ="YQ_SHUTTER" ImageFile ="\YQ_BY.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">百叶窗立面剖面</Item>
+    <Item Command ="YQ_CURTAINGLASS" ImageFile ="\YQ_mBL.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">幕墙玻璃剖面</Item>
+    <Item Command ="YQ_LINES2WINELEV" ImageFile ="\YQ_wdD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">线框变窗户立面</Item>
+    <Item Command ="YQ_SN2WINELEV" ImageFile ="\YQ_t2w.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">门窗编号变立面框</Item>
+    <Item Command ="YQ_CURTAINWALL" ImageFile ="\YQ_MQ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">幕墙立面</Item>
+    <Item Command ="YQ_GLASS_PARTITION" ImageFile ="\YQ_MQS.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">幕/隔墙剖面</Item>
+    <Item Command ="YQ_BANISTER" ImageFile ="\YQ_LG.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">扶手栏杆立面</Item>
+    <Item Command ="YQ_STAIRCASE_SECTION" ImageFile ="\YQ_ltP.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">楼梯间剖面</Item>
+    <Item Command ="YQ_STEP_SECTION" ImageFile ="\YQ_lxtb.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">拉线踏步</Item>
+    <Item Command ="YQ_WATERPROOF" ImageFile ="\YQ_FSC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">绘制防水层剖面</Item>
+    <Item Command ="YQ_STUCCO" ImageFile ="\YQ_FN.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">绘制粉刷层剖面</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="装饰构件">
+    <Item Command ="YQ_SLDDECORATION" ImageFile ="\YQ_zs.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">装饰构件集</Item>
+    <Item Command ="YQ_AUTOFURNITURE" ImageFile ="\YQ_JJ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">家具洁具平面布置</Item>
+    <Item Command ="YQ_ARRANGEWC" ImageFile ="\YQ_WC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">厕所浴室平面布置</Item>
+    <Item Command ="YQ_CHESTPLAN" ImageFile ="\YQ_YG.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">衣柜平面</Item>
+    <Item Command ="YQ_CURTAINPLAN" ImageFile ="\YQ_CLP.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">窗帘平面</Item>
+    <Item Command ="YQ_PLASTERSTRINGPLAN" ImageFile ="\YQ_SGX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">偏移石膏线平面</Item>
+    <Item Command ="YQ_CUPBOARDPLAN" ImageFile ="\YQ_GZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">简易柜子平面</Item>
+    <Item Command ="YQ_CUPBOARDELEV" ImageFile ="\YQ_GZE.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">简易柜子立面</Item>
+    <Item Command ="YQ_STONETILE" ImageFile ="\YQ_stB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">石头板剖面</Item>
+    <Item Command ="YQ_WOODENFRAME" ImageFile ="\YQ_MF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">木方架子剖面</Item>
+    <Item Command ="YQ_ARRAY_BOARDS" ImageFile ="\YQ_CBZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">层板阵列</Item>
+    <Item Command ="YQ_BLOCKBOARD" ImageFile ="\YQ_MGB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">木工板剖面</Item>
+    <Item Command ="YQ_PLYWOOD" ImageFile ="\YQ_JB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">夹板剖面</Item>
+    <Item Command ="YQ_WOODFLOORING" ImageFile ="\YQ_MDB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">木地板剖面</Item>
+    <Item Command ="YQ_GLASS" ImageFile ="\YQ_BL.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">玻璃剖面</Item>
+    <Item Command ="YQ_GYPSUMBOARD" ImageFile ="\YQ_SGB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">石膏板剖面</Item>
+    <Item Command ="YQ_LIGHTTROUGH" ImageFile ="\YQ_THDC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">暗藏灯槽剖面</Item>
+    <Item Command ="YQ_PARTITIONWALL" ImageFile ="\YQ_GQ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">轻钢龙骨石膏板隔墙</Item>
+    <Item Command ="YQ_FORMEDSTEEL" ImageFile ="\YQ_XG.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">型钢截面</Item>
+    <Item Command ="YQ_IRONFRAME" ImageFile ="\YQ_JGJ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">角钢架子剖面</Item>
+    <Item Command ="YQ_INSULATION" ImageFile ="\YQ_BWM.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">保温棉剖面</Item>
+    <Item Command ="YQ_WELDINGLINE" ImageFile ="\YQ_HF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">绘制焊缝</Item>
+    <Item Command ="YQ_HOSE" ImageFile ="\YQ_RG.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">绘制软管</Item>
+    <Item Command ="YQ_PIPE" ImageFile ="\YQ_GX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">绘制管线</Item>
+    <Item Command ="YQ_BOARDHOLE" ImageFile ="\YQ_KD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">板上方孔洞</Item>
+    <Item Command ="YQ_CYLINDERSHADOW" ImageFile ="\YQ_YZX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">圆柱影线</Item>
+    <Item Command ="YQ_BACKBOLTHOLE" ImageFile ="\YQ_BSK.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">画背栓孔</Item>
+    <Item Command ="YQ_AUTOLAMPS" ImageFile ="\YQ_DJ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">平面灯具布置</Item>
+    <Item Command ="YQ_RANDOMSPREAD" ImageFile ="\YQ_MTX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">满天星随机铺满</Item>
+    <Item Command ="YQ_INDOORELEV" ImageFile ="\YQ_LM.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">生成室内立面框架</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="建筑符号">
+    <Item Command ="YQ_SLDSYMBOLS" ImageFile ="\YQ_fh.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">建筑符号集</Item>
+    <Item Command ="YQ_AUTO_AXIS_DIM" ImageFile ="\YQ_aZH.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">自动轴号尺寸线</Item>
+    <Item Command ="YQ_SYMBOL_AXIS_C" ImageFile ="\YQ_ZH.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">连续轴号尺寸线</Item>
+    <Item Command ="YQ_GEODESIC_COORDINATES" ImageFile ="\YQ_ZB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">建筑坐标</Item>
+    <Item Command ="YQ_DESIGNED_ELEVATION" ImageFile ="\YQ_BG.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">建筑标高</Item>
+    <Item Command ="YQ_CONTOUR_ELEVATION" ImageFile ="\YQ_xBG.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">三维等高线标高</Item>
+    <Item Command ="YQ_SYMBOL_SECTIONPLANE" ImageFile ="\YQ_pqf.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">平面剖切符号</Item>
+    <Item Command ="YQ_SYMBOL_SECTIONCUTTER" ImageFile ="\YQ_dmf.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">断面符号</Item>
+    <Item Command ="YQ_SYMBOL_GRADIENT" ImageFile ="\YQ_PD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">坡度符号</Item>
+    <Item Command ="YQ_DISCONNECTION_LINE" ImageFile ="\YQ_ZX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">折断线</Item>
+    <Item Command ="YQ_PIPECUTTING" ImageFile ="\YQ_GPX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">圆管剖线</Item>
+    <Item Command ="YQ_SYMMETRY_AXIS" ImageFile ="\YQ_dcz.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">对称轴</Item>
+    <Item Command ="YQ_CENTRAL_LINE" ImageFile ="\YQ_zxx.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">中心线</Item>
+    <Item Command ="YQ_WIRESURROUND" ImageFile ="\YQ_aCC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">画电线半圆跨线</Item>
+    <Item Command ="YQ_ERASESURROUND" ImageFile ="\YQ_eCC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">删电线半圆跨线</Item>
+    <Item Command ="YQ_BENTARROW" ImageFile ="\YQ_aaW.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">弯箭头</Item>
+    <Item Command ="YQ_ENTRANCEARROW" ImageFile ="\YQ_aaE.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">出入口箭头</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="索引标题">
+    <Item Command ="YQ_SLDINDEXERS" ImageFile ="\YQ_sy.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">索引标题集</Item>
+    <Item Command ="YQ_IDENTIFIER1" ImageFile ="\YQ_sy1.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">剖切索引号1</Item>
+    <Item Command ="YQ_IDENTIFIER2" ImageFile ="\YQ_sy2.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">剖切索引号2</Item>
+    <Item Command ="YQ_IDENTIFIER3" ImageFile ="\YQ_sy3.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">剖切索引号3</Item>
+    <Item Command ="YQ_ELEVINDEXER4IN1" ImageFile ="\YQ_i0.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">立面索引号4合1</Item>
+    <Item Command ="YQ_ELEVINDEXER1" ImageFile ="\YQ_i1.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">立面索引号1</Item>
+    <Item Command ="YQ_ELEVINDEXER2" ImageFile ="\YQ_i2.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">立面索引号2</Item>
+    <Item Command ="YQ_ELEVINDEXER3" ImageFile ="\YQ_i3.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">立面索引号3</Item>
+    <Item Command ="YQ_ELEVINDEXER4" ImageFile ="\YQ_i4.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">立面索引号4</Item>
+    <Item Command ="YQ_DETAILSYMBOL1" ImageFile ="\YQ_xt1.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">详图符号1</Item>
+    <Item Command ="YQ_DETAILSYMBOL2" ImageFile ="\YQ_xt2.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">详图符号2</Item>
+    <Item Command ="YQ_INDEXER1" ImageFile ="\YQ_s1.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">自设索引符1</Item>
+    <Item Command ="YQ_INDEXER2" ImageFile ="\YQ_s2.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">自设索引符2</Item>
+    <Item Command ="YQ_INDEXER3" ImageFile ="\YQ_s3.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">自设索引符3</Item>
+    <Item Command ="YQ_INDEXER4" ImageFile ="\YQ_s4.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">自设索引符4</Item>
+    <Item Command ="YQ_INDEXER5" ImageFile ="\YQ_s5.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">自设索引符5</Item>
+    <Item Command ="YQ_INDEXER6" ImageFile ="\YQ_s6.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">自设索引符6</Item>
+    <Item Command ="YQ_INDEXER7" ImageFile ="\YQ_s7.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">自设索引符7</Item>
+    <Item Command ="YQ_INDEXER8" ImageFile ="\YQ_s8.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">自设索引符8</Item>
+    <Item Command ="YQ_INDEXER9" ImageFile ="\YQ_s9.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">自设索引符9</Item>
+    <Item Command ="YQ_LEADER" ImageFile ="\YQ_aax.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">箭头引线</Item>
+    <Item Command ="YQ_MPTLEADER" ImageFile ="\YQ_aaxx.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">多点引线</Item>
+    <Item Command ="YQ_MPTLEADER_Y" ImageFile ="\YQ_aayy.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">竖直多点引线</Item>
+    <Item Command ="YQ_LEADER_VERTEXES" ImageFile ="\YQ_aav.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">引线增删顶点</Item>
+    <Item Command ="YQ_LEADER_ADDARROW" ImageFile ="\YQ_aaJ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">引线加箭头</Item>
+    <Item Command ="YQ_DRAWINGTITLE" ImageFile ="\YQ_bt.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">装饰图标题文字</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="统计工具">
+    <Item Command ="YQ_SLDSTATISTICS" ImageFile ="\YQ_tj.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">统计工具集</Item>
+    <Item Command ="XC_SS" ImageFile ="\YQ_ss.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">选择易</Item>
+    <Item Command ="YQ_AUTOSERIALNUMBER" ImageFile ="\YQ_aBH.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">自动编号</Item>
+    <Item Command ="YQ_EMPTYTABLE" ImageFile ="\YQ_Kbg.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">等宽空表格</Item>
+    <Item Command ="YQ_TEXT2CENTER" ImageFile ="\YQ_bgZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">表格单元文字居中</Item>
+    <Item Command ="YQ_CALC_CELLAREA" ImageFile ="\YQ_tMJ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">统计区域面积</Item>
+    <Item Command ="YQ_TEXTS2EXCEL" ImageFile ="\YQ_T2E.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">输出到表格软件</Item>
+    <Item Command ="YQ_TEXTS2ACADTABLE" ImageFile ="\YQ_Zbg.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">文字表格转表格</Item>
+    <Item Command ="YQ_WINDOOR_LIST" ImageFile ="\YQ_MCB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">统计门窗表</Item>
+    <Item Command ="YQ_BLOCK_LIST" ImageFile ="\YQ_bbL.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">统计图块</Item>
+    <Item Command ="YQ_BLOCKATT_LIST" ImageFile ="\YQ_sxL.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">统计块属性和动态参</Item>
+    <Item Command ="YQ_COORDINATE_LIST" ImageFile ="\YQ_zZB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">找坐标并列表</Item>
+    <Item Command ="YQ_STRING_LIST" ImageFile ="\YQ_ttQ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">提取字串并列表</Item>
+    <Item Command ="YQ_MATERIAL_LIST" ImageFile ="\YQ_CLB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">提取生成材料表</Item>
+    <Item Command ="YQ_CALC_SUMAREA" ImageFile ="\YQ_MJ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">统计面积总面积</Item>
+    <Item Command ="YQ_ASSO_AREA" ImageFile ="\YQ_pMJ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">文字关联面积</Item>
+    <Item Command ="YQ_CALC_PERIMETER" ImageFile ="\YQ_ZC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">统计周长总周长</Item>
+    <Item Command ="YQ_ASSO_PERIMETER" ImageFile ="\YQ_pZC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">文字关联周长</Item>
+    <Item Command ="YQ_CALWEIGHT" ImageFile ="\YQ_ZL.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">根据密度计算重量</Item>
+    <Item Command ="YQ_AREASTAT" ImageFile ="\YQ_FTB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">建筑面积分摊表</Item>
+    <Item Command ="" ImageFile ="\YQ_.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">数字文字的“加减乘除”</Item>
+    <Item Command ="YQ_CALC_ADDITION" ImageFile ="\YQ_+.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">数字的和(＋)</Item>
+    <Item Command ="YQ_CALC_SUBTRATION" ImageFile ="\YQ_-.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">数字的差(－)</Item>
+    <Item Command ="YQ_CALC_MULTIPLICATION" ImageFile ="\YQ_*.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">数字的积(×)</Item>
+    <Item Command ="YQ_CALC_DIVISION" ImageFile ="\YQ_/.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">数字的商(÷)</Item>
+    <Item Command ="YQ_CALC_EXPRESSION" ImageFile ="\YQ_JS.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">计算数学表达式</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="文字内容">
+    <Group TextColor ="#FFF5F5F5" Title ="调整文字说明高度">
+      <Item Command ="" ImageFile ="\YQ_.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">调整说明文字高</Item>
+      <Item Command ="(progn (setq YQ_T_HEIGHT 2.0)(setvar &quot;TEXTSIZE&quot; (* (getvar &quot;dimscale&quot;) 2.0)))" ImageFile ="\YQ_.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">2毫米</Item>
+      <Item Command ="(progn (setq YQ_T_HEIGHT 2.0)(setvar &quot;TEXTSIZE&quot; (* (getvar &quot;dimscale&quot;) 2.5)))" ImageFile ="\YQ_.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">2.5毫米</Item>
+      <Item Command ="(progn (setq YQ_T_HEIGHT 2.0)(setvar &quot;TEXTSIZE&quot; (* (getvar &quot;dimscale&quot;) 3.0)))" ImageFile ="\YQ_.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">3毫米</Item>
+      <Item Command ="(progn (setq YQ_T_HEIGHT 2.0)(setvar &quot;TEXTSIZE&quot; (* (getvar &quot;dimscale&quot;) 3.5)))" ImageFile ="\YQ_.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">3.5毫米</Item>
+      <Item Command ="(progn (setq YQ_T_HEIGHT 2.0)(setvar &quot;TEXTSIZE&quot; (* (getvar &quot;dimscale&quot;) 4.0)))" ImageFile ="\YQ_.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">4毫米</Item>
+      <Item Command ="(progn (setq YQ_T_HEIGHT 2.0)(setvar &quot;TEXTSIZE&quot; (* (getvar &quot;dimscale&quot;) 5.0)))" ImageFile ="\YQ_.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">5毫米</Item>
+      <Item Command ="(progn (setq YQ_T_HEIGHT 2.0)(setvar &quot;TEXTSIZE&quot; (* (getvar &quot;dimscale&quot;) 6.0)))" ImageFile ="\YQ_.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">6毫米</Item>
+      <Item Command ="(progn (setq YQ_T_HEIGHT 2.0)(setvar &quot;TEXTSIZE&quot; (* (getvar &quot;dimscale&quot;) 8.0)))" ImageFile ="\YQ_.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">8毫米</Item>
+      <Item Command ="(progn (setq YQ_T_HEIGHT 2.0)(setvar &quot;TEXTSIZE&quot; (* (getvar &quot;dimscale&quot;) 10.0)))" ImageFile ="\YQ_.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">10毫米</Item>
+      <Item Command ="(progn (setq YQ_T_HEIGHT 2.0)(setvar &quot;TEXTSIZE&quot; (* (getvar &quot;dimscale&quot;) 12.0)))" ImageFile ="\YQ_.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">12毫米</Item>
+      <Item Command ="(progn (setq YQ_T_HEIGHT 2.0)(setvar &quot;TEXTSIZE&quot; (* (getvar &quot;dimscale&quot;) 15.0)))" ImageFile ="\YQ_.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">15毫米</Item>
+      <Item Command ="(progn (setq YQ_T_HEIGHT 2.0)(setvar &quot;TEXTSIZE&quot; (* (getvar &quot;dimscale&quot;) 20.0)))" ImageFile ="\YQ_.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">20毫米</Item>
+      <Item Command ="(progn (setq YQ_T_HEIGHT 2.0)(setvar &quot;TEXTSIZE&quot; (* (getvar &quot;dimscale&quot;) 30.0)))" ImageFile ="\YQ_.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">30毫米</Item>
+    </Group>
+    <Item Command ="YQ_USERDICT" ImageFile ="\YQ_DIC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">用户词库管理</Item>
+    <Item Command ="YQ_TRANSLATE" ImageFile ="\YQ_FY.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">中英翻译选中文字</Item>
+    <Item Command ="YQ_UPDTEXTLIST" ImageFile ="\YQ_EQ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">列表刷新文字</Item>
+    <Item Command ="YQ_TEXT" ImageFile ="\YQ_tt.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">输入单行文本</Item>
+    <Item Command ="YQ_SUPEREDIT" ImageFile ="\YQ_ttE.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">编辑各种文字</Item>
+    <Item Command ="YQ_DICT2TEXT" ImageFile ="\YQ_ttG.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">用字典换字</Item>
+    <Item Command ="YQ_HZ_TEXT" ImageFile ="\YQ_cTT.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">新建或输入文本</Item>
+    <Item Command ="YQ_HZ_EDIT" ImageFile ="\YQ_CED.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">编辑或输出文本</Item>
+    <Item Command ="YQ_TEXT_REPLACE" ImageFile ="\YQ_ttR.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">文字替换计算替换</Item>
+    <Item Command ="YQ_REPLACE_SUBSTRS" ImageFile ="\YQ_ttRS.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">替换多个文字子串</Item>
+    <Item Command ="YQ_TEXT_APPEND" ImageFile ="\YQ_ttA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">连接多个文字</Item>
+    <Item Command ="YQ_JTEXT" ImageFile ="\YQ_ttJ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">分行合并多文字</Item>
+    <Item Command ="YQ_TEXT_BREAK2" ImageFile ="\YQ_ttB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">打断文字为两段</Item>
+    <Item Command ="YQ_ETEXT" ImageFile ="\YQ_ttBB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">打散文字为字符</Item>
+    <Item Command ="YQ_ARRAY_NUMBERS" ImageFile ="\YQ_1234.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">递增复制数值文字</Item>
+    <Item Command ="YQ_INCREASE_NUMBERS" ImageFile ="\YQ_INC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">数字统一加增量</Item>
+    <Item Command ="YQ_INCREASE_TEXT" ImageFile ="\YQ_ttZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">递增数字文字</Item>
+    <Item Command ="YQ_FINDTEXT" ImageFile ="\YQ_ttF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">寻找特定文字</Item>
+    <Item Command ="YQ_EXCHANGELOCATION" ImageFile ="\YQ_JH.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">交换文本内容</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="文字其他">
+    <Item Command ="YQ_SLDSTYLES" ImageFile ="\YQ_ttN.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">新建字体样式</Item>
+    <Item Command ="YQ_TEXT_CSTYLE" ImageFile ="\YQ_ttS.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">设定当前文字样式</Item>
+    <Item Command ="YQ_TEXT_UPDATE" ImageFile ="\YQ_ttU.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">选样式更新文字</Item>
+    <Item Command ="YQ_REPLACEFONTS" ImageFile ="\YQ_ttRF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">自动替换缺文字档</Item>
+    <Item Command ="YQ_CHANGETEXT" ImageFile ="\YQ_ttC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">批量文字修改排版</Item>
+    <Item Command ="YQ_TEXT_WIDTH" ImageFile ="\YQ_ttW.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">修改高度/高宽比</Item>
+    <Item Command ="YQ_REORDERTEXTS" ImageFile ="\YQ_ttPX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">文字表格重新排序</Item>
+    <Item Command ="YQ_TEXT_ALIGNMENTLEFT" ImageFile ="\YQ_ttL.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">对正方式改为左下</Item>
+    <Item Command ="YQ_TEXT_ALIGNMENTRIGHT" ImageFile ="\YQ_ttLL.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">对正方式改为右下</Item>
+    <Item Command ="YQ_TEXT_RESTOREMIRR" ImageFile ="\YQ_ttRR.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">文字镜像/角度恢复</Item>
+    <Item Command ="YQ_TEXT2ATTDEF" ImageFile ="\YQ_ttSX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">转换文字或属性定义</Item>
+    <Item Command ="YQ_TXTEXP" ImageFile ="\YQ_ttX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">炸碎文字为线段</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="标注绘制">
+    <Item Command ="YQ_SETDWGSCALE" ImageFile ="\YQ_sd.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">设图纸/符号比例</Item>
+    <Item Command ="YQ_DIM_LINEAR" ImageFile ="\YQ_dd.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">水平垂直标注</Item>
+    <Item Command ="YQ_DIM_ALIGNED" ImageFile ="\YQ_ddX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">对齐标注</Item>
+    <Item Command ="YQ_DIM_BASELINE" ImageFile ="\YQ_ddB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">基线标注</Item>
+    <Item Command ="YQ_DIM_RADIUS" ImageFile ="\YQ_ddR.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">半径标注</Item>
+    <Item Command ="YQ_DIM_DIAMETER" ImageFile ="\YQ_ddJ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">直径标注</Item>
+    <Item Command ="YQ_DIM_ANGULAR" ImageFile ="\YQ_ddAN.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">角度标注</Item>
+    <Item Command ="YQ_DIM_ARC" ImageFile ="\YQ_ddAR.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">弧长标注</Item>
+    <Item Command ="YQ_DIM_ARC3PTS" ImageFile ="\YQ_ddA3.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">3点弧长标注</Item>
+    <Item Command ="YQ_DIM_QDIM" ImageFile ="\YQ_ddQ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">快速标注</Item>
+    <Item Command ="YQ_DIM_CLOSEDSPACE" ImageFile ="\YQ_ddZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">闭合空间自动标注</Item>
+    <Item Command ="YQ_DIM_PLINE" ImageFile ="\YQ_ddZZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">闭合多段线标注</Item>
+    <Item Command ="YQ_DIM_POLYGONSIDES" ImageFile ="\YQ_ddSS.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">标注多段线/线边长</Item>
+    <Item Command ="YQ_DIM_AXISWD" ImageFile ="\YQ_ddW.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">门窗及轴线标注</Item>
+    <Item Command ="YQ_DIM_BLOCKS" ImageFile ="\YQ_ddWW.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">图块及内墙标注</Item>
+    <Item Command ="YQ_DIM_CUPBOARD" ImageFile ="\YQ_ddGZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">立面柜子标注</Item>
+    <Item Command ="YQ_DIM_STAIRS" ImageFile ="\YQ_ddST.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">楼梯踏步等分标注</Item>
+    <Item Command ="YQ_DIM_DVD" ImageFile ="\YQ_ddVD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">定数等分标注</Item>
+    <Item Command ="YQ_DIM_INTPTS" ImageFile ="\YQ_ddXX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">拉线按交点标注</Item>
+    <Item Command ="YQ_DIM_CURVEINTPTS" ImageFile ="\YQ_ddCC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">找曲线交点标注弦长</Item>
+    <Item Command ="YQ_DIM_ARCPARTS" ImageFile ="\YQ_ddAC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">找圆弧交点标注弧长</Item>
+    <Item Command ="YQ_DIM_REARRANGE" ImageFile ="\YQ_ddP.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">选数字排列重建标注</Item>
+    <Item Command ="YQ_DIM_MERGEBASE" ImageFile ="\YQ_ddBB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">合并绘制基线标注</Item>
+    <Item Command ="YQ_DIM_SWITCHLAYER" ImageFile ="\YQ_ddER.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">切换标注图层</Item>
+    <Item Command ="YQ_DIM_CSTYLE" ImageFile ="\YQ_ddS.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">设定当前标注样式</Item>
+    <Item Command ="YQ_DIM_UPDATE" ImageFile ="\YQ_ddU.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">选样式更新标注</Item>
+    <Item Command ="YQ_DIM_SWITCHSTYLE" ImageFile ="\YQ_ddYQ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">切换强制源泉样式</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="标注修改">
+    <Item Command ="YQ_DIM_ADJUST" ImageFile ="\YQ_ddAA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">标注文字避让</Item>
+    <Item Command ="YQ_DIM_EXTEND" ImageFile ="\YQ_ddE.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">移动脚点</Item>
+    <Item Command ="YQ_DIM_DIVIDE" ImageFile ="\YQ_dd2.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">分裂扩展为多个</Item>
+    <Item Command ="YQ_DIM_MERGE" ImageFile ="\YQ_dd1.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">标注合并</Item>
+    <Item Command ="YQ_DIM_ALIGN" ImageFile ="\YQ_ddV.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">排齐脚点界线</Item>
+    <Item Command ="YQ_DIM_ALIGNDIMLINE" ImageFile ="\YQ_ddVV.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">排齐界线</Item>
+    <Item Command ="YQ_DIM_ALIGNPOINTS" ImageFile ="\YQ_ddL.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">排齐脚点</Item>
+    <Item Command ="YQ_DIM_EXTLEN" ImageFile ="\YQ_ddLE.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">统一标注界线长度</Item>
+    <Item Command ="YQ_DIM_ADJUSTBASE" ImageFile ="\YQ_ddY.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">修正基线间距</Item>
+    <Item Command ="YQ_DIM_BATCHBASE" ImageFile ="\YQ_ddYY.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">批量基线间距</Item>
+    <Item Command ="YQ_DIM_SHOWEXTLINE" ImageFile ="\YQ_dd2E.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">显示2脚线</Item>
+    <Item Command ="YQ_DIM_SWITCH_AR" ImageFile ="\YQ_ddRA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">转换为对齐或转角</Item>
+    <Item Command ="YQ_DIM_REVERSE" ImageFile ="\YQ_ddFZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">翻转标注文字</Item>
+    <Item Command ="YQ_DIM_FIX" ImageFile ="\YQ_ddF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">固化标注文字</Item>
+    <Item Command ="YQ_DIM_RECOVER" ImageFile ="\YQ_ddRE.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">标注恢复原值</Item>
+    <Item Command ="YQ_DIM_MMTOM" ImageFile ="\YQ_ddM.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">单位转化为米</Item>
+    <Item Command ="YQ_DIM_ROUND" ImageFile ="\YQ_dd0.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">修改标注精度(取整)</Item>
+    <Item Command ="YQ_DIM_NEWTEXT" ImageFile ="\YQ_ddN.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">键入新标注文字</Item>
+    <Item Command ="YQ_DIM_TEDIT" ImageFile ="\YQ_ddT.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">标注文字移位</Item>
+    <Item Command ="YQ_DIM_HOME" ImageFile ="\YQ_ddH.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">标注文字复位</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="曲线工具">
+    <Item Command ="YQ_PLINE_VERTEXES" ImageFile ="\YQ_xxV.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">多段线增删顶点</Item>
+    <Item Command ="YQ_PLINE_OPTIMIZE" ImageFile ="\YQ_xxY.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">优化多段线顶点</Item>
+    <Item Command ="YQ_LINE2ARC" ImageFile ="\YQ_xxA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">多段线的段变弧</Item>
+    <Item Command ="YQ_PLSEGMENT_WIDTH" ImageFile ="\YQ_xxW.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">多段线改段宽</Item>
+    <Item Command ="YQ_PLSEGMENT_OFFSET" ImageFile ="\YQ_xxS.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">偏移多段线的一段</Item>
+    <Item Command ="YQ_PLINE_JOIN" ImageFile ="\YQ_xxJ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">连成多段线</Item>
+    <Item Command ="YQ_PLINE_CLOSE" ImageFile ="\YQ_xxC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">连成闭合多段线</Item>
+    <Item Command ="YQ_PLINE_REVERSE" ImageFile ="\YQ_xxFZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">反转曲线方向</Item>
+    <Item Command ="YQ_WPLINE2WIREFRAME" ImageFile ="\YQ_xxF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">厚度多段线变线框</Item>
+    <Item Command ="YQ_CONNECTVERTEXES" ImageFile ="\YQ_LJX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">连接两根多段线顶点</Item>
+    <Item Command ="YQ_OUTLINE" ImageFile ="\YQ_lk.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">求边界线/外轮廓线</Item>
+    <Item Command ="YQ_INNERCONTOURS" ImageFile ="\YQ_nlk.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">求内部轮廓线</Item>
+    <Item Command ="YQ_INNEROFFSET" ImageFile ="\YQ_nlks.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">求内轮廓+偏移</Item>
+    <Item Command ="YQ_TOFREEHAND" ImageFile ="\YQ_hw.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">手绘效果线条抖动</Item>
+    <Item Command ="YQ_BREAK_EQUAL" ImageFile ="\YQ_DF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">等分曲线</Item>
+    <Item Command ="YQ_2PTSDIVIDE" ImageFile ="\YQ_DFx.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">两点等分</Item>
+    <Item Command ="YQ_ELLIPSE2ARC" ImageFile ="\YQ_e2a.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">用圆弧模拟椭圆</Item>
+    <Item Command ="YQ_SPLINE2APLINE" ImageFile ="\YQ_cca.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">曲线转圆弧多段线</Item>
+    <Item Command ="YQ_SPLINE2XPLINE" ImageFile ="\YQ_ccx.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">曲线转线段多段线</Item>
+    <Item Command ="YQ_CURVE2BOWSTRING" ImageFile ="\YQ_ccxx.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">等弦长分曲线</Item>
+    <Item Command ="YQ_CURVEPROJECTION" ImageFile ="\YQ_ccy.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">求曲线投影线</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="特殊工具">
+    <Item Command ="YQ_NUMBERLINES" ImageFile ="\YQ_vv.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">数字行管理与应用</Item>
+    <Item Command ="YQ_DOUBLELINE" ImageFile ="\YQ_xd.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">绘制双线</Item>
+    <Item Command ="YQ_TRIMDOUBLELINE" ImageFile ="\YQ_TX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">修剪双线</Item>
+    <Item Command ="YQ_DLINETHICKNESS" ImageFile ="\YQ_xdT.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">修正双线厚度</Item>
+    <Item Command ="YQ_2DOUBLELINE" ImageFile ="\YQ_xxd.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">单线变双线</Item>
+    <Item Command ="YQ_DLINE_OFFSET" ImageFile ="\YQ_xdo.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">双线净距偏移</Item>
+    <Item Command ="YQ_DOUBLELINEAXIS" ImageFile ="\YQ_ce.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">求双线中轴线</Item>
+    <Item Command ="YQ_ALIGNMENT" ImageFile ="\YQ_DQ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">对齐图元</Item>
+    <Item Command ="YQ_LEADERALIGN" ImageFile ="\YQ_aaDQ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">箭头引线对齐</Item>
+    <Item Command ="YQ_ALIGNFRAME" ImageFile ="\YQ_tkTZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">图框按线长调整</Item>
+    <Item Command ="YQ_BREAKBYKNIFE" ImageFile ="\YQ_bD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">画线切割</Item>
+    <Item Command ="YQ_BREAKBYKNIVES" ImageFile ="\YQ_bDD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">多线切割</Item>
+    <Item Command ="YQ_BREAKANDERASE" ImageFile ="\YQ_bX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">打断删除框内图元</Item>
+    <Item Command ="YQ_PASTEDETAILDWG" ImageFile ="\YQ_QG.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">切割提取大样图</Item>
+    <Item Command ="YQ_TRANSFORM" ImageFile ="\YQ_TF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">四边形及其他变形</Item>
+    <Item Command ="YQ_BOUNDINGBOX" ImageFile ="\YQ_JX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">求矩形外框</Item>
+    <Item Command ="YQ_TOBOUNDINGBOX" ImageFile ="\YQ_WK.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">变矩形外框</Item>
+    <Item Command ="YQ_MINBOUNDINGBOX" ImageFile ="\YQ_xJX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">最小包裹矩形/外接圆</Item>
+    <Item Command ="YQ_OVERTURN" ImageFile ="\YQ_FZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">随意翻转</Item>
+    <Item Command ="YQ_EXCHANGELOCATION" ImageFile ="\YQ_JH.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">图元交换位置</Item>
+    <Item Command ="YQ_COPY2POINTS" ImageFile ="\YQ_DZBZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">按点阵布置图元</Item>
+    <Item Command ="YQ_ASSISTANTLINES" ImageFile ="\YQ_FZX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">快捷辅助线</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="修改增强">
+    <Item Command ="YQ_SCALE_EACH" ImageFile ="\YQ_aSC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">图元原地缩放</Item>
+    <Item Command ="YQ_ROTATE_EACH" ImageFile ="\YQ_aRT.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">图元原地旋转</Item>
+    <Item Command ="YQ_MIRROR_EACH" ImageFile ="\YQ_aMI.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">图元原地镜像</Item>
+    <Item Command ="YQ_SCALEXYZ" ImageFile ="\YQ_scX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">XY不等比缩放</Item>
+    <Item Command ="YQ_DYNAMICCOPY" ImageFile ="\YQ_cV.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">动态拷贝</Item>
+    <Item Command ="YQ_STRETCH_D" ImageFile ="\YQ_stD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">定距拉伸</Item>
+    <Item Command ="YQ_MOVE_D" ImageFile ="\YQ_vD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">定距移动</Item>
+    <Item Command ="YQ_MOVE_MEMORIAL" ImageFile ="\YQ_vR.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">记忆移动</Item>
+    <Item Command ="YQ_COPY_MEMORIAL" ImageFile ="\YQ_cR.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">记忆拷贝</Item>
+    <Item Command ="YQ_SUPEROFFSET" ImageFile ="\YQ_SF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">同时偏移</Item>
+    <Item Command ="YQ_EXTENDTOPOINT" ImageFile ="\YQ_exX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">延长到指定点或线段</Item>
+    <Item Command ="YQ_JOIN_ARCLINE" ImageFile ="\YQ_FF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">连接线/弧/多段线</Item>
+    <Item Command ="YQ_CONNECT2GLINES" ImageFile ="\YQ_FX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">延长对接两组线段</Item>
+    <Item Command ="YQ_QUICKWIPEOUT" ImageFile ="\YQ_ZZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">快速加减遮罩</Item>
+    <Item Command ="YQ_BREAKALL" ImageFile ="\YQ_bA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">交点齐断</Item>
+    <Item Command ="YQ_BREAKERASE" ImageFile ="\YQ_TE.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">框选打断并删除短线</Item>
+    <Item Command ="YQ_BREAK_AT" ImageFile ="\YQ_BB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">一点打断</Item>
+    <Item Command ="YQ_BREAK_AT2" ImageFile ="\YQ_BF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">二点打断</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="检查修正">
+    <Item Command ="YQ_CLEAR_Z" ImageFile ="\YQ_Z0.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">拍平图元(Z轴归零)</Item>
+    <Item Command ="YQ_BLOCK_Z0" ImageFile ="\YQ_bbZ0.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">拍平图块(Z轴归零)</Item>
+    <Item Command ="YQ_REMOVE_DUPLICATE" ImageFile ="\YQ_RD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">消除重叠的相同图元</Item>
+    <Item Command ="YQ_LINEUNION" ImageFile ="\YQ_LU.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">合并重叠线</Item>
+    <Item Command ="YQ_LINKLINEARC" ImageFile ="\YQ_LX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">连接断线/断圆弧线</Item>
+    <Item Command ="YQ_LINECLEAN" ImageFile ="\YQ_LC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">清除点/短线/空字等</Item>
+    <Item Command ="YQ_ADJUST" ImageFile ="\YQ_JZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">图元校正对齐到网格</Item>
+    <Item Command ="YQ_OBLIQUE_CORRECTION" ImageFile ="\YQ_xgz.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">线段斜改正</Item>
+    <Item Command ="YQ_MERGE" ImageFile ="\YQ_xHB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">杂项合并图层等</Item>
+    <Item Command ="YQ_PURGEALL" ImageFile ="\YQ_puA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">清理无用项目</Item>
+    <Item Command ="YQ_PURGEFILES" ImageFile ="\YQ_puF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">清理文件夹dwg无用项</Item>
+    <Item Command ="YQ_CHECKCOLOR" ImageFile ="\YQ_CYS.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">查图元颜色号</Item>
+    <Item Command ="YQ_FINDNONORTHOLINES" ImageFile ="\YQ_BPX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">找出不正交的线段</Item>
+    <Item Command ="YQ_UCSMATCH" ImageFile ="\YQ_UM.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">找不平行WCS平面图元</Item>
+    <Item Command ="YQ_CHECKORTHOAXIS" ImageFile ="\YQ_BCZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">线段垂直检测</Item>
+    <Item Command ="YQ_REVCLOUD" ImageFile ="\YQ_YX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">修订云线</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="检查修正">
+    <Item Command ="YQ_CLEAR_Z" ImageFile ="\YQ_Z0.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">拍平图元(Z轴归零)</Item>
+    <Item Command ="YQ_BLOCK_Z0" ImageFile ="\YQ_bbZ0.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">拍平图块(Z轴归零)</Item>
+    <Item Command ="YQ_REMOVE_DUPLICATE" ImageFile ="\YQ_RD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">消除重叠的相同图元</Item>
+    <Item Command ="YQ_LINEUNION" ImageFile ="\YQ_LU.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">合并重叠线</Item>
+    <Item Command ="YQ_LINKLINEARC" ImageFile ="\YQ_LX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">连接断线/断圆弧线</Item>
+    <Item Command ="YQ_LINECLEAN" ImageFile ="\YQ_LC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">清除点/短线/空字等</Item>
+    <Item Command ="YQ_ADJUST" ImageFile ="\YQ_JZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">图元校正对齐到网格</Item>
+    <Item Command ="YQ_OBLIQUE_CORRECTION" ImageFile ="\YQ_xgz.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">线段斜改正</Item>
+    <Item Command ="YQ_MERGE" ImageFile ="\YQ_xHB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">杂项合并图层等</Item>
+    <Item Command ="YQ_PURGEALL" ImageFile ="\YQ_puA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">清理无用项目</Item>
+    <Item Command ="YQ_PURGEFILES" ImageFile ="\YQ_puF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">清理文件夹dwg无用项</Item>
+    <Item Command ="YQ_CHECKCOLOR" ImageFile ="\YQ_CYS.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">查图元颜色号</Item>
+    <Item Command ="YQ_FINDNONORTHOLINES" ImageFile ="\YQ_BPX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">找出不正交的线段</Item>
+    <Item Command ="YQ_UCSMATCH" ImageFile ="\YQ_UM.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">找不平行WCS平面图元</Item>
+    <Item Command ="YQ_CHECKORTHOAXIS" ImageFile ="\YQ_BCZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">线段垂直检测</Item>
+    <Item Command ="YQ_REVCLOUD" ImageFile ="\YQ_YX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">修订云线</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="图块属性">
+    <Item Command ="YQ_HEAPTREES" ImageFile ="\YQ_zw.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">成片乔灌木</Item>
+    <Item Command ="YQ_LANDSCAPE" ImageFile ="\YQ_hj.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">环境分析符号</Item>
+    <Item Command ="YQ_BLOCK2BYLAYER" ImageFile ="\YQ_bb0.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">改图块内图层/颜色</Item>
+    <Item Command ="YQ_BLOCKBASEPOINT" ImageFile ="\YQ_bbI.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">图块改基点</Item>
+    <Item Command ="YQ_BLOCK2NEWNAME" ImageFile ="\YQ_bbR.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">图块改名</Item>
+    <Item Command ="YQ_BLOCK_BATCHRENAME" ImageFile ="\YQ_bbG.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">图块批量改名</Item>
+    <Item Command ="YQ_QUICKDETAILBLOCK" ImageFile ="\YQ_bbD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">快速制作大样图图块</Item>
+    <Item Command ="YQ_BLOCKSCALE" ImageFile ="\YQ_bbS.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">设置图块(图框)比例</Item>
+    <Item Command ="YQ_BLOCK_WRITEOUT" ImageFile ="\YQ_bbW.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">批量导出图块文件</Item>
+    <Item Command ="YQ_REPLACEBYDWG" ImageFile ="\YQ_bbTD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">用dwg替代图中块</Item>
+    <Item Command ="YQ_QUICKNEWBLOCK" ImageFile ="\YQ_bbN.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">快速制作一个图块</Item>
+    <Item Command ="YQ_BLOCK_ADD" ImageFile ="\YQ_bbA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">往图块中加入图元</Item>
+    <Item Command ="YQ_BLOCK_REMOVE" ImageFile ="\YQ_bbE.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">删除块中一个图元</Item>
+    <Item Command ="YQ_BLOCK_COPY" ImageFile ="\YQ_bbC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">从图块中复制图元</Item>
+    <Item Command ="YQ_BLOCKWIPEOUT" ImageFile ="\YQ_bbZZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">图块加减遮罩</Item>
+    <Item Command ="YQ_CREATE_MINSERT" ImageFile ="\YQ_bbJM.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">制作匿名加密块</Item>
+    <Item Command ="YQ_EXPLODE_MINSERT" ImageFile ="\YQ_bbX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">炸碎图块或匿名块</Item>
+    <Item Command ="YQ_EXPLODE_NBLOCK" ImageFile ="\YQ_bbXX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">王炸嵌套块</Item>
+    <Item Command ="YQ_BLOCKTEXT2ATT" ImageFile ="\YQ_bbsx.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">块中文字转为属性</Item>
+    <Item Command ="YQ_MODIFY_ATT" ImageFile ="\YQ_sxG.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">修改块内属性域</Item>
+    <Item Command ="YQ_INCREASE_ATT" ImageFile ="\YQ_sxZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">递增块内属性域</Item>
+    <Item Command ="YQ_CHANGEATTS" ImageFile ="\YQ_sxC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">批量处理块属性</Item>
+    <Item Command ="YQ_BLOCKATT2TEXT" ImageFile ="\YQ_sxT.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">提取块内属性为文字</Item>
+    <Item Command ="YQ_ERASE_BLKATT" ImageFile ="\YQ_sxE.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">删除块内属性</Item>
+    <Item Command ="YQ_BLOCKS" ImageFile ="\YQ_KK.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">内部图库</Item>
+    <Item Command ="YQ_BLOCKVIEWER" ImageFile ="\YQ_BV.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">用户图库</Item>
+    <Item Command ="YQ_BLOCKVIEWER1" ImageFile ="\YQ_BV1.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">用户图库1</Item>
+    <Item Command ="YQ_BLOCKVIEWER2" ImageFile ="\YQ_BV2.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">用户图库2</Item>
+    <Item Command ="YQ_BLOCKVIEWER3" ImageFile ="\YQ_BV3.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">用户图库3</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="填充&amp;线型">
+    <Item Command ="YQ_HATCHKEYS" ImageFile ="\YQ_hhSC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">设置填充图案快捷键</Item>
+    <Item Command ="YQ_HATCHINGSCALE" ImageFile ="\YQ_xtc.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">特性.改填充及比例</Item>
+    <Item Command ="YQ_HATCH_QUICK" ImageFile ="\YQ_TC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">快捷填充</Item>
+    <Item Command ="YQ_HATCH_MATCH" ImageFile ="\YQ_TCT.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">选图案作为模板填充</Item>
+    <Item Command ="YQ_HATCH_SLIDE" ImageFile ="\YQ_TCC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">参数及幻灯片填充</Item>
+    <Item Command ="YQ_HATCH_NEWBASE" ImageFile ="\YQ_hhI.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">设/移Hatch基准点</Item>
+    <Item Command ="YQ_HATCH_ANGLE" ImageFile ="\YQ_hhA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">修改填充角度</Item>
+    <Item Command ="YQ_HATCH_BORDER" ImageFile ="\YQ_hhB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">重建填充图案边界</Item>
+    <Item Command ="YQ_HATCH_CLIPPING" ImageFile ="\YQ_hhJ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">剪裁填充图案</Item>
+    <Item Command ="YQ_HATCH_SPLIT" ImageFile ="\YQ_hhX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">拆分填充图案</Item>
+    <Item Command ="YQ_HATCH_UNION" ImageFile ="\YQ_hhU.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">合并填充图案</Item>
+    <Item Command ="YQ_HATCH_DISASSO" ImageFile ="\YQ_hhGL.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">去除填充关联</Item>
+    <Item Command ="YQ_FILL_WALL" ImageFile ="\YQ_wwF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">填充墙、柱</Item>
+    <Item Command ="YQ_MKPAT" ImageFile ="\YQ_MP.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">制作Hatch图案1mm</Item>
+    <Item Command ="YQ_MKPAT1" ImageFile ="\YQ_MP1.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">制作Hatch图案1:1</Item>
+    <Item Command ="YQ_MKPAT_BYHATCH" ImageFile ="\YQ_MPP.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">提取制作填充图案</Item>
+    <Item Command ="YQ_LTYPEKEYS" ImageFile ="\YQ_ltSC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">设置线型快捷键</Item>
+    <Item Command ="YQ_LTSCALE" ImageFile ="\YQ_xt.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">修改线型及比例</Item>
+    <Item Command ="YQ_LTSWITCH" ImageFile ="\YQ_xtS.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">切换线型(含块内)</Item>
+    <Item Command ="YQ_PUTLTSCALE" ImageFile ="\YQ_pLTS.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">替换同线型比例</Item>
+    <Item Command ="YQ_MKLINETYPE" ImageFile ="\YQ_mLT.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">制作字符线型</Item>
+    <Item Command ="YQ_LOADLINETYPE" ImageFile ="\YQ_lLT.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">载入线型</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="图层工具">
+    <Item Command ="YQ_LAYER_2CURRENT" ImageFile ="\YQ_erC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">选图元改到当前层</Item>
+    <Item Command ="YQ_LAYER_NEW" ImageFile ="\YQ_erN.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">新建图层</Item>
+    <Item Command ="YQ_LAYER_CURRENT" ImageFile ="\YQ_erS.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">设定当前图层</Item>
+    <Item Command ="YQ_LAYER_SAVERESTORE" ImageFile ="\YQ_erR.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">保存恢复图层开关状态</Item>
+    <Item Command ="YQ_LAYER_ISO" ImageFile ="\YQ_erD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">关闭非选图层</Item>
+    <Item Command ="YQ_LAYER_OFF" ImageFile ="\YQ_erF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">关闭图层</Item>
+    <Item Command ="YQ_LAYER_OFF_ALL" ImageFile ="\YQ_erAF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">关闭全部图层</Item>
+    <Item Command ="YQ_LAYER_ON" ImageFile ="\YQ_erA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">打开图层</Item>
+    <Item Command ="YQ_LAYER_ON_ALL" ImageFile ="\YQ_erAA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">打开全部图层</Item>
+    <Item Command ="YQ_LAYER_ON2OFF" ImageFile ="\YQ_erV.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">切换全部图层开关</Item>
+    <Item Command ="YQ_LAYER_LOCK" ImageFile ="\YQ_erL.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">锁定图层</Item>
+    <Item Command ="YQ_LAYER_ISO_LOCK" ImageFile ="\YQ_erDL.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">锁定非选图层</Item>
+    <Item Command ="YQ_LAYER_UNLOCK" ImageFile ="\YQ_erU.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">解锁图层</Item>
+    <Item Command ="YQ_LAYER_FREEZE" ImageFile ="\YQ_erZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">冻结图层</Item>
+    <Item Command ="YQ_LAYER_ISO_FREEZE" ImageFile ="\YQ_erDZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">冻结非选图层</Item>
+    <Item Command ="YQ_LAYER_THAW" ImageFile ="\YQ_erT.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">解冻图层</Item>
+    <Item Command ="YQ_LAYER_NOFF" ImageFile ="\YQ_erBF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">关闭块内图层</Item>
+    <Item Command ="YQ_LAYER_NFREEZE" ImageFile ="\YQ_erBZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">冻结块内图层</Item>
+    <Item Command ="YQ_LAYER_SHOWALL" ImageFile ="\YQ_erER.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">解冻/解锁/打开所有</Item>
+    <Item Command ="YQ_LAYER_REPLACE" ImageFile ="\YQ_erTD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">批量替换图层</Item>
+    <Item Command ="YQ_LAYER_BATCHRENAME" ImageFile ="\YQ_erG.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">图层批量改名</Item>
+    <Item Command ="YQ_MERGE_LAYER" ImageFile ="\YQ_erM.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">合并图层</Item>
+    <Item Command ="YQ_FORMLAYBYCOLOR" ImageFile ="\YQ_c2er.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">按图元颜色重新分层</Item>
+    <Item Command ="YQ_LAYERKEYS" ImageFile ="\YQ_erSC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">设置转换图层快捷键</Item>
+    <Item Command ="YQ_COLORKEYS" ImageFile ="\YQ_erK.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">设置转换颜色快捷键</Item>
+    <Item Command ="YQ_OUTPUTLAYERS" ImageFile ="\YQ_erO.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">导出图层文件</Item>
+    <Item Command ="YQ_INPUTLAYERS" ImageFile ="\YQ_erI.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">导入图层文件</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="视口布局">
+    <Item Command ="YQ_VPLAYER_MANAGER" ImageFile ="\YQ_vvC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">管理视口图层</Item>
+    <Item Command ="YQ_VPLAYER_FREEZE" ImageFile ="\YQ_vvZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">冻结视口图层</Item>
+    <Item Command ="YQ_VPLAYER_NFREEZE" ImageFile ="\YQ_vvBZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">冻结视口块内图层</Item>
+    <Item Command ="YQ_VPLAYER_THAW" ImageFile ="\YQ_vvT.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">解冻视口图层</Item>
+    <Item Command ="YQ_VPLAYER_ISO" ImageFile ="\YQ_vvDZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">隔离视口图层</Item>
+    <Item Command ="YQ_VPLAYER_ISOALL" ImageFile ="\YQ_vvZZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">隔离其他视口图层</Item>
+    <Item Command ="YQ_VPLAYER_GRAY" ImageFile ="\YQ_vvH.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">视口图层变色</Item>
+    <Item Command ="YQ_VPLAYER_RECOVER" ImageFile ="\YQ_vvHF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">还原视口层颜色</Item>
+    <Item Command ="YQ_VIEWPORT_NEW" ImageFile ="\YQ_vvN.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">新建视口</Item>
+    <Item Command ="YQ_VIEWPORT_SPLIT" ImageFile ="\YQ_vv2.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">拆分视口</Item>
+    <Item Command ="YQ_MODEL2VIEWPORT" ImageFile ="\YQ_mVV.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">模型范围新建视口</Item>
+    <Item Command ="YQ_CURVE2VIEWPORT" ImageFile ="\YQ_xxVV.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">闭合曲线变视口</Item>
+    <Item Command ="YQ_VIEWPORT_SCALE" ImageFile ="\YQ_vvS.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">设定视口比例</Item>
+    <Item Command ="YQ_SCALEVPS" ImageFile ="\YQ_vvSC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">缩放视口外框及比例</Item>
+    <Item Command ="YQ_VIEWPORT_SYNC" ImageFile ="\YQ_vvDQ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">对齐视口内容</Item>
+    <Item Command ="YQ_VIEWPORT_PAN" ImageFile ="\YQ_vvP.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">平移视口视图</Item>
+    <Item Command ="YQ_VIEWPORT_LOCK" ImageFile ="\YQ_vvL.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">锁定视口</Item>
+    <Item Command ="YQ_VIEWPORT_LOCK_ALL" ImageFile ="\YQ_vvAL.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">锁定全部视口</Item>
+    <Item Command ="YQ_VIEWPORT_UNLOCK" ImageFile ="\YQ_vvU.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">解锁视口</Item>
+    <Item Command ="YQ_VIEWPORT_UNLOCK_ALL" ImageFile ="\YQ_vvAU.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">解锁全部视口</Item>
+    <Item Command ="YQ_VIEWPORT_OFF" ImageFile ="\YQ_vvF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">关闭视口</Item>
+    <Item Command ="YQ_VIEWPORT_OFF_ALL" ImageFile ="\YQ_vvAF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">关闭全部视口</Item>
+    <Item Command ="YQ_VIEWPORT_ON" ImageFile ="\YQ_vvA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">打开视口</Item>
+    <Item Command ="YQ_VIEWPORT_ON_ALL" ImageFile ="\YQ_vvAA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">打开全部视口</Item>
+    <Item Command ="YQ_VIEWPORT2PSPACE" ImageFile ="\YQ_vvBB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">视口转布局块</Item>
+    <Item Command ="YQ_LAYOUT_BATCHRENAME" ImageFile ="\YQ_tzG.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">布局批量改名</Item>
+    <Item Command ="YQ_FRAMES2LAYOUTS" ImageFile ="\YQ_tzF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">选图框拆分为布局</Item>
+    <Item Command ="YQ_FRAMEDIVIDED" ImageFile ="\YQ_tzFG.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">图纸绘图区分割</Item>
+    <Item Command ="YQ_UCSDIR" ImageFile ="\YQ_vvD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">旋转立面视图4方向</Item>
+    <Item Command ="YQ_SNAPSHOT" ImageFile ="\YQ_KZ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">视图快照</Item>
+    <Item Command ="YQ_HYPERLINK" ImageFile ="\YQ_CLJ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">超链接及视图管理</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="特性刷子">
+    <Item Command ="YQ_MATCH_BLOCK" ImageFile ="\YQ_ssB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">刷子.匹配替换图块</Item>
+    <Item Command ="YQ_MATCH_DYNPROPS" ImageFile ="\YQ_ssD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">刷子.匹配动态块属性</Item>
+    <Item Command ="YQ_MATCH_ROTATION" ImageFile ="\YQ_ssA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">刷子.匹配角度</Item>
+    <Item Command ="YQ_MATCH_LAYER" ImageFile ="\YQ_ssER.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">刷子.匹配图层</Item>
+    <Item Command ="YQ_MATCH_COLOR" ImageFile ="\YQ_ssC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">刷子.匹配颜色</Item>
+    <Item Command ="YQ_MATCH_LAYERCOLOR" ImageFile ="\YQ_ssCC.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">刷子.匹配图层与颜色</Item>
+    <Item Command ="YQ_MATCH_VPLAYER" ImageFile ="\YQ_ssVV.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">刷子.匹配视口图层</Item>
+    <Item Command ="YQ_MATCH_CONTENT" ImageFile ="\YQ_ssT.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">刷子.匹配文字内容</Item>
+    <Item Command ="YQ_MATCH_STYLE" ImageFile ="\YQ_ssST.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">刷子.匹配文字样式</Item>
+    <Item Command ="YQ_MATCH_TEXTHEIGHT" ImageFile ="\YQ_ssH.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">刷子.匹配文字高度</Item>
+    <Item Command ="YQ_MATCH_TAGTEXT" ImageFile ="\YQ_ssQ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">刷子.匹配标签内容</Item>
+    <Item Command ="YQ_MATCH_WIDTH" ImageFile ="\YQ_ssW.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">刷子.匹配线宽度</Item>
+    <Item Command ="YQ_MATCH_LINETYPE" ImageFile ="\YQ_ssXT.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">刷子.匹配线型</Item>
+    <Item Command ="YQ_MATCH_THICKNESS" ImageFile ="\YQ_ssTH.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">刷子.匹配竖向厚度</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="其他工具">
+    <Item Command ="YQ_BATCHPLOT" ImageFile ="\YQ_bPT.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">选图框批量打印</Item>
+    <Item Command ="YQ_CATALOG" ImageFile ="\YQ_dwgL.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">编制图纸目录</Item>
+    <Item Command ="YQ_OUTPUTDWGS" ImageFile ="\YQ_dwgS.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">选图框归档图纸</Item>
+    <Item Command ="YQ_ARRANGEDWGS" ImageFile ="\YQ_dwgA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">排列合并图档</Item>
+    <Item Command ="YQ_HIDESELECT" ImageFile ="\YQ_eeF.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">隐藏选择图元</Item>
+    <Item Command ="YQ_HIDEUNSELECT" ImageFile ="\YQ_eeD.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">隐藏非选择图元</Item>
+    <Item Command ="YQ_DISPLAYHIDE" ImageFile ="\YQ_eeA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">显示临时隐藏图元</Item>
+    <Item Command ="YQ_DISPLAYALL" ImageFile ="\YQ_eeAA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">强制显示全部图元</Item>
+    <Item Command ="YQ_QUICKGROUP" ImageFile ="\YQ_ggN.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">快速制作一个编组</Item>
+    <Item Command ="YQ_EXPLODEGROUP" ImageFile ="\YQ_ggX.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">解散一个编组</Item>
+    <Item Command ="YQ_GROUP_ADD" ImageFile ="\YQ_ggA.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">加入一个编组</Item>
+    <Item Command ="YQ_GROUP_REMOVE" ImageFile ="\YQ_ggE.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">删除编组中图元</Item>
+    <Item Command ="YQ_GROUP_SEPARATE" ImageFile ="\YQ_ggS.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">从编组中分离图元</Item>
+    <Item Command ="YQ_PURGEGROUP" ImageFile ="\YQ_ggP.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">清除无用编组</Item>
+    <Item Command ="YQ_SWITCH_DYNAMIC" ImageFile ="\YQ_dtYQ.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">切换是否使用动态</Item>
+    <Item Command ="YQ_DRAWCLIPBOARD" ImageFile ="\YQ_ZTB.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">画出Excel粘贴板坐标</Item>
+    <Item Command ="YQ_ACAD2KML" ImageFile ="\YQ_a2k.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">输出到谷歌地球</Item>
+    <Item Command ="YQ_COMMANDFINDER" ImageFile ="\YQ_zml.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">源泉设计命令查找</Item>
+    <Item Command ="YQ_LASTYQCMD" ImageFile ="\YQ_qq.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">重复上一个源泉命令</Item>
+  </Group>
+  <Group TextColor ="#FFF5F5F5" Title ="ET工具">
+    <Group TextColor ="#FFF5F5F5" Title ="ET文字工具">
+      <Item Command ="_tcase" ImageFile ="\YQ_tcase.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET文字改大小写</Item>
+      <Item Command ="_tcount" ImageFile ="\YQ_tcount.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET文字编号</Item>
+      <Item Command ="_tjust" ImageFile ="\YQ_tjust.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET修改文字对正方式</Item>
+      <Item Command ="_textfit" ImageFile ="\YQ_textfit.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET限制文字总宽度</Item>
+      <Item Command ="_torient" ImageFile ="\YQ_torient.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET旋转文字方向</Item>
+      <Item Command ="_tscale" ImageFile ="\YQ_tscale.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET缩放文字或定高</Item>
+      <Item Command ="_arctext" ImageFile ="\YQ_arctext.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET弧形字串</Item>
+      <Item Command ="_txtexp" ImageFile ="\YQ_txtexp.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET炸开文字为线</Item>
+      <Item Command ="_tcircle" ImageFile ="\YQ_tcircle.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET文字加圆框方框</Item>
+      <Item Command ="_textmask" ImageFile ="\YQ_textmask.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET文字加遮罩</Item>
+      <Item Command ="_textunmask" ImageFile ="\YQ_textunmask.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET除文字遮罩</Item>
+      <Item Command ="_txt2mtxt" ImageFile ="\YQ_txt2mtxt.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET单行字变多行</Item>
+    </Group>
+    <Group TextColor ="#FFF5F5F5" Title ="ET标注工具">
+      <Item Command ="_dimex" ImageFile ="\YQ_dimex.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET标注样式输出</Item>
+      <Item Command ="_dimim" ImageFile ="\YQ_dimim.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET标注样式输入</Item>
+      <Item Command ="_qlattach" ImageFile ="\YQ_qlattach.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET引线附着文字</Item>
+      <Item Command ="_qldetachset" ImageFile ="\YQ_qldetachset.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET引线脱离文字</Item>
+      <Item Command ="_qldetachset" ImageFile ="\YQ_qldetachset.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET全局引线附着文字</Item>
+    </Group>
+    <Group TextColor ="#FFF5F5F5" Title ="ET修改工具">
+      <Item Command ="_extrim" ImageFile ="\YQ_extrim.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET围圈切割</Item>
+      <Item Command ="_trex" ImageFile ="\YQ_trex.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET剪切延伸</Item>
+      <Item Command ="_mstretch" ImageFile ="\YQ_mstretch.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET多窗口拉伸</Item>
+      <Item Command ="_exoffset" ImageFile ="\YQ_exoffset.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET加强偏移</Item>
+      <Item Command ="_mocoro" ImageFile ="\YQ_mocoro.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET移动复制旋转</Item>
+      <Item Command ="_flatten" ImageFile ="\YQ_flatten.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET平面化(曲线转多段线)</Item>
+      <Item Command ="_overkill" ImageFile ="\YQ_overkill.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET消除重叠图元</Item>
+    </Group>
+    <Group TextColor ="#FFF5F5F5" Title ="ET图块工具">
+      <Item Command ="_xlist" ImageFile ="\YQ_xlist.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET块内物列表</Item>
+      <Item Command ="_ncopy" ImageFile ="\YQ_ncopy.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET拷贝块内物</Item>
+      <Item Command ="_burst" ImageFile ="\YQ_burst.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET炸开属性为文字</Item>
+      <Item Command ="_attin" ImageFile ="\YQ_attin.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET块属性读入txt</Item>
+      <Item Command ="_attout" ImageFile ="\YQ_attout.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET块属性输出txt</Item>
+    </Group>
+    <Group TextColor ="#FFF5F5F5" Title ="ET线型和形">
+      <Item Command ="_mkltype" ImageFile ="\YQ_mkltype.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET制作线型</Item>
+      <Item Command ="_shp2blk" ImageFile ="\YQ_shp2blk.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET形变块</Item>
+      <Item Command ="_mkshape" ImageFile ="\YQ_mkshape.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET制作形文件</Item>
+    </Group>
+    <Group TextColor ="#FFF5F5F5" Title ="ET布局工具">
+      <Item Command ="_chspace" ImageFile ="\YQ_chspace.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET转换模型/图纸空间</Item>
+      <Item Command ="_alignspace" ImageFile ="\YQ_alignspace.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET对齐模型/图纸空间</Item>
+      <Item Command ="_layoutmerge" ImageFile ="\YQ_layoutmerge.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET合并视口</Item>
+      <Item Command ="_vpsync" ImageFile ="\YQ_vpsync.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET同步多个视口</Item>
+      <Item Command ="_vpscale" ImageFile ="\YQ_vpscale.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET查询视口比例</Item>
+    </Group>
+    <Group TextColor ="#FFF5F5F5" Title ="ET文件工具">
+      <Item Command ="_imageedit" ImageFile ="\YQ_imageedit.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET图像编辑</Item>
+      <Item Command ="_plt2dwg" ImageFile ="\YQ_plt2dwg.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET转换plt为dwg文件</Item>
+      <Item Command ="_redir" ImageFile ="\YQ_redir.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET重设参照图像路径</Item>
+      <Item Command ="_propulate" ImageFile ="\YQ_propulate.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET更新图形属性</Item>
+    </Group>
+    <Group TextColor ="#FFF5F5F5" Title ="ET选择工具">
+      <Item Command ="_getsel" ImageFile ="\YQ_getsel.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET选择相似项</Item>
+      <Item Command ="'_fs" ImageFile ="\YQ_fs.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET快速选择</Item>
+    </Group>
+    <Group TextColor ="#FFF5F5F5" Title ="ET其他工具">
+      <Item Command ="_xdata" ImageFile ="\YQ_xdata.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET给图元连接外部数据</Item>
+      <Item Command ="_xdlist" ImageFile ="\YQ_xdlist.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET查询图元外部数据</Item>
+      <Item Command ="_aliasedit" ImageFile ="\YQ_aliasedit.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET编辑AutoCAD原始快捷键</Item>
+      <Item Command ="_sysvdlg" ImageFile ="\YQ_sysvdlg.bmp" ImageIndex ="" TextColor ="#FFF5F5F5">ET修改系统变量</Item>
+    </Group>
+  </Group>
+</ScreenMenu>

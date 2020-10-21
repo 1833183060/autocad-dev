@@ -56,9 +56,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RemoteManager\RemoteManager.csproj">
+    <ProjectReference Include="..\RemoteManager\RemoteManager 4.5.csproj">
       <Project>{162D6DDA-53F2-43F0-A1F0-126832A0939F}</Project>
-      <Name>RemoteManager</Name>
+      <Name>RemoteManager 4.5</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
