@@ -16,9 +16,9 @@ namespace AcadUtil
     {       
         public static void CreateGroup(string groupName,ObjectIdCollection ids)
         {
-            Document doc =Application.DocumentManager.MdiActiveDocument;
-            Database db = doc.Database;
-            Editor ed = doc.Editor;
+            //Document doc =Application.DocumentManager.MdiActiveDocument;
+            Database db = HostApplicationServices.WorkingDatabase;
+            //Editor ed = doc.Editor;
 
             Transaction tr =db.TransactionManager.StartTransaction();
 
@@ -38,7 +38,7 @@ namespace AcadUtil
                 // Only set the block name if it isn't in use
                 if (gd.Contains(groupName))
                 { 
-                    ed.WriteMessage("\nA group with this name already exists.");
+                    //ed.WriteMessage("\nA group with this name already exists.");
 
                     throw new System.Exception("A group with this name already exists.");
                 }else{
@@ -50,7 +50,7 @@ namespace AcadUtil
                 // An exception has been thrown, indicating the
                 // name is invalid
 
-                ed.WriteMessage("\nInvalid group name.");
+                //ed.WriteMessage("\nInvalid group name.");
             }
 
             // Create our new group...
@@ -66,7 +66,7 @@ namespace AcadUtil
             // Commit the transaction
             tr.Commit();
             // Report what we've done
-            ed.WriteMessage("\nCreated group named \"{0}\" containing  entities.",grpName);
+            //ed.WriteMessage("\nCreated group named \"{0}\" containing  entities.",grpName);
           }
 
         }
@@ -77,14 +77,14 @@ namespace AcadUtil
         /// </summary>
         /// <param name="stropt"></param>
 
-        public void deleteGroupAndObjs(StringOption stropt)
+        public static void deleteGroupAndObjs(StringOption stropt)
         {
             //定义数据库
             Database db = HostApplicationServices.WorkingDatabase;
             //获取当前文件
-            Document doc = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
+            //Document doc = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument;
             //获取当前命令行对象
-            Editor ed = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument.Editor;
+            //Editor ed = Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument.Editor;
 
             using (Transaction trans = db.TransactionManager.StartTransaction())
             {
@@ -103,9 +103,12 @@ namespace AcadUtil
                         //先删除组中的对象再删除组，直接删除组的话只是将组打散而已
                         foreach (ObjectId id in partGroup.GetAllEntityIds())
                         {
-                            Entity ent = (Entity)id.GetObject(OpenMode.ForWrite);
-                            ent.Erase();
-                            ent.Dispose();
+                            try
+                            {
+                                Entity ent = (Entity)id.GetObject(OpenMode.ForWrite);
+                                ent.Erase();
+                                ent.Dispose();
+                            }catch(System.Exception ex) { }
                         }
                         partGroup.UpgradeOpen();
                         partGroup.Erase(true);

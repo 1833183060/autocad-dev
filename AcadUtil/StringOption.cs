@@ -14,7 +14,11 @@ namespace AcadUtil
     {
         public StringMatchType MatchType { get; set; }
         public string Value { get; set; }
-
+        public StringOption(string v, StringMatchType t)
+        {
+            Value = v;
+            MatchType = t;
+        }
         public bool Match(string str)
         {
             switch (MatchType)

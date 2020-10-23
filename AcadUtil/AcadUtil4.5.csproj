@@ -45,27 +45,35 @@
   <ItemGroup>
     <Reference Include="AcCui">
       <HintPath>..\..\..\..\ObjectARX 2010\inc-x64\AcCui.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="AcDbMgd">
       <HintPath>..\..\..\..\ObjectARX 2010\inc-x64\AcDbMgd.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="acdbmgdbrep">
       <HintPath>..\..\..\..\ObjectARX 2010\inc-x64\acdbmgdbrep.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="AcDx">
       <HintPath>..\..\..\..\ObjectARX 2010\inc-x64\AcDx.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="AcMgd">
       <HintPath>..\..\..\..\ObjectARX 2010\inc-x64\AcMgd.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="AcTcMgd">
       <HintPath>..\..\..\..\ObjectARX 2010\inc-x64\AcTcMgd.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="AcWindows">
       <HintPath>..\..\..\..\ObjectARX 2010\inc-x64\AcWindows.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="AdWindows">
       <HintPath>..\..\..\..\ObjectARX 2010\inc-x64\AdWindows.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net35\Newtonsoft.Json.dll</HintPath>
