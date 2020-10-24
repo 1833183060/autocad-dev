@@ -13,7 +13,8 @@ using Autodesk.AutoCAD.ApplicationServices;
 namespace AcadUtil
 {
     public class MyGroup
-    {       
+    {
+        private static ObjectId erasingGroupId = ObjectId.Null;
         public static void CreateGroup(string groupName,ObjectIdCollection ids)
         {
             //Document doc =Application.DocumentManager.MdiActiveDocument;
@@ -70,15 +71,29 @@ namespace AcadUtil
           }
 
         }
+        private static void Group_ObjectClosed(object sender, ObjectClosedEventArgs e)
+        {
+            if (erasingGroupId == ObjectId.Null) return;
+            Database db = HostApplicationServices.WorkingDatabase;
+            using (Transaction trans = db.TransactionManager.StartTransaction())
+            {
 
+                Group g = trans.GetObject(erasingGroupId, OpenMode.ForWrite)as Group;
+                erasingGroupId = ObjectId.Null;
+                g.Erase();
+                trans.Commit();
+            }
+            
+        }
         /// <summary>
-        /// 删除组及组内对象
+        /// 删除组内对象,并将组id记录到待删除变量
         /// 参考：https://www.cnblogs.com/swtool/p/3810009.html
         /// </summary>
         /// <param name="stropt"></param>
 
         public static void deleteGroupAndObjs(StringOption stropt)
         {
+            if (erasingGroupId != ObjectId.Null) return;
             //定义数据库
             Database db = HostApplicationServices.WorkingDatabase;
             //获取当前文件
@@ -96,10 +111,12 @@ namespace AcadUtil
                 {
                     //获取组对象
                     Group partGroup = trans.GetObject((ObjectId)ide.Value, OpenMode.ForRead) as Group;
-
+                    
                     //
                     if (stropt.Match(partGroup.Name))
                     {
+                        erasingGroupId = partGroup.ObjectId;
+                        partGroup.ObjectClosed += Group_ObjectClosed;
                         //先删除组中的对象再删除组，直接删除组的话只是将组打散而已
                         foreach (ObjectId id in partGroup.GetAllEntityIds())
                         {
@@ -108,11 +125,16 @@ namespace AcadUtil
                                 Entity ent = (Entity)id.GetObject(OpenMode.ForWrite);
                                 ent.Erase();
                                 ent.Dispose();
-                            }catch(System.Exception ex) { }
+                            }
+                            catch(System.Exception ex) {
+                                throw new System.Exception("128");
+                            }
                         }
-                        partGroup.UpgradeOpen();
-                        partGroup.Erase(true);
-                        partGroup.DowngradeOpen();
+                        
+                        break;
+                        //partGroup.UpgradeOpen();
+                        //partGroup.Erase(true);
+                        //partGroup.DowngradeOpen();
                     }
                 }
                 #endregion 删除组
