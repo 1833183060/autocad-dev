@@ -115,6 +115,7 @@ namespace AcadUtil
                     //
                     if (stropt.Match(partGroup.Name))
                     {
+                        partGroup.UpgradeOpen();
                         erasingGroupId = partGroup.ObjectId;
                         partGroup.ObjectClosed += Group_ObjectClosed;
                         //先删除组中的对象再删除组，直接删除组的话只是将组打散而已
