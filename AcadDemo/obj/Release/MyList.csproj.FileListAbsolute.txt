@@ -1,0 +1,13 @@
+D:\mywork\vsproject\acad\MyList\bin\Release\MyList.dll
+D:\mywork\vsproject\acad\MyList\bin\Release\MyList.pdb
+D:\mywork\vsproject\acad\MyList\bin\Release\Autodesk.AutoCAD.Interop.Common.dll
+D:\mywork\vsproject\acad\MyList\bin\Release\Autodesk.AutoCAD.Interop.dll
+D:\mywork\vsproject\acad\MyList\bin\Release\Newtonsoft.Json.dll
+D:\mywork\vsproject\acad\MyList\bin\Release\Newtonsoft.Json.xml
+D:\mywork\vsproject\acad\MyList\obj\Release\MyList.csprojResolveAssemblyReference.cache
+D:\mywork\vsproject\acad\MyList\obj\Release\MyList.Login.resources
+D:\mywork\vsproject\acad\MyList\obj\Release\MyList.csproj.GenerateResource.Cache
+D:\mywork\vsproject\acad\MyList\obj\Release\MyList.dll
+D:\mywork\vsproject\acad\MyList\obj\Release\MyList.pdb
+D:\mywork\acad二次开发\安装包制作工具\agilePluginSetup\MyList.dll
+D:\mywork\acad二次开发\安装包制作工具\agilePluginSetup\MyList.pdb

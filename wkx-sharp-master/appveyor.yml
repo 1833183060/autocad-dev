@@ -1,0 +1,30 @@
+image: Visual Studio 2017
+configuration: Release
+dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+install:
+- ps: .\scripts\update-version.ps1
+before_build:
+- dotnet restore
+build_script:
+- dotnet build
+test_script:
+- dotnet test Wkx.Tests --no-build
+artifacts:
+- path: '**\*.nupkg'
+deploy:
+- provider: NuGet
+  server: https://www.myget.org/F/wkx/api/v2/package
+  api_key:
+    secure: 1z5/yKOcTtb7iqitTKq4jfUED7+pQyJkHz5TryyO4hSAvjrKRThI5e0MRVBkxxzx
+  symbol_server: https://www.myget.org/F/wkx/api/v2/package
+  on:
+    branch: master
+- provider: NuGet
+  api_key:
+    secure: tGdmfvratYIxf1BjUhTaGbbbaSJjCq/G6c55mxgQQ5qUmu/Jfetzibf8uOKzqx9W
+  on:
+    appveyor_repo_tag: true

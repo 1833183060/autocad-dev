@@ -332,7 +332,6 @@
     <Compile Include="Struct0.cs" />
     <Compile Include="Voronoi\VoronoiCell.cs" />
     <Compile Include="Voronoi\VoronoiGraph.cs" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My\Setting\ResolutionControl.resx">

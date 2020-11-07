@@ -84,7 +84,7 @@ class TransientGraphics
                     foreach (Point3d pt in intersectionPts)
                     {
                         Circle marker = new Circle(pt, Vector3d.ZAxis, 0.2);
-                        marker.Color = Color.FromRgb(0, 255, 0);
+                        marker.Color =Autodesk.AutoCAD.Colors.Color.FromRgb(0, 255, 0);
                         _markers.Add(marker);
 
                         IntegerCollection intCol = new IntegerCollection();
@@ -119,19 +119,10 @@ class TransientGraphics
             foreach (DBObject marker in _markers)
             {
 
-                tm.EraseTransient(
-
-                                    marker,
-
-                                    intCol
-
-                                 );
+                tm.EraseTransient(marker, intCol);
 
                 marker.Dispose();
-
             }
-
         }
-
     }
 }

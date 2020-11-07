@@ -49,11 +49,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetLoadX4.5", "NetLoadX源�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteManager 4.5", "NetLoadX源码\RemoteManager\RemoteManager 4.5.csproj", "{162D6DDA-53F2-43F0-A1F0-126832A0939F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "adndevblog", "adndevblog\adndevblog.csproj", "{029374B9-8FE2-4651-8AE1-03E38C67B660}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "adndevblog2016", "adndevblog\adndevblog2016.csproj", "{029374B9-8FE2-4651-8AE1-03E38C67B660}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyGeom4.5", "MyGeom\MyGeom4.5.csproj", "{08D1F657-F32B-48C8-8090-5196AAD89EA4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcadUtil4.5", "AcadUtil\AcadUtil4.5.csproj", "{D43251CC-EE75-4046-8C80-F8DA703F4F76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wkx4.5", "wkx\wkx4.5.csproj", "{ED4139D0-BBDB-4377-A383-AA9045D51959}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AcadDemo4.5", "AcadDemo\AcadDemo4.5.csproj", "{FE518E5F-2494-475F-B206-E569359E0039}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -329,6 +333,42 @@ Global
 		{D43251CC-EE75-4046-8C80-F8DA703F4F76}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{D43251CC-EE75-4046-8C80-F8DA703F4F76}.Release|Win32.ActiveCfg = Release|Any CPU
 		{D43251CC-EE75-4046-8C80-F8DA703F4F76}.Release|x64.ActiveCfg = Release|Any CPU
+		{ED4139D0-BBDB-4377-A383-AA9045D51959}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED4139D0-BBDB-4377-A383-AA9045D51959}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED4139D0-BBDB-4377-A383-AA9045D51959}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{ED4139D0-BBDB-4377-A383-AA9045D51959}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{ED4139D0-BBDB-4377-A383-AA9045D51959}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{ED4139D0-BBDB-4377-A383-AA9045D51959}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{ED4139D0-BBDB-4377-A383-AA9045D51959}.net4.0|Any CPU.ActiveCfg = Release|Any CPU
+		{ED4139D0-BBDB-4377-A383-AA9045D51959}.net4.0|Any CPU.Build.0 = Release|Any CPU
+		{ED4139D0-BBDB-4377-A383-AA9045D51959}.net4.0|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{ED4139D0-BBDB-4377-A383-AA9045D51959}.net4.0|Mixed Platforms.Build.0 = Release|Any CPU
+		{ED4139D0-BBDB-4377-A383-AA9045D51959}.net4.0|Win32.ActiveCfg = Release|Any CPU
+		{ED4139D0-BBDB-4377-A383-AA9045D51959}.net4.0|x64.ActiveCfg = Release|Any CPU
+		{ED4139D0-BBDB-4377-A383-AA9045D51959}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED4139D0-BBDB-4377-A383-AA9045D51959}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED4139D0-BBDB-4377-A383-AA9045D51959}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{ED4139D0-BBDB-4377-A383-AA9045D51959}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{ED4139D0-BBDB-4377-A383-AA9045D51959}.Release|Win32.ActiveCfg = Release|Any CPU
+		{ED4139D0-BBDB-4377-A383-AA9045D51959}.Release|x64.ActiveCfg = Release|Any CPU
+		{FE518E5F-2494-475F-B206-E569359E0039}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE518E5F-2494-475F-B206-E569359E0039}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE518E5F-2494-475F-B206-E569359E0039}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{FE518E5F-2494-475F-B206-E569359E0039}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{FE518E5F-2494-475F-B206-E569359E0039}.Debug|Win32.ActiveCfg = Debug|Any CPU
+		{FE518E5F-2494-475F-B206-E569359E0039}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FE518E5F-2494-475F-B206-E569359E0039}.net4.0|Any CPU.ActiveCfg = net4.0|Any CPU
+		{FE518E5F-2494-475F-B206-E569359E0039}.net4.0|Any CPU.Build.0 = net4.0|Any CPU
+		{FE518E5F-2494-475F-B206-E569359E0039}.net4.0|Mixed Platforms.ActiveCfg = net4.0|Any CPU
+		{FE518E5F-2494-475F-B206-E569359E0039}.net4.0|Mixed Platforms.Build.0 = net4.0|Any CPU
+		{FE518E5F-2494-475F-B206-E569359E0039}.net4.0|Win32.ActiveCfg = net4.0|Any CPU
+		{FE518E5F-2494-475F-B206-E569359E0039}.net4.0|x64.ActiveCfg = net4.0|Any CPU
+		{FE518E5F-2494-475F-B206-E569359E0039}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE518E5F-2494-475F-B206-E569359E0039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE518E5F-2494-475F-B206-E569359E0039}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{FE518E5F-2494-475F-B206-E569359E0039}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{FE518E5F-2494-475F-B206-E569359E0039}.Release|Win32.ActiveCfg = Release|Any CPU
+		{FE518E5F-2494-475F-B206-E569359E0039}.Release|x64.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
