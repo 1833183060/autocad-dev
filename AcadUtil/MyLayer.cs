@@ -14,6 +14,11 @@ namespace AcadUtil
 {
     public class MyLayer
     {
-        
+        public static void SetCLayer(string name,Autodesk.AutoCAD.Colors.Color color)
+        {
+            bool r=true;
+            DBManager.CreateLayer(name, color,false,ref r);
+            Application.SetSystemVariable("clayer", name);
+        } 
     }
 }

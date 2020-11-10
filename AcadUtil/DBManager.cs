@@ -31,9 +31,14 @@ namespace AcadUtil
             return result;
         }
 
-
+        public static ObjectId CreateLayer(string name, Color color, bool isFrozen, ref bool isNewlyCreated)
+        {
+            Database workingDatabase = HostApplicationServices.WorkingDatabase;
+            return CreateLayer(name, color, isFrozen, ref isNewlyCreated, workingDatabase);
+        }
         public static ObjectId CreateLayer(string name, short color, bool isFrozen, ref bool isNewlyCreated)
         {
+            
             Database workingDatabase = HostApplicationServices.WorkingDatabase;
             return CreateLayer(name, color, isFrozen, ref isNewlyCreated, workingDatabase);
         }
@@ -50,6 +55,7 @@ namespace AcadUtil
             {
                 return ObjectId.Null;
             }
+            
             using (Transaction transaction = db.TransactionManager.StartTransaction())
             {
                 LayerTable layerTable = (LayerTable)transaction.GetObject(db.LayerTableId, (OpenMode)0, true);

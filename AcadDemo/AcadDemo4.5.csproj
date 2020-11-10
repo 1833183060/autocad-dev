@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBManager.cs" />
+    <Compile Include="DimensionDemo.cs" />
     <Compile Include="InitClass.cs" />
     <Compile Include="MyGroup.cs" />
     <Compile Include="MyLayer.cs" />
