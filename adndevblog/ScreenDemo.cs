@@ -12,6 +12,7 @@ using Autodesk.AutoCAD.Runtime;
 using Autodesk.AutoCAD.EditorInput;
 using Autodesk.AutoCAD.ApplicationServices;
 using Autodesk.AutoCAD.Windows;
+using Autodesk.AutoCAD.Geometry;
 
 namespace adndevblog
 {
@@ -37,5 +38,36 @@ namespace adndevblog
             docWindow.SetSize(new System.Drawing.Size(500, 500));
         }
 
+        /// <summary>
+        /// 获取autocad模型空间窗口大小
+        /// 参考 https://adndevblog.typepad.com/autocad/2012/04/getting-the-extents-of-autocad-model-window.html
+        /// </summary>
+        [CommandMethod("ScreenExtents")]
+        public void ScreenExtents()
+        {
+            Document doc = Application.DocumentManager.MdiActiveDocument;
+
+            Database db = doc.Database;
+
+            Editor ed = doc.Editor;
+            Point2d screenSize = (Point2d)Application.GetSystemVariable("SCREENSIZE");
+            System.Drawing.Point upperLeft = new System.Drawing.Point(0, 0);
+            System.Drawing.Point lowerRight = new System.Drawing.Point((int)screenSize.X,(int)screenSize.Y);
+            Point3d upperLeftWorld = ed.PointToWorld(upperLeft, 0);
+
+            Point3d lowerRightWorld = ed.PointToWorld(lowerRight, 0);
+            using (Transaction Tx = db.TransactionManager.StartTransaction())
+            {
+                //Draws a line to visualize result...
+
+                Line line = new Line(upperLeftWorld, lowerRightWorld);
+
+                BlockTableRecord btr = Tx.GetObject(db.CurrentSpaceId, OpenMode.ForWrite) as BlockTableRecord;
+                btr.AppendEntity(line);
+
+                Tx.AddNewlyCreatedDBObject(line, true);
+                Tx.Commit();
+            }
+        }
     }
 }
