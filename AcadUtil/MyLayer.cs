@@ -19,6 +19,24 @@ namespace AcadUtil
             bool r=true;
             DBManager.CreateLayer(name, color,false,ref r);
             Application.SetSystemVariable("clayer", name);
-        } 
+        }
+        public static void DeleteAllObj(string layerName)
+        {
+            TypedValue[] tvs ={
+                                new TypedValue((int)DxfCode.LayerName,layerName)
+                            };
+            SelectionFilter filter = new SelectionFilter(tvs);
+
+            ObjectId[] ids=MySelection.SelectAll(filter);
+            using (Transaction trans = HostApplicationServices.WorkingDatabase.TransactionManager.StartTransaction())
+            {
+                for (int i = 0; i < ids.Length; ++i)
+                {
+                    DBObject obj = trans.GetObject(ids[i],OpenMode.ForWrite);
+                    obj.Erase();
+                }
+                trans.Commit();
+            }
+        }
     }
 }

@@ -1,4 +1,7 @@
-﻿//https://adndevblog.typepad.com/autocad/2012/04/retrieving-nested-entities-under-cursor-aperture-using-net-api.html
+﻿//参考：https://adndevblog.typepad.com/autocad/2012/04/retrieving-nested-entities-under-cursor-aperture-using-net-api.html
+//
+//qq群 720924083
+//2020-11-10
 using System;
 using System.Collections.Generic;
 using System.Linq;
