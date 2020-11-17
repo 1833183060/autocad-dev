@@ -28,6 +28,7 @@ namespace AcadUtil
             SelectionFilter filter = new SelectionFilter(tvs);
 
             ObjectId[] ids=MySelection.SelectAll(filter);
+            if (ids == null) return;
             using (Transaction trans = HostApplicationServices.WorkingDatabase.TransactionManager.StartTransaction())
             {
                 for (int i = 0; i < ids.Length; ++i)
